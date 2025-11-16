@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyberpunk - Créateur de Personnage</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cousine:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <h1>[ SYSTÈME DE CRÉATION DE PERSONNAGE ]</h1>
+        <nav>
+            <ul>
+                <li><a href="#identity">Identité</a></li>
+                <li><a href="#history">Historique</a></li>
+                <li><a href="#attributes">Attributs</a></li>
+                <li><a href="#skills">Compétences</a></li>
+                <li><a href="#summary">Fiche Finale</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- SECTION IDENTITÉ -->
+        <section id="identity" class="view">
+            <h2 class="section-title">> SECTION 1: IDENTITÉ</h2>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="char-name">NOM D'AGENT</label>
+                    <input type="text" id="char-name" name="char-name" placeholder="Ex: V, Morgane Blackhand...">
+                </div>
+                <div class="form-group">
+                    <label for="char-handle">PSEUDONYME</label>
+                    <input type="text" id="char-handle" name="char-handle" placeholder="Ex: Le Fantôme, Razor...">
+                </div>
+                <div class="form-group">
+                    <label for="lifepath">ARCHÉTYPE / CLASSE</label>
+                    <select id="lifepath" name="lifepath">
+                        <option value="Cop">Cop</option>
+                        <option value="Corporate">Corporate</option>
+                        <option value="Media">Media</option>
+                        <option value="MedTech">MedTech</option>
+                        <option value="Netrunner">Netrunner</option>
+                        <option value="Nomad">Nomad</option>
+                        <option value="Rockerboy/girl">Rockerboy/girl</option>
+                        <option value="Solo">Solo</option>
+                        <option value="Techie">Techie</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION HISTORIQUE PERSONNEL -->
+        <section id="history" class="view">
+            <h2 class="section-title">> SECTION 2: HISTORIQUE PERSONNEL</h2>
+            <button id="randomize-history-btn" class="action-btn randomize-btn">GÉNÉRER UN NOUVEL HISTORIQUE</button>
+            
+            <div class="history-container">
+                <!-- Ligne 1 -->
+                <div class="history-row">
+                    <div class="history-item">
+                        <span class="history-label">Style vestimentaire</span>
+                        <p id="char-style" class="history-value">...</p>
+                    </div>
+                    <div class="history-item">
+                        <span class="history-label">Coiffure</span>
+                        <p id="char-hair" class="history-value">...</p>
+                    </div>
+                    <div class="history-item">
+                        <span class="history-label">Accessoire iconique</span>
+                        <p id="char-accessory" class="history-value">...</p>
+                    </div>
+                </div>
+                <!-- Ligne 2 -->
+                <div class="history-row">
+                     <div class="history-item">
+                        <span class="history-label">Origine ethnique</span>
+                        <p id="char-origin" class="history-value">...</p>
+                    </div>
+                    <div class="history-item">
+                        <span class="history-label">Langue maternelle</span>
+                        <p id="char-language" class="history-value">...</p>
+                    </div>
+                </div>
+                <!-- Ligne 3 -->
+                <div class="history-row">
+                    <div class="history-item">
+                        <span class="history-label">CSP d'Origine</span>
+                        <p id="char-csp" class="history-value">...</p>
+                    </div>
+                    <div class="history-item">
+                        <span class="history-label">Enfance</span>
+                        <p id="char-childhood" class="history-value">...</p>
+                    </div>
+                </div>
+                <!-- Ligne 4 (Destin Familial) -->
+                <div class="history-row">
+                    <div class="history-item">
+                        <span class="history-label">Destin familial</span>
+                        <p id="char-family-fate" class="history-value">...</p>
+                    </div>
+                </div>
+                <!-- Ligne 5 (Adelphes) -->
+                <div class="history-row">
+                    <div class="history-item">
+                        <span class="history-label">Adelphe(s)</span>
+                        <p id="char-siblings" class="history-value">...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION ATTRIBUTS -->
+        <section id="attributes" class="view">
+            <h2 class="section-title">> SECTION 3: ATTRIBUTS</h2>
+            <div class="points-tracker">
+                POINTS RESTANTS : <span id="points-remaining">0</span>
+            </div>
+            <div class="attribute-grid">
+                <!-- Les cartes d'attributs seront générées par le script -->
+            </div>
+        </section>
+
+        <!-- SECTION COMPÉTENCES -->
+        <section id="skills" class="view">
+            <h2 class="section-title">> SECTION 4: COMPÉTENCES</h2>
+            <div id="core-skill-points-tracker" class="points-tracker">
+                POINTS DE COMPÉTENCE MÉTIER RESTANTS : <span id="core-skill-points-remaining">32</span>
+            </div>
+            <div id="pickup-skill-points-tracker" class="points-tracker">
+                POINTS DE COMPÉTENCE ADDITIONNELS RESTANTS : <span id="pickup-skill-points-remaining">0</span>
+            </div>
+            <div id="skills-container" class="skills-container">
+                <!-- Les groupes de compétences seront générés par le script -->
+            </div>
+        </section>
+
+        <!-- SECTION RÉSUMÉ -->
+        <section id="summary" class="view">
+            <h2 class="section-title">> FICHE DE PERSONNAGE FINALE</h2>
+            <div class="summary-card">
+                <h3>RÉSUMÉ</h3>
+                <p><strong>NOM:</strong> <span id="summary-name">...</span></p>
+                <p><strong>PSEUDONYME:</strong> <span id="summary-handle">...</span></p>
+                <p><strong>ARCHÉTYPE:</strong> <span id="summary-lifepath">...</span></p>
+                
+                <h4 class="summary-subtitle">HISTORIQUE</h4>
+                <div class="summary-grid">
+                    <p><strong>Style:</strong> <span id="summary-style">...</span></p>
+                    <p><strong>Coiffure:</strong> <span id="summary-hair">...</span></p>
+                    <p><strong>Accessoire:</strong> <span id="summary-accessory">...</span></p>
+                    <p><strong>Origine:</strong> <span id="summary-origin">...</span></p>
+                    <p><strong>Langue:</strong> <span id="summary-language">...</span></p>
+                    <p><strong>CSP Origine:</strong> <span id="summary-csp">...</span></p>
+                    <p><strong>Enfance:</strong> <span id="summary-childhood">...</span></p>
+                </div>
+                <p><strong>Destin Familial:</strong> <span id="summary-family-fate">...</span></p>
+                <p><strong>Adelphe(s):</strong> <span id="summary-siblings">...</span></p>
+
+                <h4 class="summary-subtitle">ATTRIBUTS</h4>
+                <div id="summary-attributes">
+                    <!-- Le résumé des attributs ira ici -->
+                </div>
+
+                <h4 class="summary-subtitle">[ STATS SECONDAIRES ]</h4>
+                <p><strong>Humanité:</strong> <span id="summary-humanity">...</span></p>
+                
+                <h4 class="summary-subtitle">COMPÉTENCES</h4>
+                <div id="summary-skills" class="summary-grid">
+                    <!-- Le résumé des compétences ira ici -->
+                </div>
+                
+                <div class="export-buttons">
+                    <button id="export-csv-btn" class="action-btn">[ EXPORTER .CSV ]</button>
+                    <button id="download-btn" class="action-btn">[ TÉLÉCHARGER .TXT ]</button>
+                    <button id="print-btn" class="action-btn">[ IMPRIMER / PDF ]</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 - Projet de création de personnage Cyberpunk</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>```
