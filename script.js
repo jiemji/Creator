@@ -282,7 +282,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             skillGroup.innerHTML = `<h3>${statName}</h3><div class="skills-list">${skillsListHtml}</div>`;
             skillsContainer.appendChild(skillGroup);
-        })
+        });
 
         const specialSkillInfo = gameData.specialskill.find(s => s.Classe === selectedClass);
         if (specialSkillInfo) {
@@ -494,4 +494,4 @@ ${skillsText || 'Aucune compétence acquise.'}
         }
     }
     initializeApp();
-});`` 
+});
