@@ -248,9 +248,8 @@ main, section.view {
     align-items: start; 
 }
 
-/* NOUVEAU : Règle pour la mini-fiche "Spécial" */
 #special-skill-group {
-    grid-column: 1 / -1; /* S'étend sur toute la largeur */
+    grid-column: 1 / -1;
 }
 
 .skill-group {
