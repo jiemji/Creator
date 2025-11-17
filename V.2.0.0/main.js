@@ -33,7 +33,7 @@ async function initializeApp() {
         calculatePickupSkillPoints();
         
         dom.randomizeHistoryBtn.disabled = false;
-        dom.randomizeHistoryBtn.textContent = "Reroll";
+        dom.randomizeHistoryBtn.textContent = "Générer un nouvel historique";
         
         randomizeHistory();
         updateUI();

@@ -1,0 +1,73 @@
+Classe;Skill
+Cop;Arme de poing
+Cop;Athlétisme
+Cop;Empathie
+Cop;Interrogatoire
+Cop;Melée
+Cop;Perspicacité
+Cop;Streetwise
+Corporate;Empathie
+Corporate;Esthétique
+Corporate;Garde-robe
+Corporate;Perspicacité
+Corporate;Persuasion
+Corporate;Sociabilité
+Corporate;Trading
+Media;Composition
+Media;Empathie
+Media;Interview
+Media;Perspicacité
+Media;Persuasion
+Media;Photo & Film
+Media;Sociabilité
+Media;Streetwise
+MedTech;Basic Tech
+MedTech;Empathie
+MedTech;Médecine
+MedTech;Perspicacité
+MedTech;Pharmacopée
+MedTech;Zoologie
+Netrunner;Basic Tech
+Netrunner;Composition
+Netrunner;CyberTech
+Netrunner;Développement
+Netrunner;Electronique
+Netrunner;Perspicacité
+Netrunner;Administration
+Nomad;Athlétisme
+Nomad;Basic Tech
+Nomad;Fusil
+Nomad;Melée
+Nomad;Perspicacité
+Nomad;Survie
+Nomad;Voiture
+Rockerboy/girl;Composition
+Rockerboy/girl;Garde-robe
+Rockerboy/girl;Melée
+Rockerboy/girl;Musicien
+Rockerboy/girl;Performance
+Rockerboy/girl;Perspicacité
+Rockerboy/girl;Persuasion
+Rockerboy/girl;Séduction
+Solo;Arme de poing
+Solo;Arme lourde
+Solo;Art martial
+Solo;Athlétisme
+Solo;Discrétion
+Solo;Melée
+Solo;Mitraillette
+Solo;Perspicacité
+Techie;Aero Tech
+Techie;Basic Tech
+Techie;CyberTech
+Techie;Electricité
+Techie;Electronique
+Techie;Gyro Tech
+Techie;Perspicacité
+Cop;Droit
+Corporate;Comptabilité
+MedTech;Biologie
+MedTech;Chimie
+Netrunner;Crochetage
+Nomad;Couteau
+Techie;Démolition

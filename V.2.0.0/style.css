@@ -4,12 +4,10 @@
     --color-primary: #39FF14;   /* Vert néon vif */
     --color-primary-dim: #2E8B57; /* Vert plus sombre pour les éléments secondaires */
     --color-primary-light: #00BFFF;/* Cyan pour les compétences métiers et le survol */
-    --color-primary-dark: #006d00;/* Cyan pour les compétences métiers et le survol */
     --header-height: 160px;
 }
 
-html { box-sizing: border-box;
-    scroll-padding-top: var(--header-height);}
+html { box-sizing: border-box; }
 *, *:before, *:after { box-sizing: inherit; }
 
 body {
@@ -137,51 +135,11 @@ main, section.view {
 }
 
 /* --- SECTION HISTORIQUE --- */
-
-/* --- Bouton Reroll --- */
-#reroll-btn {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    /* 1/8 de la largeur de la vue, avec des limites min/max */
-    width: clamp(55px, 12.5vw, 80px);
-    height: clamp(55px, 12.5vw, 80px);
-    border-radius: 50%;
-    padding: 0;
-    z-index: 1001; /* Au-dessus du header */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.randomize-btn {
+    width: 100%;
+    margin-bottom: 40px;
+    padding: 15px;
 }
-
-/* Icône de rafraîchissement créée en CSS */
-#reroll-btn::before {
-    content: '';
-    display: block;
-    width: 40%;
-    height: 40%;
-    border: 4px solid var(--color-primary);
-    border-right-color: transparent;
-    border-radius: 50%;
-    transition: transform 0.4s ease-out;
-}
-
-#reroll-btn:hover::before {
-    transform: rotate(360deg);
-}
-
-/* Classe pour l'accessibilité (lecteurs d'écran) */
-.sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0,0,0,0);
-    border: 0;
-}
-
 .history-container {
     display: flex;
     flex-direction: column;
@@ -195,24 +153,21 @@ main, section.view {
 .history-item {
     flex: 1; /* Chaque item prend une part égale de l'espace de la ligne */
 }
-
 .history-item .history-label {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     opacity: 0.8;
-    font-size: 1.1em;
-    color: var(--color-primary-dim);
+    font-size: 1em;
 }
-
 .history-item .history-value {
-    font-size: 0.95em;
+    font-size: 1.3em;
     margin: 8px 0 0 0;
-    padding: 5px 10px 5px 10px ;
+    padding: 10px;
     border-left: 3px solid var(--color-primary-dim);
     background-color: rgba(57, 255, 20, 0.03);
-    min-height: 30px;
-    line-height: 1.3;
+    min-height: 65px; /* Augmenté pour mieux gérer 2 lignes */
+    line-height: 1.4;
     display: flex;
     align-items: center;
 }
