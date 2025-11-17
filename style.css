@@ -287,15 +287,22 @@ main, section.view {
 
 /* --- SECTION COMPÉTENCES --- */
 .skills-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 30px;
+    /* Suppression des propriétés de grille */
+    /* display: grid; */
+    /* grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); */
+    /* gap: 30px; */
+    /* align-items: start;  */
+
+    /* Ajout des propriétés multi-colonnes */
+    column-width: 300px;
+    column-gap: 30px;
     margin-top: 40px;
-    align-items: start; 
 }
 
 #special-skill-group {
-    grid-column: 1 / -1;
+    /* La propriété grid-column est remplacée par column-span */
+    /* grid-column: 1 / -1; */
+    column-span: all;
 }
 
 .skill-group {
@@ -304,6 +311,9 @@ main, section.view {
     background-color: rgba(57, 255, 20, 0.02);
     display: flex;
     flex-direction: column;
+        /* Ajouts pour la mise en page multi-colonnes */
+    break-inside: avoid;   /* Empêche un bloc de se couper entre deux colonnes */
+    margin-bottom: 30px; /* Remplace le 'gap' vertical de la grille */
 }
 
 .skill-group h3 {
@@ -335,6 +345,15 @@ main, section.view {
 .core-skill .skill-name {
     color: var(--color-primary-light);
     font-weight: 700;
+}
+
+.core-skill .skill-value {
+    color: var(--color-primary-light);
+}
+
+.core-skill .quantity-btn {
+    color: var(--color-primary-light);
+    border-color: var(--color-primary-light);
 }
 
 .skill-controls {
