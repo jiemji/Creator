@@ -22,6 +22,8 @@ function fullCharacterReset() {
 }
 
 async function initializeApp() {
+    dom.randomizeHistoryBtn.disabled = true;
+    dom.randomizeHistoryBtn.textContent = "Chargement des données...";
 
     try {
         state.gameData = await loadAllData();
@@ -29,6 +31,9 @@ async function initializeApp() {
         initializeSkills();
         initializeAttributes();
         calculatePickupSkillPoints();
+        
+        dom.randomizeHistoryBtn.disabled = false;
+        dom.randomizeHistoryBtn.textContent = "Reroll";
         
         randomizeHistory();
         updateUI();
@@ -54,7 +59,9 @@ async function initializeApp() {
             }
         });
 
-         dom.identity.name.addEventListener('input', renderSummary);
+        dom.randomizeHistoryBtn.addEventListener('click', fullCharacterReset);
+
+        dom.identity.name.addEventListener('input', renderSummary);
         dom.identity.handle.addEventListener('input', renderSummary);
         dom.identity.lifepath.addEventListener('change', () => {
             // Recalculer les points de compétence métier lors du changement de classe
@@ -73,6 +80,7 @@ async function initializeApp() {
 
     } catch (error) {
         console.error("ERREUR D'INITIALISATION :", error);
+        dom.randomizeHistoryBtn.textContent = "ERREUR DE CHARGEMENT";
         document.querySelectorAll('.history-value').forEach(el => el.textContent = "Erreur");
     }
 }

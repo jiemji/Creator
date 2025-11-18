@@ -4,6 +4,7 @@ export const dom = {
     skillsContainer: document.getElementById('skills-container'),
     coreSkillPointsDisplay: document.getElementById('core-skill-points-remaining'),
     pickupSkillPointsDisplay: document.getElementById('pickup-skill-points-remaining'),
+    randomizeHistoryBtn: document.getElementById('reroll-btn'),
     exportCsvBtn: document.getElementById('export-csv-btn'),
     downloadBtn: document.getElementById('download-btn'),
     printBtn: document.getElementById('print-btn'),

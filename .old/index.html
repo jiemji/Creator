@@ -12,6 +12,9 @@
 <body>
 
     <header>
+        <button id="reroll-btn" class="action-btn" title="Générer un nouveu personnage">
+            <span class="sr-only">ReRoll</span>
+        </button>
         <h1>[ SYSTÈME DE CRÉATION DE PERSONNAGE ]</h1>
         <nav>
             <ul>
@@ -40,11 +43,15 @@
                 <div class="form-group">
                     <label for="lifepath">ARCHÉTYPE / CLASSE</label>
                     <select id="lifepath" name="lifepath">
-                        <option value="netrunner">Netrunner</option>
-                        <option value="solo">Solo</option>
-                        <option value="techie">Techie</option>
-                        <option value="nomad">Nomade</option>
-                        <option value="corpo">Corpo</option>
+                        <option value="Cop">Cop</option>
+                        <option value="Corporate">Corporate</option>
+                        <option value="Media">Media</option>
+                        <option value="MedTech">MedTech</option>
+                        <option value="Netrunner">Netrunner</option>
+                        <option value="Nomad">Nomad</option>
+                        <option value="Rockerboy/girl">Rockerboy/girl</option>
+                        <option value="Solo">Solo</option>
+                        <option value="Techie">Techie</option>
                     </select>
                 </div>
             </div>
@@ -53,8 +60,7 @@
         <!-- SECTION HISTORIQUE PERSONNEL -->
         <section id="history" class="view">
             <h2 class="section-title">> SECTION 2: HISTORIQUE PERSONNEL</h2>
-            <button id="randomize-history-btn" class="action-btn randomize-btn">GÉNÉRER UN NOUVEL HISTORIQUE</button>
-            
+
             <div class="history-container">
                 <!-- Ligne 1 -->
                 <div class="history-row">
@@ -124,8 +130,11 @@
         <!-- SECTION COMPÉTENCES -->
         <section id="skills" class="view">
             <h2 class="section-title">> SECTION 4: COMPÉTENCES</h2>
-            <div class="points-tracker">
-                POINTS DE COMPÉTENCE RESTANTS : <span id="skill-points-remaining">40</span>
+            <div id="core-skill-points-tracker" class="points-tracker">
+                POINTS DE COMPÉTENCE MÉTIER RESTANTS : <span id="core-skill-points-remaining">32</span>
+            </div>
+            <div id="pickup-skill-points-tracker" class="points-tracker">
+                POINTS DE COMPÉTENCE ADDITIONNELS RESTANTS : <span id="pickup-skill-points-remaining">0</span>
             </div>
             <div id="skills-container" class="skills-container">
                 <!-- Les groupes de compétences seront générés par le script -->
@@ -138,7 +147,7 @@
             <div class="summary-card">
                 <h3>RÉSUMÉ</h3>
                 <p><strong>NOM:</strong> <span id="summary-name">...</span></p>
-                <p><strong>PSEUDO:</strong> <span id="summary-handle">...</span></p>
+                <p><strong>PSEUDONYME:</strong> <span id="summary-handle">...</span></p>
                 <p><strong>ARCHÉTYPE:</strong> <span id="summary-lifepath">...</span></p>
                 
                 <h4 class="summary-subtitle">HISTORIQUE</h4>
@@ -162,6 +171,11 @@
                 <h4 class="summary-subtitle">[ STATS SECONDAIRES ]</h4>
                 <p><strong>Humanité:</strong> <span id="summary-humanity">...</span></p>
                 
+                <h4 class="summary-subtitle">COMPÉTENCES</h4>
+                <div id="summary-skills" class="summary-grid">
+                    <!-- Le résumé des compétences ira ici -->
+                </div>
+                
                 <div class="export-buttons">
                     <button id="export-csv-btn" class="action-btn">[ EXPORTER .CSV ]</button>
                     <button id="download-btn" class="action-btn">[ TÉLÉCHARGER .TXT ]</button>
@@ -175,6 +189,6 @@
         <p>&copy; 2025 - Projet de création de personnage Cyberpunk</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script type="module" src="main.js"></script>
 </body>
 </html>
