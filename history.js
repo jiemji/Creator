@@ -7,8 +7,16 @@ const getRandomItem = (arr) => {
 };
 
 export function randomizeHistory() {
-    dom.history.style.textContent = getRandomItem(state.gameData.vetement).texte;
-    dom.history.hair.textContent = getRandomItem(state.gameData.coiffure).texte;
+    const selectedRole = dom.identity.lifepath.value;
+
+    // Filtrer les données par le rôle sélectionné
+    const filteredVetement = state.gameData.vetement.filter(item => item.Rôle === selectedRole);
+    const filteredCoiffure = state.gameData.coiffure.filter(item => item.Rôle === selectedRole);
+
+    // Utiliser les listes filtrées pour la génération aléatoire
+    dom.history.style.textContent = getRandomItem(filteredVetement).texte;
+    dom.history.hair.textContent = getRandomItem(filteredCoiffure).texte;
+    
     dom.history.accessory.textContent = getRandomItem(state.gameData.accessoire).texte;
     dom.history.csp.textContent = getRandomItem(state.gameData.origine).texte;
     dom.history.childhood.textContent = getRandomItem(state.gameData.childhood).texte;
