@@ -106,6 +106,52 @@ main, section.view {
     justify-content: space-between; /* Pousse le '?' à droite */
 }
 
+/* AJOUT: Conteneur pour les boutons d'action dans le titre */
+.title-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espace entre le bouton reroll et le tooltip */
+}
+
+/* --- AJOUT DES STYLES POUR LE BOUTON D'ACTION DE SECTION --- */
+.section-action-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    border-radius: 50%;
+    border: 2px solid var(--color-primary-dim);
+    background-color: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.section-action-btn:hover {
+    border-color: var(--color-primary);
+    background-color: transparent; /* Annule le hover global */
+    box-shadow: none; /* Annule le hover global */
+}
+
+/* Icône de rafraîchissement (flèche circulaire) */
+.section-action-btn::before {
+    content: '';
+    display: block;
+    width: 50%;
+    height: 50%;
+    border: 2px solid var(--color-primary-dim);
+    border-top-color: transparent;
+    border-radius: 50%;
+    transition: transform 0.4s ease-out, border-color 0.3s ease;
+}
+
+.section-action-btn:hover::before {
+    border-color: var(--color-primary);
+    border-top-color: transparent;
+    transform: rotate(360deg);
+}
+
 /* --- FORMULAIRES (SECTION IDENTITÉ) --- */
 .form-grid {
     display: grid;

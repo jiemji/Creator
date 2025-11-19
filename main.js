@@ -67,6 +67,12 @@ async function initializeApp() {
             updateUI();
         });
 
+        dom.rerollHistoryBtn.addEventListener('click', () => {
+            randomizeHistory();
+            renderSummary();
+        });
+
+
         dom.printBtn.addEventListener('click', () => window.print());
         dom.downloadBtn.addEventListener('click', downloadTxt);
         dom.exportCsvBtn.addEventListener('click', exportCsv);

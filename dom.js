@@ -4,6 +4,8 @@ export const dom = {
     skillsContainer: document.getElementById('skills-container'),
     coreSkillPointsDisplay: document.getElementById('core-skill-points-remaining'),
     pickupSkillPointsDisplay: document.getElementById('pickup-skill-points-remaining'),
+    rerollHistoryBtn: document.getElementById('reroll-history-btn'), // AJOUT
+    exportCsvBtn: document.getElementById('export-csv-btn'),
     exportCsvBtn: document.getElementById('export-csv-btn'),
     downloadBtn: document.getElementById('download-btn'),
     printBtn: document.getElementById('print-btn'),
