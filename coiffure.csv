@@ -1,11 +1,91 @@
-num;texte
-1;Mohawk
-2;Long & Ratty
-3;Short & Spiked
-4;Wild & all over
-5;Bald
-6;Striped
-7;Tinted
-8;Neat, short
-9;Short, curly
-10;Long, straight
+Rôle;Nom de la coiffure;texte
+Solo;La Recrue;Coupe brosse militaire très courte (3mm). Simple, hygiénique et sans fioritures pour le combat.
+Solo;Le Samouraï Urbain;Un "Top knot" (chignon haut) strict retenu par un anneau en acier brossé. Les côtés sont rasés à blanc.
+Solo;L'Asymétrique;Un côté de la tête rasé, l'autre avec des cheveux mi-longs noirs plaqués au gel. Une cicatrice esthétique traverse la zone rasée.
+Solo;Le Camo-Style;Cheveux courts teints avec des motifs de camouflage gris et bleu urbain. Un bandana noir est noué sur le front.
+Solo;Le Prédateur;Lourdes tresses synthétiques tombant sur les épaules, ornées de perles en métal lourd. Donne une allure massive et menaçante.
+Solo;Le Casque Visuel;Cheveux coupés et gélifiés pour former une coque rigide et brillante autour du crâne. Aspect "plastique dur" noir mat.
+Solo;Le Chrome-Look;Crâne rasé et recouvert d'une peinture corporelle chromée effet miroir. Brille intensément sous les néons.
+Solo;L'Épineux;Cheveux courts sculptés en piques très dures avec de la cire industrielle. Les pointes sont teintes en rouge sang.
+Solo;Le Tribal;Crête large tressée au centre, tempes couvertes de tatouages maori à l'encre noire dense. Des anneaux en argent percent les oreilles et l'arcade.
+Solo;La Tête de Mort;Visage et crâne rasé peints pour ressembler à un squelette blanc sur fond noir. Terrifiant sans aucune technologie.
+Techie;L'Atelier;Queue de cheval basse attachée négligemment avec un fil électrique coloré (non fonctionnel). Mèches grasses sur le front.
+Techie;Le Pratique;Coupe au bol courte avec une frange droite pour ne pas gêner la vue. Couleur châtain terne, utilitaire.
+Techie;Le Cuivré;Cheveux mi-longs teints en orange métallique rappelant le fil de cuivre. Des petites rondelles et écrous sont tressés dedans.
+Techie;Le Patchwork;Cheveux décolorés par zones irrégulières (imitant des taches d'acide). Style "savant fou" ébouriffé.
+Techie;Le Circuit;Crâne rasé avec des motifs de circuits imprimés dessinés au henné noir ou tatoués. Très graphique.
+Techie;Le Plastique;Cheveux enduits d'un gel vinyle qui leur donne l'aspect de câbles plats et brillants. Couleur jaune danger et noir.
+Techie;Le Magnétique;Cheveux hérissés en l'air par l'électricité statique (laque forte). Des trombones et petits ressorts y sont accrochés pour le style.
+Techie;Le Tool-Belt;Tresses épaisses relevées sur la tête, piquées de nombreuses épingles à cheveux métalliques ressemblant à des clous.
+Techie;Le Phospho;Coupe courte teinte en vert radioactif qui luit dans le noir (phosphorescent). Idéal pour être vu dans les zones sombres.
+Techie;L'Isolant;Cheveux entièrement recouverts d'une mousse coiffante durcissante grise, aspect "mousse expansive". Volume énorme et texture rugueuse.
+Medtech;Le Clinique;Coupe courte, tirée en arrière, d'un blanc pur artificiel. Évoque l'hygiène absolue et la stérilité.
+Medtech;L'Urgence;Cheveux attachés à la va-vite avec des élastiques chirurgicaux bleus. Quelques mèches rebelles tombent sur les yeux.
+Medtech;Le Chimiste;Coloration "tie and dye" passant du blanc au vert toxique sur les pointes. Rappelle les réactifs chimiques.
+Medtech;La Gélule;Coupe Pixie très courte, bicolore (moitié rouge, moitié blanc). Inspirée des antibiotiques génériques.
+Medtech;Le Scalpel;Coupe géométrique aux bords tranchants comme des lames. Teinture gris argenté métallisé.
+Medtech;Le Vital;Cheveux longs dont les mèches sont teintes en rouge profond, rappelant des veines ou artères.
+Medtech;L'Anatomique;Crâne rasé avec les os du crâne et les sutures peints fidèlement sur la peau. Aspect écorché pédagogique.
+Medtech;Le Tube;Dreadlocks enfermées dans des tubes en plastique transparent (tubulures de perfusion vides). Style médical cyberpunk.
+Medtech;Le Virus;Cheveux crêpés en forme de sphère hérissée (comme une représentation de virus). Teints en violet et vert fluo.
+Medtech;Le Franken-Style;Crâne rasé avec de fausses cicatrices de suture grossières dessinées partout. Donne l'air d'avoir été recousu.
+Cop;Le Bleu;Coupe réglementaire très courte, mais teinte en bleu nuit profond. Discret mais affirme l'appartenance.
+Cop;Le Badge;Crâne rasé avec le numéro de matricule rasé encore plus court (ou tatoué) sur la tempe. Autoritaire.
+Cop;Le Sleek;Cheveux gominés en arrière, aspect mouillé permanent. Sévère et classique.
+Cop;Le Casque;Cheveux coupés de manière à former un bourrelet protecteur autour du crâne (style coupe afro dense et compacte).
+Cop;L'Alerte;Mèches rouges et bleues alternées sur une base noire. Rappelle les gyrophares de patrouille.
+Cop;Le Blindé;Tresses collées au crâne formant des motifs géométriques serrés. Donne un aspect de texture renforcée.
+Cop;Le Juge;Perruque poudrée blanche synthétique modernisée. Accessoire rétro pour marquer le pouvoir judiciaire.
+Cop;La Grille;Cheveux coiffés en damier rigide avec beaucoup de laque. Aspect "barreaux de prison".
+Cop;L'Officier;Casquette de police portée en permanence, cheveux longs dépassant dans le dos, teints en gris acier.
+Cop;L'Exécuteur;Cagoule intégrale en latex noir portée comme accessoire de mode, ne laissant voir que les yeux et la bouche. Pas de cheveux visibles.
+Netrunner;Le Script;Coupe au bol simple, teinte en vert "écran monochrome". Classique rétro-informatique.
+Netrunner;Le Binaire;Coupe asymétrique stricte noire et blanche. Motifs de pixels rasés sur la nuque.
+Netrunner;Le Flux;Cheveux longs, très lisses, teints avec un dégradé arc-en-ciel brillant. Évoque la fibre optique.
+Netrunner;La Puce;Carré court et plat, carrément géométrique. Une barrette en forme de puce électronique retient la mèche.
+Netrunner;Le Grid;Crâne rasé avec un quadrillage parfait tatoué en encre UV invisible (se voit sous lumière noire).
+Netrunner;Le Glitch;Cheveux coupés à des longueurs aléatoires et teints de couleurs discordantes (cyan, magenta, jaune). Effet visuel brouillé.
+Netrunner;Le Virtuel;Perruque en plastique translucide bleu ou rose. Donne un aspect d'avatar 3D non texturé.
+Netrunner;Le Câblé;Tresses fines et rigides qui partent dans tous les sens, ressemblant à un plat de spaghettis de câbles.
+Netrunner;Le Miroir;Cheveux entièrement recouverts de paillettes argentées compactes. Reflète les écrans environnants.
+Netrunner;Le Système;Coiffure complexe faite de chignons interconnectés par des rubans noirs, imitant une topologie réseau.
+Rocker;Le Grunge;Cheveux longs, gras, tombant devant le visage. Accessoirisé avec des épingles à nourrice.
+Rocker;Le Glam;Volume énorme, cheveux crêpés et laqués. Maquillage éclair sur le visage façon David Bowie.
+Rocker;Le Néon;Crête iroquoise teinte en rose fluo très vif. Les côtés sont rasés à blanc.
+Rocker;Le Rebelle;Tête rasée sauf une longue mèche devant, teinte en rouge. Piercings multiples aux oreilles et nez.
+Rocker;Le Léopard;Cheveux très courts teints avec des motifs de peau de léopard (jaune et taches noires). Kitsch et voyant.
+Rocker;Le Spike;Cheveux longs dont les pointes sont durcies à la colle pour former des piques géantes autour de la tête.
+Rocker;Le Vinyle;Cheveux noirs tellement laqués qu'ils ressemblent à du plastique ou du cuir brillant.
+Rocker;Le Métal;Longue chevelure avec des chaînes fines et légères tressées à l'intérieur. Bruit métallique à chaque mouvement.
+Rocker;L'Idole;Perruque aux couleurs pastel (bleu ciel, rose bonbon) avec deux couettes géantes. Style Anime exagéré.
+Rocker;Le Chaos;Mélange de dreads, de crête et de zones rasées, teint en 5 couleurs différentes. Anarchie capillaire totale.
+Nomad;Le Routard;Cheveux longs retenus par un bandana usé et poussiéreux. Aspect naturel, délavé par le soleil.
+Nomad;Le Cuir;Tresses entourées de lanières de cuir brut. Des plumes d'oiseaux (vraies ou synthétiques) sont accrochées.
+Nomad;Le Tribal;Crête Mohawk courte. Tatouages tribaux couvrant tout le crâne rasé sur les côtés.
+Nomad;Le Talisman;Dreadlocks décorées d'os de petits animaux, de dents ou de boulons trouvés sur la route.
+Nomad;Le Vent;Cheveux très longs, ébouriffés, grisés par la poussière. Lunettes de protection portées sur le front comme serre-tête.
+Nomad;La Fourrure;Cheveux crêpés et mélangés à de la fausse fourrure pour donner un aspect de crinière de lion ou de loup.
+Nomad;Le Récup;Coiffure ornée de déchets brillants (capsules, morceaux de canettes) percés et utilisés comme bijoux.
+Nomad;Le Goudron;Cheveux enduits d'une pâte noire mate et épaisse (argile ou graisse). Aspect lourd et protecteur.
+Nomad;Le Masque;Foulard couvrant entièrement les cheveux et la bouche, ne laissant voir que les yeux maquillés de noir (Khol).
+Nomad;Le Post-Apo;Crâne rasé par endroits (calvitie artificielle), peau brûlée par le soleil, restes de cheveux en touffes hirsutes.
+Corporate;Le Standard;Coupe impeccable, raie sur le côté, cheveux brillants de santé. Le luxe de la simplicité.
+Corporate;Le Carré;Coupe au carré ultra-précise, noir de jais. Frange coupée au millimètre au-dessus des sourcils.
+Corporate;L'Or;Cheveux saupoudrés de véritable poudre d'or ou tissés avec des fils d'or 24 carats. Signe extérieur de richesse.
+Corporate;Le Logo;Le logo de la corporation est rasé ou teint avec précision à l'arrière du crâne. Loyauté affichée.
+Corporate;Le Marbre;Cheveux blancs et gris coiffés pour imiter les veinures du marbre. Aspect froid et statutaire.
+Corporate;Le Voile;Cheveux très longs et fins, portés devant le visage comme un voile transparent. Mystérieux et intimidant.
+Corporate;Le Sculpté;Cheveux gélifiés pour former des formes géométriques solides (cubes, sphères) sur la tête. Art moderne capillaire.
+Corporate;La Perle;Crâne chauve, peau maquillée pour avoir un éclat nacré parfait. Bijoux collés directement sur la peau.
+Corporate;Le Synthétique;Perruque visiblement artificielle en matériau de luxe (soie, velours). La mode est au "faux" assumé.
+Corporate;La Statue;Cheveux et visage entièrement couverts de poudre blanche ou grise. Donne l'air d'une statue grecque vivante.
+Media;Le Reporter;Coupe pratique, mi-longue, qui tient en place même avec du vent. Un stylo est souvent piqué dans le chignon.
+Media;La Vedette;Brushing volumineux parfait, style présentateur TV des années 80 exagéré. Sourire Ultra-Brite assorti.
+Media;Le Flash;Cheveux teints en blond platine presque blanc pour accrocher la lumière des projecteurs.
+Media;Le Titre;Mots ou slogans courts ("LIVE", "TRUTH") rasés ou teints sur le côté du crâne.
+Media;L'Objectif;Coupe afro ronde et parfaite, rappelant la forme d'une bonnette de microphone.
+Media;Le Caméléon;Cheveux qui changent de style chaque jour (perruques variées). Pour se fondre dans n'importe quel milieu.
+Media;L'Op art;Motifs hypnotiques noirs et blancs peints sur le crâne rasé. Attire l'attention visuelle immédiatement.
+Media;Le Rétro;Coiffure style années 1940 ou 1950 (Victory Rolls), très soignée. Donne un air de "journalisme sérieux".
+Media;Le Signal;Coiffure très haute et verticale (30cm), teinte en rouge vif. Impossible de le perdre de vue dans une foule.
+Media;Le Yeux;Des dizaines de faux yeux en verre (bijoux) sont collés dans les cheveux ou sur un turban. Symbolise "Je vois tout".
