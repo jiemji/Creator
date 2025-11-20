@@ -10,6 +10,16 @@ function generateTotalPoints() {
     return sum;
 }
 
+function generateBudget() {
+    let sum;
+    do {
+        sum = 0;
+        for (let i = 0; i < 7; i++) sum += Math.floor(Math.random() * 10) + 1;
+    } while (sum < 14); // Assure un minimum de 14 points pour les 7 stats (2 par stat)
+    return sum;
+}
+
+
 function distributeAttributes(totalPoints) {
     const stats = state.gameData.stats.map(s => s.Statistique);
     const distributed = {};
@@ -45,16 +55,35 @@ function updateAttributeButtons() {
     });
 }
 
-export function handleAttributeChange(attrKey, action) {
-    if (action === 'increase' && state.attrPointsRemaining > 0 && state.characterAttributes[attrKey] < MAX_STAT) {
+export function handleAttributeChange(attrKey, action, buttonElement) {
+    const oldValue = state.characterAttributes[attrKey];
+    if (action === 'increase' && state.attrPointsRemaining > 0 && oldValue < MAX_STAT) {
         state.characterAttributes[attrKey]++;
         state.attrPointsRemaining--;
-    } else if (action === 'decrease' && state.characterAttributes[attrKey] > MIN_STAT) {
+    } else if (action === 'decrease' && oldValue > MIN_STAT) {
         state.characterAttributes[attrKey]--;
         state.attrPointsRemaining++;
     }
-}
 
+    if (oldValue !== state.characterAttributes[attrKey]) {
+        buttonElement.closest('.attribute-controls').querySelector('.attribute-value').textContent = state.characterAttributes[attrKey];
+        dom.pointsDisplay.textContent = state.attrPointsRemaining;
+        updateAttributeButtons();
+
+    if (attrKey === 'Esprit') {
+                const humanityCardValue = document.querySelector('.humanity-card .attribute-value');
+                if (humanityCardValue) {
+                    humanityCardValue.textContent = state.characterAttributes['Esprit'] * 10;
+                }
+
+                const budgetCardValue = document.querySelector('.amber-card .attribute-value');
+                if (budgetCardValue) {
+                    budgetCardValue.textContent = state.characterAttributes['Esprit'] * 1000;
+                }
+
+        }
+    }
+}
 export function render() {
     dom.attributeGrid.innerHTML = '';
     dom.pointsDisplay.textContent = state.attrPointsRemaining;
@@ -74,18 +103,30 @@ export function render() {
             </div>`;
         dom.attributeGrid.appendChild(card);
 
-        if (statName === 'Technique') {
-            const humanityCard = document.createElement('div');
-            humanityCard.className = 'attribute-card humanity-card';
-            const humanityValue = (state.characterAttributes['Psychologie'] || 0) * 10;
-            humanityCard.innerHTML = `
-                <h3>Humanité</h3>
-                <p class="description">A combien de degrés de la cyberpsychose êtes vous ?</p>
-                <div class="attribute-controls">
-                    <span class="attribute-value">${humanityValue}</span>
-                </div>`;
-            dom.attributeGrid.appendChild(humanityCard);
-        }
-    });
+   });
+
+    const humanityCard = document.createElement('div');
+    humanityCard.className = 'attribute-card humanity-card';
+    const humanityValue = (state.characterAttributes['Esprit'] || 0) * 10;
+    humanityCard.innerHTML = `
+        <h3>Humanité</h3>
+        <p class="description">A combien de degrés de la cyberpsychose êtes vous ?</p>
+        <div class="attribute-controls">
+            <span class="attribute-value">${humanityValue}</span>
+        </div>`;
+    dom.attributeGrid.appendChild(humanityCard);
+
+    const budgetCard = document.createElement('div');
+        budgetCard.className = 'attribute-card amber-card'; 
+        const budgetCardValue = (state.characterAttributes['Esprit'] || 0) * 1000;
+        budgetCard.innerHTML = `
+            <h3>Budget</h3>
+            <p class="description">Le montant de vos économies</p>
+            <div class="attribute-controls">
+                <span class="attribute-value">${budgetCardValue}</span>
+            </div>`;
+    dom.attributeGrid.appendChild(budgetCard);
+
+ 
     updateAttributeButtons();
 }

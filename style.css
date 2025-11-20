@@ -609,3 +609,59 @@ footer {
     visibility: visible;
     transform: translate(-50%, -50%) scale(1);
 }
+
+/* --- NOUVELLE FICHE AMBRE --- */
+/* amber-card {
+    Définition de la palette locale Ambre
+    --crt-amber: #FFB000;
+    --crt-amber-dim: #996A00;
+    --crt-bg: #1A1A1A;
+
+    /*background-color: var(--crt-bg);
+    border-color: var(--crt-amber-dim);
+    color: var(--crt-amber);
+    /*box-shadow: 0 0 5px var(--crt-amber-dim), inset 0 0 15px rgba(0,0,0,0.6)
+    position: relative;
+    overflow: hidden;
+}*/
+
+.amber-card {
+    --crt-amber: #FFB000;
+    --crt-amber-dim: #996A00;
+    border: 1px solid var(--crt-amber-dim);
+    padding: 15px 10px 10px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(57, 255, 20, 0.02);
+    transition: all 0.3s ease;
+}
+/*.amber-card::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-image: linear-gradient(rgba(0,0,0,0.4) 50%, transparent 50%);
+    background-size: 100% 4px;
+    opacity: 0.5;
+    pointer-events: none;
+}*/
+
+.amber-card:hover { border-color: var(--crt-amber); }
+
+.amber-card h3 {
+    color: var(--crt-amber);
+}
+
+.amber-card .description {
+    color: var(--crt-amber);
+}
+
+.amber-card .attribute-value {
+    color: var(--crt-amber);
+
+}
+
+.amber-card .attribute-controls {
+    z-index: 1;
+}

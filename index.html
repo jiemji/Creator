@@ -33,7 +33,9 @@
                     <div class="tooltip-content">
                         <p><strong>NOM D'AGENT :</strong> Le nom complet de votre personnage.</p>
                         <p><strong>PSEUDONYME :</strong> Le surnom qu'on vous donne dans la rue.</p>
-                        <p><strong>ARCHÉTYPE :</strong> Votre "classe" ou rôle, qui définit vos compétences de base.</p>
+                        <p><strong>Carrière :</strong>Le métier du personnage en parallèle de son activité de solo ou qu'il a exercé avant d'être solo à plein temps</p>
+                        <p>Le choix d'une carrière remet à zéro les compétences ainsi que les description de style du personnage. Ses origines ne changent pas pour que vous puissiez lui choisir différents métiers en accord avec ses attributs.
+                        </p>
                     </div>
                 </div>
             </h2>
@@ -48,12 +50,12 @@
                     <input type="text" id="char-handle" name="char-handle" placeholder="Ex: Le Fantôme, Razor...">
                 </div>
                 <div class="form-group">
-                    <label for="lifepath">ARCHÉTYPE / CLASSE</label>
+                    <label for="lifepath">Carrière</label>
                     <select id="lifepath" name="lifepath">
                         <option value="Cop">Cop</option>
                         <option value="Corporate">Corporate</option>
                         <option value="Media">Media</option>
-                        <option value="MedTech">MedTech</option>
+                        <option value="Medtech">MedTech</option>
                         <option value="Netrunner">Netrunner</option>
                         <option value="Nomad">Nomad</option>
                         <option value="Rockerboy/girl">Rockerboy/girl</option>
@@ -72,7 +74,8 @@
                     <div class="tooltip-container">
                         <span class="tooltip-trigger" tabindex="0">?</span>
                         <div class="tooltip-content">
-                            <p>Cette section génère aléatoirement l'apparence et le passé de votre personnage. Cliquez sur le bouton de rafraîchissement pour obtenir un nouvel historique sans changer vos attributs.</p>
+                            <p>Cette section génère aléatoirement l'apparence et le passé de votre personnage.</p>
+                        <p>Cliquez sur le bouton de rafraîchissement pour obtenir un nouvel historique sans changer vos attributs.</p>
                         </div>
                     </div>
                 </div>
@@ -136,14 +139,18 @@
         <!-- SECTION ATTRIBUTS -->
         <section id="attributes" class="view">
             <h2 class="section-title">> SECTION 3: Attributs
-                <div class="tooltip-container">
-                    <span class="tooltip-trigger" tabindex="2">?</span>
-                    <div class="tooltip-content">
-                        <p>Les attributs peuvent avoir une valeur comprise en 2 et 10.<br>Un valeur de 2 signifie que le personnage est dans la moyenne (ce sont des héros tout de même). 10 signifie que le personnage est exceptionnel.</p>
-                        <p>Il servent de base pour le calcul des jets de compétences. </pp>
-                        <p>Vous êtes libres de les distribuer comme vous le souhaitez mais il peut être intéressant de maximiser des attributs en accord avec les compétences métiers du personnage.</p>
-                        <p>Les attributs peuvent diminuer en cours de partie en cas d'événement dramatique.</p>
-                        <p> La valeur d'humanité diminue au fur et à mesure de la pose d'implants sur le corps du personnage</p>
+                <div class="title-actions">
+                    <!-- AJOUT DE CE BOUTON -->
+                    <button id="reroll-attributes-btn" class="section-action-btn" title="Générer de nouveaux attributs"></button>
+                    <div class="tooltip-container">
+                        <span class="tooltip-trigger" tabindex="2">?</span>
+                        <div class="tooltip-content">
+                            <p>Les attributs peuvent avoir une valeur comprise en 2 et 10.<br>Un valeur de 2 signifie que le personnage est dans la moyenne (ce sont des héros tout de même). 10 signifie que le personnage est exceptionnel.</p>
+                            <p>Il servent de base pour le calcul des jets de compétences. </p>
+                            <p>Vous êtes libres de les distribuer comme vous le souhaitez mais il peut être intéressant de maximiser des attributs en accord avec les compétences métiers du personnage.</p>
+                            <p>Les attributs peuvent diminuer en cours de partie en cas d'événement dramatique.</p>
+                            <p> La valeur d'humanité diminue au fur et à mesure de la pose d'implants sur le corps du personnage</p>
+                        </div>
                     </div>
                 </div>
             </h2>
@@ -158,15 +165,17 @@
         <!-- SECTION COMPÉTENCES -->
         <section id="skills" class="view">
             <h2 class="section-title">> SECTION 4: Compétences
-                <div class="tooltip-container">
-                    <span class="tooltip-trigger" tabindex="2">?</span>
-                    <div class="tooltip-content">
-                        <p>Les compétences sont des bonus qui s'ajoutent au score d'un attribut lors d'un jet de compétence.</p>
-                        <p>Elles peuvent avoir une valeur comprise entre 0 et 10.<br>A 0, le personnage ne maitrise absolument pas cette compétence. A 10, il est un maitre du sujet</p><p></p>
-                        <p>Les compétences en bleues sont des compétences métier. Elles dépendent du rôle du personnage. Vous devez allouer les 36 points bleus. </p>
-                        <p>La compétence spéciale est liée au rôle choisi et fait partie des compétences à monter</p>
-                        <p>Vous disposez aussi d'un nombre de points verts qui peuvent être dépensés sur n'importe quelle autre compétences non métiers pour personnaliser votre personnage.</p>
-                    </div>
+                <div class="title-actions">
+                    <button id="reroll-skills-btn" class="section-action-btn" title="Remise à zéro"></button>
+                    <div class="tooltip-container">
+                        <span class="tooltip-trigger" tabindex="2">?</span>
+                        <div class="tooltip-content">
+                            <p>Les compétences sont des bonus qui s'ajoutent au score d'un attribut lors d'un jet de compétence.</p>
+                            <p>Elles peuvent avoir une valeur comprise entre 0 et 10.<br>A 0, le personnage ne maitrise absolument pas cette compétence. A 10, il est un maitre du sujet</p><p></p>
+                            <p>Les compétences en bleues sont des compétences métier. Elles dépendent du rôle du personnage. Vous devez allouer les 36 points bleus. </p>
+                            <p>La compétence spéciale est liée au rôle choisi et fait partie des compétences à monter</p>
+                            <p>Vous disposez aussi d'un nombre de points verts qui peuvent être dépensés sur n'importe quelle autre compétences non métiers pour personnaliser votre personnage.</p>
+                        </div>
                 </div>
             </h2>
             <div id="core-skill-points-tracker" class="points-tracker">

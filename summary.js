@@ -73,6 +73,30 @@ export function exportCsv() {
     downloadFile(csvContent, 'export_personnage.csv', 'text/csv;charset=utf-8;');
 }
 
+export function updateSummaryAttribute(attrKey) {
+    const element = dom.summary.attributes.querySelector(`[data-summary-attr="${attrKey}"]`);
+    if (element) element.textContent = state.characterAttributes[attrKey];
+}
+export function updateSummaryHumanity() {
+    dom.summary.humanity.textContent = (state.characterAttributes['Esprit'] || 0) * 10;
+}
+export function updateSummarySkill(skillName) {
+    let container = dom.summary.skills;
+    let element = container.querySelector(`[data-summary-skill="${skillName}"]`);
+    let value = state.characterSkills[skillName];
+    if (value > 0) {
+        if (!element) {
+            const p = document.createElement('p');
+            p.innerHTML = `<strong>${skillName}:</strong> <span data-summary-skill="${skillName}">${value}</span>`;
+            container.appendChild(p);
+        } else {
+            element.textContent = value;
+        }
+    } else if (element) {
+        element.parentElement.remove();
+    }
+}
+
 export function render() {
     // Identity
     dom.summary.name.textContent = dom.identity.name.value || '...';
@@ -90,33 +114,19 @@ export function render() {
     dom.summary.familyFate.innerHTML = dom.history.familyFate.innerHTML;
     dom.summary.siblings.textContent = dom.history.siblings.textContent;
     
+
     // Attributes
-    if (dom.summary.attributes) {
-        dom.summary.attributes.innerHTML = '';
-        for (const statName in state.characterAttributes) {
-            const summaryLine = document.createElement('p');
-            summaryLine.innerHTML = `<strong>${statName}:</strong> ${state.characterAttributes[statName]}`;
-            dom.summary.attributes.appendChild(summaryLine);
-        }
+    dom.summary.attributes.innerHTML = '';
+    for (const statName in state.characterAttributes) {
+        const p = document.createElement('p');
+        p.innerHTML = `<strong>${statName}:</strong> <span data-summary-attr="${statName}">${state.characterAttributes[statName]}</span>`;
+        dom.summary.attributes.appendChild(p);
     }
-    
-    // Secondary Stats
-    if (state.characterAttributes['Psychologie']) {
-        const humanity = state.characterAttributes['Psychologie'] * 10;
-        dom.summary.humanity.textContent = humanity;
-    }
-    
-    // Skills
-    if (dom.summary.skills) {
-        dom.summary.skills.innerHTML = '';
-        // Trie les compétences par ordre alphabétique pour un affichage cohérent
-        const sortedSkills = Object.entries(state.characterSkills).sort((a, b) => a[0].localeCompare(b[0]));
-        for (const [skillName, skillValue] of sortedSkills) {
-            if (skillValue > 0) {
-                const skillLine = document.createElement('p');
-                skillLine.innerHTML = `<strong>${skillName}:</strong> ${skillValue}`;
-                dom.summary.skills.appendChild(skillLine);
-            }
-        }
-    }
+    updateSummaryHumanity();
+    dom.summary.skills.innerHTML = '';
+    Object.entries(state.characterSkills).filter(([, val]) => val > 0).forEach(([key, val]) => {
+        const p = document.createElement('p');
+        p.innerHTML = `<strong>${key}:</strong> <span data-summary-skill="${key}">${val}</span>`;
+        dom.summary.skills.appendChild(p);
+    });
 }

@@ -2,21 +2,27 @@ import { dom } from './dom.js';
 import { state } from './state.js';
 
 const getRandomItem = (arr) => {
-    if (!arr || arr.length === 0) return { texte: "ERREUR", ethnie: "ERREUR", langue: "ERREUR" };
+    if (!arr || arr.length === 0) return { texte: "ERREUR", ethnie: "ERREUR", langue: "ERREUR", 'Nom de la coiffure': "ERREUR" };
     return arr[Math.floor(Math.random() * arr.length)];
 };
 
-export function randomizeHistory() {
+// NOUVELLE FONCTION EXPORTÉE pour la mise à jour ciblée
+export function updateRoleSpecificHistory() {
     const selectedRole = dom.identity.lifepath.value;
 
-    // Filtrer les données par le rôle sélectionné
     const filteredVetement = state.gameData.vetement.filter(item => item.Rôle === selectedRole);
     const filteredCoiffure = state.gameData.coiffure.filter(item => item.Rôle === selectedRole);
 
-    // Utiliser les listes filtrées pour la génération aléatoire
     dom.history.style.textContent = getRandomItem(filteredVetement).texte;
     dom.history.hair.textContent = getRandomItem(filteredCoiffure).texte;
+}
+
+// ANCIENNE FONCTION MODIFIÉE pour une regénération complète
+export function randomizeHistory() {
+    // 1. Appelle la fonction ciblée pour les éléments dépendants du rôle
+    updateRoleSpecificHistory();
     
+    // 2. S'occupe du reste des éléments indépendants
     dom.history.accessory.textContent = getRandomItem(state.gameData.accessoire).texte;
     dom.history.csp.textContent = getRandomItem(state.gameData.origine).texte;
     dom.history.childhood.textContent = getRandomItem(state.gameData.childhood).texte;

@@ -2,9 +2,9 @@ import { dom } from './dom.js';
 import { state } from './state.js';
 import { loadAllData } from './dataLoader.js';
 import { initializeAttributes, handleAttributeChange } from './attributes.js';
-import { initializeSkills, handleSkillChange, calculatePickupSkillPoints } from './skills.js';
-import { randomizeHistory } from './history.js';
-import { render as renderSummary, downloadTxt, exportCsv } from './summary.js';
+import { initializeSkills, handleSkillChange, calculatePickupSkillPoints, updateSkillPointDisplays, updateSkillButtons } from './skills.js';
+import { randomizeHistory, updateRoleSpecificHistory } from './history.js';
+import { render as renderSummary, downloadTxt, exportCsv, updateSummaryAttribute, updateSummaryHumanity, updateSummarySkill } from './summary.js';
 import { render as renderAttributes } from './attributes.js';
 import { render as renderSkills } from './skills.js';
 
@@ -14,15 +14,7 @@ function updateUI() {
     renderSummary();
 }
 
-function fullCharacterReset() {
-    initializeAttributes();
-    calculatePickupSkillPoints();
-    randomizeHistory();
-    updateUI();
-}
-
 async function initializeApp() {
-
     try {
         state.gameData = await loadAllData();
         
@@ -31,47 +23,71 @@ async function initializeApp() {
         calculatePickupSkillPoints();
         
         randomizeHistory();
-        updateUI();
+        updateUI(); // Premier rendu complet
 
-        // --- SETUP EVENT LISTENERS ---
-
-        dom.attributeGrid.addEventListener('click', (e) => {
-            if (e.target.matches('.attribute-controls .quantity-btn')) {
-                handleAttributeChange(e.target.dataset.attr, e.target.dataset.action);
-                calculatePickupSkillPoints();
-                updateUI();
-            }
-        });
-
-        dom.skillsContainer.addEventListener('click', (e) => {
-            if (e.target.matches('.skill-controls .quantity-btn')) {
-                handleSkillChange(
-                    e.target.dataset.skill,
-                    e.target.dataset.core === 'true',
-                    e.target.dataset.action
-                );
-                updateUI();
-            }
-        });
-
-         dom.identity.name.addEventListener('input', renderSummary);
-        dom.identity.handle.addEventListener('input', renderSummary);
-        dom.identity.lifepath.addEventListener('change', () => {
-            // Recalculer les points de compétence métier lors du changement de classe
-            const spentCorePoints = Object.entries(state.characterSkills).reduce((acc, [skillName, value]) => {
-                const isCore = state.gameData.coreskill.some(cs => cs.Classe === dom.identity.lifepath.value && cs.Skill === skillName);
-                if (isCore) return acc + value;
-                return acc;
-            }, 0);
-            state.coreSkillPointsRemaining = 36 - spentCorePoints; // Le total est de 36
-            updateUI();
-        });
+        // --- SETUP EVENT LISTENERS (UNIQUES ET CORRECTS) ---
 
         dom.rerollHistoryBtn.addEventListener('click', () => {
             randomizeHistory();
             renderSummary();
         });
 
+        // AJOUT DE L'ÉVÉNEMENT POUR LE REROLL DES ATTRIBUTS
+        dom.rerollAttributesBtn.addEventListener('click', () => {
+            initializeAttributes();       // 1. Refait le tirage des attributs
+            initializeSkills();           // 2. Réinitialise les compétences
+            calculatePickupSkillPoints(); // 3. Recalcule les points de compétence additionnels
+            updateUI();                   // 4. Met à jour toute l'interface
+        });
+
+                // AJOUT DE L'ÉVÉNEMENT POUR LE REROLL DES SKILLS
+        dom.rerollSkillsBtn.addEventListener('click', () => {
+            initializeSkills();           // 2. Réinitialise les compétences
+            calculatePickupSkillPoints(); // 3. Recalcule les points de compétence additionnels
+            renderSkills();               // Nécessaire pour afficher les valeurs remises à zéro
+            renderSummary();              // Nécessaire pour vider les compétences du résumé
+        });
+
+        dom.attributeGrid.addEventListener('click', (e) => {
+            if (e.target.matches('.attribute-controls .quantity-btn')) {
+                const attrKey = e.target.dataset.attr;
+                handleAttributeChange(attrKey, e.target.dataset.action, e.target);
+                
+                calculatePickupSkillPoints();
+                updateSkillPointDisplays(); 
+                updateSummaryAttribute(attrKey);
+
+                if (attrKey === 'Esprit') {
+                    updateSummaryHumanity();
+                }
+                
+                if (attrKey === 'Intelligence' || attrKey === 'Réflexes') {
+                    updateSkillButtons();
+                }
+            }
+        });
+
+        dom.skillsContainer.addEventListener('click', (e) => {
+            if (e.target.matches('.skill-controls .quantity-btn')) {
+                const skillName = e.target.dataset.skill;
+                handleSkillChange(
+                    skillName,
+                    e.target.dataset.core === 'true',
+                    e.target.dataset.action,
+                    e.target
+                );
+                updateSummarySkill(skillName);
+            }
+        });
+
+        dom.identity.name.addEventListener('input', renderSummary);
+        dom.identity.handle.addEventListener('input', renderSummary);
+        dom.identity.lifepath.addEventListener('change', () => {
+            initializeSkills();
+            calculatePickupSkillPoints();
+            updateRoleSpecificHistory();
+            updateUI();
+        });
 
         dom.printBtn.addEventListener('click', () => window.print());
         dom.downloadBtn.addEventListener('click', downloadTxt);

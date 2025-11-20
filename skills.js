@@ -1,6 +1,8 @@
 import { dom } from './dom.js';
 import { state, MIN_SKILL, MAX_STAT, TOTAL_CORE_SKILL_POINTS } from './state.js';
 
+let skillButtonsCache = [];
+
 export function initializeSkills() {
     state.characterSkills = {};
     state.gameData.competences.forEach(skill => {
@@ -28,13 +30,14 @@ export function calculatePickupSkillPoints() {
     state.pickupSkillPointsRemaining = totalPickupPoints - spentPickupPoints;
 }
 
-function updateSkillPointDisplays() {
+export function updateSkillPointDisplays() {
     dom.coreSkillPointsDisplay.textContent = state.coreSkillPointsRemaining;
     dom.pickupSkillPointsDisplay.textContent = state.pickupSkillPointsRemaining;
 }
 
-function updateSkillButtons() {
-    document.querySelectorAll('.skill-controls .quantity-btn').forEach(btn => {
+export function updateSkillButtons() {
+    // 3. Utilisation du cache, beaucoup plus rapide
+    skillButtonsCache.forEach(btn => {
         const action = btn.dataset.action;
         const skillName = btn.dataset.skill;
         const isCore = btn.dataset.core === 'true';
@@ -53,8 +56,10 @@ function updateSkillButtons() {
     });
 }
 
-export function handleSkillChange(skillName, isCore, action) {
-    if (action === 'increase' && state.characterSkills[skillName] < MAX_STAT) {
+export function handleSkillChange(skillName, isCore, action, buttonElement) {
+    const oldValue = state.characterSkills[skillName];
+
+    if (action === 'increase' && oldValue < MAX_STAT) {
         if (isCore && state.coreSkillPointsRemaining > 0) {
             state.characterSkills[skillName]++;
             state.coreSkillPointsRemaining--;
@@ -62,7 +67,7 @@ export function handleSkillChange(skillName, isCore, action) {
             state.characterSkills[skillName]++;
             state.pickupSkillPointsRemaining--;
         }
-    } else if (action === 'decrease' && state.characterSkills[skillName] > MIN_SKILL) {
+    } else if (action === 'decrease' && oldValue > MIN_SKILL) {
         if (isCore) {
             state.characterSkills[skillName]--;
             state.coreSkillPointsRemaining++;
@@ -70,6 +75,12 @@ export function handleSkillChange(skillName, isCore, action) {
             state.characterSkills[skillName]--;
             state.pickupSkillPointsRemaining++;
         }
+    }
+
+    if (oldValue !== state.characterSkills[skillName]) {
+        buttonElement.closest('.skill-controls').querySelector('.skill-value').textContent = state.characterSkills[skillName];
+        updateSkillPointDisplays();
+        updateSkillButtons();
     }
 }
 
@@ -112,7 +123,7 @@ export function render() {
         return acc;
     }, {});
 
-    const statOrder = ['Intelligence', 'Technique', 'Classe' ,'Réflexes', 'Psychologie', 'Sang-Froid',  'Puissance'];
+const statOrder = ['Intelligence', 'Classe','Technique' ,'Réflexes',  'Sang-Froid',  'Puissance', 'Esprit'];
 
     statOrder.forEach(statName => {
         if (!skillsByStat[statName]) return;
@@ -163,6 +174,8 @@ export function render() {
         skillsContainer.appendChild(skillGroup);
     });
     
+ skillButtonsCache = document.querySelectorAll('.skill-controls .quantity-btn');
+
     updateSkillButtons();
     updateSkillPointDisplays();
 }
