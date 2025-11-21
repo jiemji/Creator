@@ -7,6 +7,7 @@ export const state = {
     gameData: {},
     characterAttributes: {},
     characterSkills: {},
+    characterBudget: { amount: 0, currency: '€$' },
     attrPointsRemaining: 0,
     coreSkillPointsRemaining: TOTAL_CORE_SKILL_POINTS,
     pickupSkillPointsRemaining: 0,

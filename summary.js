@@ -129,4 +129,7 @@ export function render() {
         p.innerHTML = `<strong>${key}:</strong> <span data-summary-skill="${key}">${val}</span>`;
         dom.summary.skills.appendChild(p);
     });
+
+   dom.summary.budget.innerHTML = `${state.characterBudget.amount}`;
+    
 }

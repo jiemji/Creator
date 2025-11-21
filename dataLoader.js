@@ -35,7 +35,8 @@ export async function loadAllData() {
         stats: 'stat.csv',
         competences: 'competences.csv',
         coreskill: 'coreskill.csv',
-        specialskill: 'specialskill.csv'
+        specialskill: 'specialskill.csv',
+        budget: 'budget.csv'
     };
 
     const promises = Object.entries(filePaths).map(([key, path]) => 

@@ -19,6 +19,7 @@
                 <li><a href="#history">Historique</a></li>
                 <li><a href="#attributes">Attributs</a></li>
                 <li><a href="#skills">Compétences</a></li>
+                <li><a href="#budget">Budget</a></li>
                 <li><a href="#summary">Fiche Finale</a></li>
             </ul>
         </nav>
@@ -189,6 +190,20 @@
             </div>
         </section>
 
+        <!-- SECTION BUDGET -->
+        <section id="budget" class="view">
+            <h2 class="section-title">> SECTION 5: BUDGET</h2>
+            <div class="history-item">
+                <span class="history-label">Fonds pour la création du personnage</span>
+                <p class="history-value" style="font-size: 2em; justify-content: center;color: var(--crt-amber);">80000<img src="donald.png" alt="crédits" class="currency-icon"></p>
+            </div>
+            <br>
+            <div class="history-item">
+                <span class="history-label">Epargne</span>
+                <span id="char-budget" class="history-value " style="font-size: 2em; justify-content: center;color: var(--crt-amber);">...</span>
+            </div>
+        </section>
+
         <!-- SECTION RÉSUMÉ -->
         <section id="summary" class="view">
             <h2 class="section-title">> FICHE DE PERSONNAGE FINALE</h2>
@@ -224,6 +239,9 @@
                     <!-- Le résumé des compétences ira ici -->
                 </div>
                 
+                <h4 class="summary-subtitle">BUDGET</h4>
+                <p><strong>Epargne: </strong>D$ <span id="summary-budget">...</span></p>
+                <p><strong>Fonds d'équipement:</strong> <span id="summary-budget">D$ 80000</span></p>
                 <div class="export-buttons">
                     <button id="export-csv-btn" class="action-btn">[ EXPORTER .CSV ]</button>
                     <button id="download-btn" class="action-btn">[ TÉLÉCHARGER .TXT ]</button>

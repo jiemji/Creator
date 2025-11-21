@@ -10,16 +10,6 @@ function generateTotalPoints() {
     return sum;
 }
 
-function generateBudget() {
-    let sum;
-    do {
-        sum = 0;
-        for (let i = 0; i < 7; i++) sum += Math.floor(Math.random() * 10) + 1;
-    } while (sum < 14); // Assure un minimum de 14 points pour les 7 stats (2 par stat)
-    return sum;
-}
-
-
 function distributeAttributes(totalPoints) {
     const stats = state.gameData.stats.map(s => s.Statistique);
     const distributed = {};
@@ -116,17 +106,5 @@ export function render() {
         </div>`;
     dom.attributeGrid.appendChild(humanityCard);
 
-    const budgetCard = document.createElement('div');
-        budgetCard.className = 'attribute-card amber-card'; 
-        const budgetCardValue = (state.characterAttributes['Esprit'] || 0) * 1000;
-        budgetCard.innerHTML = `
-            <h3>Budget</h3>
-            <p class="description">Le montant de vos économies</p>
-            <div class="attribute-controls">
-                <span class="attribute-value">${budgetCardValue}</span>
-            </div>`;
-    dom.attributeGrid.appendChild(budgetCard);
-
- 
     updateAttributeButtons();
 }

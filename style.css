@@ -6,6 +6,8 @@
     --color-primary-light: #00BFFF;/* Cyan pour les compétences métiers et le survol */
     --color-primary-dark: #006d00;/* Cyan pour les compétences métiers et le survol */
     --header-height: 160px;
+       --crt-amber: #FFB000;
+    --crt-amber-dim: #996A00;
 }
 
 html { box-sizing: border-box;
@@ -626,8 +628,7 @@ footer {
 }*/
 
 .amber-card {
-    --crt-amber: #FFB000;
-    --crt-amber-dim: #996A00;
+ 
     border: 1px solid var(--crt-amber-dim);
     padding: 15px 10px 10px 10px;
     display: flex;
@@ -664,4 +665,17 @@ footer {
 
 .amber-card .attribute-controls {
     z-index: 1;
+}
+
+/* --- STYLE POUR L'ICÔNE DE DEVISE --- */
+.currency-icon {
+    /* Fait en sorte que la hauteur de l'image s'aligne sur la hauteur du texte */
+    height: 1em; 
+    /* Aligne l'image verticalement avec le milieu du texte */
+   /*vertical-align: center;*/
+   position : relative;
+   top:-3px;
+      /* Ajoute un petit espace entre le montant et l'image */
+    margin-left: 0.25em;
+
 }

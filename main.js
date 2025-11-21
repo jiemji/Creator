@@ -1,4 +1,4 @@
-import { dom } from './dom.js';
+import { dom, initializeDom } from './dom.js';
 import { state } from './state.js';
 import { loadAllData } from './dataLoader.js';
 import { initializeAttributes, handleAttributeChange } from './attributes.js';
@@ -7,6 +7,7 @@ import { randomizeHistory, updateRoleSpecificHistory } from './history.js';
 import { render as renderSummary, downloadTxt, exportCsv, updateSummaryAttribute, updateSummaryHumanity, updateSummarySkill } from './summary.js';
 import { render as renderAttributes } from './attributes.js';
 import { render as renderSkills } from './skills.js';
+import { calculateAndDisplayBudget } from './budget.js';
 
 function updateUI() {
     renderAttributes();
@@ -16,11 +17,14 @@ function updateUI() {
 
 async function initializeApp() {
     try {
+        initializeDom();
         state.gameData = await loadAllData();
+        
         
         initializeSkills();
         initializeAttributes();
         calculatePickupSkillPoints();
+        calculateAndDisplayBudget(); 
         
         randomizeHistory();
         updateUI(); // Premier rendu complet
@@ -86,6 +90,7 @@ async function initializeApp() {
             initializeSkills();
             calculatePickupSkillPoints();
             updateRoleSpecificHistory();
+            calculateAndDisplayBudget();
             updateUI();
         });
 
