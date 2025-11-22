@@ -4,7 +4,7 @@ import { loadAllData } from './dataLoader.js';
 import { initializeAttributes, handleAttributeChange } from './attributes.js';
 import { initializeSkills, handleSkillChange, calculatePickupSkillPoints, updateSkillPointDisplays, updateSkillButtons, updateSpecialSkillTitle } from './skills.js';
 import { randomizeHistory, updateRoleSpecificHistory } from './history.js';
-import { render as renderSummary, downloadTxt, exportCsv, updateSummaryAttribute, updateSummaryHumanity, updateSummarySkill } from './summary.js';
+import { render as renderSummary, downloadTxt, exportCsv} from './summary.js';
 import { render as renderAttributes } from './attributes.js';
 import { render as renderSkills } from './skills.js';
 import { calculateAndDisplayBudget } from './budget.js';
@@ -13,7 +13,6 @@ import { updateJobDescription } from './identity.js';
 function updateUI() {
     renderAttributes();
     renderSkills();
-    renderSummary();
 }
 
 async function initializeApp() {
@@ -31,12 +30,10 @@ async function initializeApp() {
         randomizeHistory();
         updateUI(); // Premier rendu complet
 
-        // --- SETUP EVENT LISTENERS (UNIQUES ET CORRECTS) ---
+        dom.refreshSummaryBtn.addEventListener('click', renderSummary); // NOUVEAU
 
-        dom.rerollHistoryBtn.addEventListener('click', () => {
-            randomizeHistory();
-            renderSummary();
-        });
+        dom.rerollHistoryBtn.addEventListener('click', randomizeHistory);
+
 
         // AJOUT DE L'ÉVÉNEMENT POUR LE REROLL DES ATTRIBUTS
         dom.rerollAttributesBtn.addEventListener('click', () => {
@@ -51,7 +48,6 @@ async function initializeApp() {
             initializeSkills();           // 2. Réinitialise les compétences
             calculatePickupSkillPoints(); // 3. Recalcule les points de compétence additionnels
             renderSkills();               // Nécessaire pour afficher les valeurs remises à zéro
-            renderSummary();              // Nécessaire pour vider les compétences du résumé
         });
 
         dom.attributeGrid.addEventListener('click', (e) => {
@@ -61,11 +57,6 @@ async function initializeApp() {
                 
                 calculatePickupSkillPoints();
                 updateSkillPointDisplays(); 
-                updateSummaryAttribute(attrKey);
-
-                if (attrKey === 'Esprit') {
-                    updateSummaryHumanity();
-                }
                 
                 if (attrKey === 'Intelligence' || attrKey === 'Réflexes') {
                     updateSkillButtons();
@@ -82,21 +73,21 @@ async function initializeApp() {
                     e.target.dataset.action,
                     e.target
                 );
-                updateSummarySkill(skillName);
-
+                
                 // Vérifie si la compétence modifiée est la compétence spéciale
                 const selectedRole = dom.identity.lifepath.value;
                 const specialSkillInfo = state.gameData.specialskill.find(s => s.Classe === selectedRole);
                 if (specialSkillInfo && skillName === specialSkillInfo.specialskill) {
                     calculateAndDisplayBudget();
-                    updateSpecialSkillTitle();                    renderSummary();
+                    updateSpecialSkillTitle();                   
                 }
 
             }
         });
 
-        dom.identity.name.addEventListener('input', renderSummary);
-        dom.identity.handle.addEventListener('input', renderSummary);
+        /*dom.identity.name.addEventListener('input', () => {});
+        dom.identity.handle.addEventListener('input', () => {});*/
+
         dom.identity.lifepath.addEventListener('change', () => {
             initializeSkills();
             calculatePickupSkillPoints();
@@ -112,7 +103,7 @@ async function initializeApp() {
 
     } catch (error) {
         console.error("ERREUR D'INITIALISATION :", error);
-        document.querySelectorAll('.history-value').forEach(el => el.textContent = "Erreur");
+        /*document.querySelectorAll('.history-value').forEach(el => el.textContent = "Erreur");*/
     }
 }
 

@@ -65,12 +65,6 @@ export function handleAttributeChange(attrKey, action, buttonElement) {
                 if (humanityCardValue) {
                     humanityCardValue.textContent = state.characterAttributes['Esprit'] * 10;
                 }
-
-                const budgetCardValue = document.querySelector('.amber-card .attribute-value');
-                if (budgetCardValue) {
-                    budgetCardValue.textContent = state.characterAttributes['Esprit'] * 1000;
-                }
-
         }
     }
 }

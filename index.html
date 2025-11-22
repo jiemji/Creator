@@ -218,48 +218,33 @@
 
         <!-- SECTION RÉSUMÉ -->
         <section id="summary" class="view">
-            <h2 class="section-title">> FICHE DE PERSONNAGE FINALE</h2>
-            <div class="summary-card">
-                <h3>RÉSUMÉ</h3>
-                <p><strong>NOM:</strong> <span id="summary-name">...</span></p>
-                <p><strong>PSEUDONYME:</strong> <span id="summary-handle">...</span></p>
-                <p><strong>ARCHÉTYPE:</strong> <span id="summary-lifepath">...</span></p>
-                
-                <h4 class="summary-subtitle">HISTORIQUE</h4>
-                <div class="summary-grid">
-                    <p><strong>Style:</strong> <span id="summary-style">...</span></p>
-                    <p><strong>Coiffure:</strong> <span id="summary-hair">...</span></p>
-                    <p><strong>Accessoire:</strong> <span id="summary-accessory">...</span></p>
-                    <p><strong>Origine:</strong> <span id="summary-origin">...</span></p>
-                    <p><strong>Langue:</strong> <span id="summary-language">...</span></p>
-                    <p><strong>CSP Origine:</strong> <span id="summary-csp">...</span></p>
-                    <p><strong>Enfance:</strong> <span id="summary-childhood">...</span></p>
+            <h2 class="section-title">> FICHE DE PERSONNAGE
+                <div class="title-actions">
+                    <button id="refresh-summary-btn" class="section-action-btn" title="Rafraîchir la fiche"></button>
                 </div>
-                <p><strong>Destin Familial:</strong> <span id="summary-family-fate">...</span></p>
-                <p><strong>Adelphe(s):</strong> <span id="summary-siblings">...</span></p>
+            </h2>
+            <div class="summary-card">
+                <!-- NOUVELLE STRUCTURE COMPLÈTE -->
+                <div id="summary-identity" class="summary-section"></div>
+                
+                <h4 class="summary-subtitle">HISTOIRE</h4>
+                <div id="summary-history" class="summary-section"></div>
 
                 <h4 class="summary-subtitle">ATTRIBUTS</h4>
-                <div id="summary-attributes">
-                    <!-- Le résumé des attributs ira ici -->
-                </div>
+                <div id="summary-attributes" class="summary-section summary-grid-attributes"></div>
 
-                <h4 class="summary-subtitle">[ STATS SECONDAIRES ]</h4>
-                <p><strong>Humanité:</strong> <span id="summary-humanity">...</span></p>
-                
                 <h4 class="summary-subtitle">COMPÉTENCES</h4>
-                <div id="summary-skills" class="summary-grid">
-                    <!-- Le résumé des compétences ira ici -->
-                </div>
-                
+                <div id="summary-skills" class="summary-section"></div>
+
                 <h4 class="summary-subtitle">BUDGET</h4>
-                <p><strong>Epargne: </strong>D$ <span id="summary-budget">...</span></p>
-                <p><strong>Fonds d'équipement:</strong> <span id="summary-budget">D$ 80000</span></p>
+                <div id="summary-budget" class="summary-section"></div>
+                
                 <div class="export-buttons">
                     <button id="export-csv-btn" class="action-btn">[ EXPORTER .CSV ]</button>
                     <button id="download-btn" class="action-btn">[ TÉLÉCHARGER .TXT ]</button>
                     <button id="print-btn" class="action-btn">[ IMPRIMER / PDF ]</button>
                 </div>
-            </div>
+</div>
         </section>
     </main>
 

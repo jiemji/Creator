@@ -6,24 +6,42 @@ let skillButtonsCache = [];
 export function initializeSkills() {
     // Étape 1: Tout remettre à zéro
     state.characterSkills = {};
+    
+    // Initialiser les compétences standards
     state.gameData.competences.forEach(skill => {
         state.characterSkills[skill['Sous-competence']] = 0;
     });
-    state.gameData.specialskill.forEach(skill => {
-        state.characterSkills[skill.specialskill] = 1;
-    });
-    state.coreSkillPointsRemaining = TOTAL_CORE_SKILL_POINTS;
 
+    // CORRECTION : N'initialiser que la compétence spéciale de la classe ACTUELLE
+    const selectedRole = dom.identity.lifepath.value;
+    const specialSkillInfo = state.gameData.specialskill.find(s => s.Classe === selectedRole);
+    
+    if (specialSkillInfo) {
+        state.characterSkills[specialSkillInfo.specialskill] = 1;
+    }
+
+    state.coreSkillPointsRemaining = TOTAL_CORE_SKILL_POINTS;
 }
 
 export function calculatePickupSkillPoints() {
     const intelligence = state.characterAttributes['Intelligence'] || 0;
     const reflexes = state.characterAttributes['Réflexes'] || 0;
     const totalPickupPoints = intelligence + reflexes;
+
+    // Récupération du nom de la compétence spéciale pour le rôle actuel
+    const selectedRole = dom.identity.lifepath.value;
+    const specialSkillInfo = state.gameData.specialskill.find(s => s.Classe === selectedRole);
+    const specialSkillName = specialSkillInfo ? specialSkillInfo.specialskill : null;
     
     const spentPickupPoints = Object.entries(state.characterSkills).reduce((acc, [skillName, value]) => {
-        const isCore = state.gameData.coreskill.some(cs => cs.Classe === dom.identity.lifepath.value && cs.Skill === skillName);
-        if (!isCore) {
+        // Vérifie si c'est une compétence métier (Core)
+        const isCore = state.gameData.coreskill.some(cs => cs.Classe === selectedRole && cs.Skill === skillName);
+        
+        // Vérifie si c'est la compétence spéciale (ne doit pas compter comme pickup)
+        const isSpecial = skillName === specialSkillName;
+
+        // Si ce n'est NI une compétence métier NI la compétence spéciale, c'est du Pickup
+        if (!isCore && !isSpecial) {
             return acc + value;
         }
         return acc;
