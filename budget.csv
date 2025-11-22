@@ -69,16 +69,16 @@ Netrunner;7;Bit Jockey;3000
 Netrunner;8;Cowboy du Net;5000
 Netrunner;9;Deckslinger;7000
 Netrunner;10;Sysop (Administrateur Système);10000
-Medtechie;1;Réparateur (Patch Man);1600
-Medtechie;2;Réparateur (Patch Man);1600
-Medtechie;3;Réparateur (Patch Man);1600
-Medtechie;4;Réparateur (Patch Man);1600
-Medtechie;5;Réparateur (Patch Man);1600
-Medtechie;6;Technicien Médical;3000
-Medtechie;7;Ripperdoc / Médecin Général;5000
-Medtechie;8;Spécialiste Trauma Team;7000
-Medtechie;9;Praticien;10000
-Medtechie;10;Médecin;15000
+Medtech;1;Réparateur (Patch Man);1600
+Medtech;2;Réparateur (Patch Man);1600
+Medtech;3;Réparateur (Patch Man);1600
+Medtech;4;Réparateur (Patch Man);1600
+Medtech;5;Réparateur (Patch Man);1600
+Medtech;6;Technicien Médical;3000
+Medtech;7;Ripperdoc / Médecin Général;5000
+Medtech;8;Spécialiste Trauma Team;7000
+Medtech;9;Praticien;10000
+Medtech;10;Médecin;15000
 Nomad;1;Membre du Clan;1000
 Nomad;2;Membre du Clan;1000
 Nomad;3;Membre du Clan;1000

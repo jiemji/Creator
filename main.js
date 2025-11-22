@@ -8,6 +8,7 @@ import { render as renderSummary, downloadTxt, exportCsv, updateSummaryAttribute
 import { render as renderAttributes } from './attributes.js';
 import { render as renderSkills } from './skills.js';
 import { calculateAndDisplayBudget } from './budget.js';
+import { updateJobDescription } from './identity.js';
 
 function updateUI() {
     renderAttributes();
@@ -25,6 +26,7 @@ async function initializeApp() {
         initializeAttributes();
         calculatePickupSkillPoints();
         calculateAndDisplayBudget(); 
+        updateJobDescription(); 
         
         randomizeHistory();
         updateUI(); // Premier rendu complet
@@ -100,6 +102,7 @@ async function initializeApp() {
             calculatePickupSkillPoints();
             updateRoleSpecificHistory();
             calculateAndDisplayBudget();
+            updateJobDescription(); 
             updateUI();
         });
 

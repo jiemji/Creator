@@ -12,11 +12,23 @@
 <body>
 
     <header>
-        <h1>[ SYSTÈME DE CRÉATION DE PERSONNAGE ]</h1>
+        <div class="form-group">
+            <select id="lifepath" name="lifepath">
+                <option value="Cop">Cop</option>
+                <option value="Corporate">Corporate</option>
+                <option value="Media">Media</option>
+                <option value="Medtech">MedTech</option>
+                <option value="Netrunner">Netrunner</option>
+                <option value="Nomad">Nomad</option>
+                <option value="Rockerboy/girl">Rockerboy/girl</option>
+                <option value="Solo">Solo</option>
+                <option value="Techie">Techie</option>
+            </select>
+        </div>
         <nav>
             <ul>
                 <li><a href="#identity">Identité</a></li>
-                <li><a href="#history">Historique</a></li>
+                <li><a href="#history">Histoire</a></li>
                 <li><a href="#attributes">Attributs</a></li>
                 <li><a href="#skills">Compétences</a></li>
                 <li><a href="#budget">Budget</a></li>
@@ -32,10 +44,10 @@
                 <div class="tooltip-container">
                     <span class="tooltip-trigger" tabindex="0">?</span>
                     <div class="tooltip-content">
-                        <p><strong>NOM D'AGENT :</strong> Le nom complet de votre personnage.</p>
+                        <p><strong>NOM :</strong> Le nom complet de votre personnage.</p>
                         <p><strong>PSEUDONYME :</strong> Le surnom qu'on vous donne dans la rue.</p>
-                        <p><strong>Carrière :</strong>Le métier du personnage en parallèle de son activité de solo ou qu'il a exercé avant d'être solo à plein temps</p>
-                        <p>Le choix d'une carrière remet à zéro les compétences ainsi que les description de style du personnage. Ses origines ne changent pas pour que vous puissiez lui choisir différents métiers en accord avec ses attributs.
+                        <p>Le métier du personnage en parallèle de son activité de solo ou qu'il a exercé avant d'être solo à plein temps</p>
+                        <p>Le choix d'un métier remet à zéro les compétences ainsi que le look du personnage. Ses origines ne changent pas pour que vous puissiez lui choisir différents métiers en accord avec ses attributs.
                         </p>
                     </div>
                 </div>
@@ -43,7 +55,7 @@
 
             <div class="form-grid">
                 <div class="form-group">
-                    <label for="char-name">NOM D'AGENT</label>
+                    <label for="char-name">NOM</label>
                     <input type="text" id="char-name" name="char-name" placeholder="Ex: V, Morgane Blackhand...">
                 </div>
                 <div class="form-group">
@@ -51,25 +63,15 @@
                     <input type="text" id="char-handle" name="char-handle" placeholder="Ex: Le Fantôme, Razor...">
                 </div>
                 <div class="form-group">
-                    <label for="lifepath">Carrière</label>
-                    <select id="lifepath" name="lifepath">
-                        <option value="Cop">Cop</option>
-                        <option value="Corporate">Corporate</option>
-                        <option value="Media">Media</option>
-                        <option value="Medtech">MedTech</option>
-                        <option value="Netrunner">Netrunner</option>
-                        <option value="Nomad">Nomad</option>
-                        <option value="Rockerboy/girl">Rockerboy/girl</option>
-                        <option value="Solo">Solo</option>
-                        <option value="Techie">Techie</option>
-                    </select>
+                    <label>MÉTIER</label>
+                    <p id="char-job-description" class="job-description-text">...</p>
                 </div>
             </div>
         </section>
 
         <!-- SECTION HISTORIQUE PERSONNEL -->
         <section id="history" class="view">
-            <h2 class="section-title">> SECTION 2: HISTORIQUE PERSONNEL
+            <h2 class="section-title">> SECTION 2: Histoire personnelle
                 <div class="title-actions">
                     <button id="reroll-history-btn" class="section-action-btn" title="Générer un nouvel historique"></button>
                     <div class="tooltip-container">

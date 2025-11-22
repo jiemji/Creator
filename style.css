@@ -61,6 +61,57 @@ header h1 {
     letter-spacing: 0.1em;
 }
 
+/* Style pour le conteneur du select dans le header */
+header .form-group {
+    margin-bottom: 15px;
+}
+
+/* On cache la label maintenant inutile */
+#lifepath-label-header {
+    display: none;
+}
+
+/* Style principal pour le select, imitant l'ancien H1 */
+header #lifepath {
+    /* Reset du style de base */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    width: auto;
+    cursor: pointer;
+    
+    /* Application du style du titre */
+    font-family: 'Cousine', monospace;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    text-shadow: 0 0 60px rgba(2, 83, 15, 0.8);
+    font-size:5em;
+    letter-spacing: 0.1em;
+    text-align: center;
+}
+
+header #lifepath:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+/* S'assure que le texte des options est centré dans tous les navigateurs */
+header #lifepath {
+    text-align-last: center;
+}
+
+header #lifepath option {
+    text-shadow: none;
+    font-size: 0.5em; /* Ajuster si nécessaire pour la lisibilité */
+    text-align: left; /* Les options dans la liste déroulante sont plus lisibles à gauche */
+}
+
+
 nav ul {
     list-style: none;
     padding: 0; margin: 0;
@@ -186,6 +237,19 @@ main, section.view {
 .form-group select option {
     background-color: var(--color-bg);
     color: var(--color-primary);
+}
+
+.job-description-text {
+    background: transparent;
+    border: 1px solid var(--color-primary-dim);
+    color: var(--color-primary);
+    font-family: 'Cousine', monospace;
+    font-size: 1em; /* Un peu plus petit pour un paragraphe */
+    padding: 12px;
+    margin: 0;
+    min-height: 80px; /* Hauteur minimale pour l'alignement */
+    line-height: 1.5;
+    opacity: 0.8; /* Le rendre légèrement moins proéminent qu'un champ de saisie */
 }
 
 /* --- SECTION HISTORIQUE --- */

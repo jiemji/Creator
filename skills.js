@@ -141,7 +141,7 @@ export function render() {
             <div class="skills-list">
                 <div class="skill-item ${coreClass}">
                         <div class="skill-name-container">
-                            <span class="skill-name">${specialSkillName}
+                            <span class="skill-name">${specialSkillName}<br>
                             <span id="special-skill-title" class="special-skill-title"></span></span>
                     </div>
                     <div class="skill-controls">
