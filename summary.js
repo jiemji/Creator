@@ -51,18 +51,40 @@ export function exportCsv() {
 function renderIdentity() {
     const selectedRole = dom.identity.lifepath.value;
     const skillInfo = state.gameData.specialskill.find(s => s.Classe === selectedRole);
-    const jobDescription = skillInfo ? skillInfo.resume : '';
     
+    // 1. Récupération de la description
+    const jobDescription = skillInfo ? skillInfo.resume : '';
+
+    // 2. Récupération du Titre (basé sur le niveau de la compétence spéciale)
+    const specialSkillName = skillInfo ? skillInfo.specialskill : null;
+    const specialSkillValue = specialSkillName ? (state.characterSkills[specialSkillName] || 0) : 0;
+    
+    const budgetEntry = state.gameData.budget.find(entry => 
+        entry.Classe === selectedRole && 
+        parseInt(entry.Niveau, 10) === specialSkillValue
+    );
+    const jobTitle = budgetEntry ? budgetEntry.Titre : 'Débutant';
+
     dom.summary.identity.innerHTML = `
         <p><strong>${dom.identity.name.value || '...'}</strong> - <em>${dom.identity.handle.value || '...'}</em></p>
         <p><strong>${selectedRole}</strong> (${jobDescription})</p>
+        <p><strong>Titre :</strong> ${jobTitle}</p>
     `;
 }
 
 function renderHistory() {
     dom.summary.history.innerHTML = `
-        <p>${dom.history.style.textContent} - ${dom.history.hair.textContent} - ${dom.history.accessory.textContent}</p>
-        <p>${dom.history.origin.textContent} - ${dom.history.language.textContent}</p>
+        <p>${dom.history.style.textContent}</p>
+        <br>
+        <p>${dom.history.hair.textContent}</p>
+        <br>
+        <p>${dom.history.accessory.textContent}</p>
+        
+        <br><br>
+        <p><strong>Origines ethniques : </strong>${dom.history.origin.textContent}</p>
+        <p><strong>Langues maternelles : </strong>${dom.history.language.textContent}</p>
+        
+        <br><br>
         <p><strong>Enfance:</strong> ${dom.history.childhood.textContent}</p>
         <p><strong>Adelphe(s):</strong> ${dom.history.siblings.textContent}</p>
         <p><strong>Destin Familial:</strong> ${dom.history.familyFate.textContent}</p>
@@ -85,24 +107,21 @@ function renderAttributes() {
 }
 
 function renderSkills() {
-    let html = '';
-    const statOrder = ['Intelligence', 'Classe', 'Technique', 'Réflexes', 'Sang-Froid', 'Puissance', 'Esprit'];
+    // "saute une ligne" au début
+    let html = '<br>'; 
     
-    const selectedRole = dom.identity.lifepath.value;
-    const specialSkillInfo = state.gameData.specialskill.find(s => s.Classe === selectedRole);
-    const specialSkillName = specialSkillInfo ? specialSkillInfo.specialskill : null;
-    const specialSkillValue = specialSkillName ? state.characterSkills[specialSkillName] : 0;
-
-    if (specialSkillValue > 0) {
-        html += `<p><strong>${specialSkillName}:</strong> ${specialSkillValue}</p>`;
-    }
-
+    // Ordre des attributs (avec Reflexes sans accent comme validé précédemment)
+    const statOrder = ['Intelligence', 'Classe', 'Technique', 'Reflexes', 'Sang-Froid', 'Puissance', 'Esprit'];
+    
     statOrder.forEach(statName => {
+        // Récupère les compétences de cet attribut qui ont des points investis (> 0)
         const skillsForStat = state.gameData.competences
             .filter(skill => skill.Statistique === statName)
             .map(skill => skill['Sous-competence'])
-            .filter(skillName => state.characterSkills[skillName] > 0 && skillName !== specialSkillName);
+            // On filtre directement ici les valeurs > 0 dans le state
+            .filter(skillName => (state.characterSkills[skillName] || 0) > 0);
 
+        // Si on a au moins une compétence, on affiche le groupe
         if (skillsForStat.length > 0) {
             html += `<h5>${statName.toUpperCase()}</h5>`;
             skillsForStat.forEach(skillName => {
@@ -110,17 +129,28 @@ function renderSkills() {
             });
         }
     });
-    dom.summary.skills.innerHTML = html || '<p>Aucune compétence.</p>';
+
+    // Si rien n'a été ajouté (html est juste <br>), on affiche un message par défaut, sinon le HTML généré
+    dom.summary.skills.innerHTML = html.length > 4 ? html : '<br><p>Aucune compétence.</p>';
 }
 
 function renderBudget() {
-    const initialAmount = state.characterBudget.amount;
-    const equipmentFunds = Math.floor(initialAmount * 0.8);
-    const savings = initialAmount - equipmentFunds;
+    // 1. Fonds d'équipement : Valeur fixe
+    const equipmentFunds = 80000;
 
+    // 2. Epargne : Récupère la valeur calculée dans le module budget.js
+    const savings = state.characterBudget.amount || 0;
+
+    // 3. Salaire mensuel : Recalcul basé sur le niveau de compétence spéciale
     const selectedRole = dom.identity.lifepath.value;
-    const specialSkillValue = state.characterSkills[state.gameData.specialskill.find(s => s.Classe === selectedRole)?.specialskill] || 0;
-    const budgetEntry = state.gameData.budget.find(entry => entry.Classe === selectedRole && parseInt(entry.Niveau, 10) === specialSkillValue);
+    const specialSkillInfo = state.gameData.specialskill.find(s => s.Classe === selectedRole);
+    const specialSkillName = specialSkillInfo ? specialSkillInfo.specialskill : null;
+    const specialSkillValue = specialSkillName ? (state.characterSkills[specialSkillName] || 0) : 0;
+
+    const budgetEntry = state.gameData.budget.find(entry => 
+        entry.Classe === selectedRole && 
+        parseInt(entry.Niveau, 10) === specialSkillValue
+    );
     const monthlySalary = budgetEntry ? budgetEntry.Montant : 0;
 
     dom.summary.budget.innerHTML = `

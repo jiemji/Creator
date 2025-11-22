@@ -565,6 +565,55 @@ button:disabled {
     flex-grow: 1;
 }
 
+/* --- BOUTON SPÉCIAL FICHE PERSONNAGE --- */
+#refresh-summary-btn {
+    /* Dimensions et Texte */
+    width: auto;
+    height: auto;
+    border-radius: 0; /* Rectangulaire */
+    font-family: 'Cousine', monospace;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.4em; /* Relatif à la taille du titre H2 (2.5em) -> Rendu visuel harmonieux */
+    padding: 0.5em 1.5em;
+    margin-top: 5px;
+    
+    /* Couleurs (Texte Noir sur Fond Vert) */
+    background-color: var(--color-primary);
+    color: #000; /* Noir pur pour le contraste */
+    border: none;
+    
+    /* Effet d'irradiation (Glow) */
+    box-shadow: 0 0 15px var(--color-primary), 0 0 30px var(--color-primary);
+    animation: radioactive-glow 2s infinite alternate;
+    
+    /* Suppression des styles par défaut du bouton rond s'il en reste */
+    display: inline-block;
+}
+
+#refresh-summary-btn:hover {
+    background-color: var(--color-primary-light);
+    color: #000;
+    box-shadow: 0 0 25px var(--color-primary-light), 0 0 50px var(--color-primary-light);
+    transform: scale(1.05); /* Léger zoom au survol */
+}
+
+/* Animation de pulsation pour l'effet "irradie" */
+@keyframes radioactive-glow {
+    from {
+        box-shadow: 0 0 10px var(--color-primary), 0 0 20px var(--color-primary);
+    }
+    to {
+        box-shadow: 0 0 20px var(--color-primary), 0 0 40px var(--color-primary), 0 0 60px rgba(57, 255, 20, 0.4);
+    }
+}
+
+/* Suppression de l'icône (flèche) définie précédemment pour les boutons d'action */
+#refresh-summary-btn::before {
+    display: none;
+    content: none;
+}
+
 /* --- FOOTER --- */
 footer {
     padding: 20px;
