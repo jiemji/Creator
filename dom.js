@@ -13,7 +13,6 @@ export function initializeDom() {
         refreshSummaryBtn: document.getElementById('refresh-summary-btn'),
         budgetDisplay: document.getElementById('char-budget'),
         budgetSalary: document.getElementById('char-salary'),
-        exportCsvBtn: document.getElementById('export-csv-btn'),
         downloadBtn: document.getElementById('download-btn'),
         printBtn: document.getElementById('print-btn'),
         identity: {

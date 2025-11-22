@@ -27,6 +27,6 @@ export function calculateAndDisplayBudget() {
     state.characterBudget.amount = savings;
 
     // 5. Mettre à jour l'affichage
-    dom.budgetSalary.innerHTML = `${monthlySalary} <img src="donald.png" alt="crédits" class="currency-icon">`;
-    dom.budgetDisplay.innerHTML = `${savings} <img src="donald.png" alt="crédits" class="currency-icon">`;
+    dom.budgetSalary.innerHTML = `${monthlySalary}<img src="donald.png" alt="crédits" class="currency-icon">`;
+    dom.budgetDisplay.innerHTML = `${savings}<img src="donald.png" alt="crédits" class="currency-icon">`;
 }

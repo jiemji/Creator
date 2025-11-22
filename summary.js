@@ -34,9 +34,10 @@ function generateCharacterSheetText() {
 
     text += "> IDENTITÉ\n" + separator;
     text += `Nom        : ${dom.identity.name.value || '...'}\n`;
-    text += `Pseudonyme : ${dom.identity.handle.value || '...'}\n`;
+    text += `Pseudonyme : ${dom.identity.handle.value || '...'}\n\n`;
     text += `Rôle       : ${selectedRole} (${jobDescription})\n`;
     text += `Titre      : ${jobTitle}\n\n`;
+    text += `Capacité spéciale (niv. ${specialSkillValue})     : ${specialSkillName}\n\n`;
 
     // --- 2. HISTOIRE ---
     // On remplace les <br> HTML par des sauts de ligne \n
@@ -96,28 +97,9 @@ function generateCharacterSheetText() {
     return text;
 }
 
-function generateCharacterCSV() {
-    const charName = dom.identity.name.value || 'personnage_sans_nom';
-    let csvContent = "Nom du personnage;Element;Type;Valeur\n";
-    for (const statName in state.characterAttributes) {
-        csvContent += `"${charName}";"${statName}";"Attribut";"${state.characterAttributes[statName]}"\n`;
-    }
-    for (const skillName in state.characterSkills) {
-        if (state.characterSkills[skillName] > 0) {
-            csvContent += `"${charName}";"${skillName}";"Compétence";"${state.characterSkills[skillName]}"\n`;
-        }
-    }
-    return csvContent;
-}
-
 export function downloadTxt() {
     const textToDownload = generateCharacterSheetText();
     downloadFile(textToDownload, 'cyberpunk_personnage.txt', 'text/plain');
-}
-
-export function exportCsv() {
-    const csvContent = generateCharacterCSV();
-    downloadFile(csvContent, 'export_personnage.csv', 'text/csv;charset=utf-8;');
 }
 
 function renderIdentity() {
@@ -141,6 +123,7 @@ function renderIdentity() {
         <p><strong>${dom.identity.name.value || '...'}</strong> - <em>${dom.identity.handle.value || '...'}</em></p>
         <p><strong>${selectedRole}</strong> (${jobDescription})</p>
         <p><strong>Titre :</strong> ${jobTitle}</p>
+        <p><strong>Compétences Spéciales (niv. ${specialSkillValue}) :</strong> ${specialSkillName}</p>
     `;
 }
 
@@ -223,8 +206,8 @@ function renderBudget() {
 
     dom.summary.budget.innerHTML = `
         <p><strong>Fonds d'équipement:</strong> ${equipmentFunds} <img src="donald.png" alt="crédits" class="currency-icon"></p>
-        <p><strong>Epargne:</strong> ${savings} <img src="donald.png" alt="crédits" class="currency-icon"></p>
-        <p><strong>Salaire Mensuel:</strong> ${monthlySalary} <img src="donald.png" alt="crédits" class="currency-icon"></p>
+        <p><strong>Epargne:</strong> ${savings}<img src="donald.png" alt="crédits" class="currency-icon"></p>
+        <p><strong>Salaire Mensuel:</strong> ${monthlySalary}<img src="donald.png" alt="crédits" class="currency-icon"></p>
     `;
 }
 

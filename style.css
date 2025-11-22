@@ -811,9 +811,7 @@ footer {
     height: 1em; 
     /* Aligne l'image verticalement avec le milieu du texte */
    /*vertical-align: center;*/
-   position : relative;
-   top:-3px;
-      /* Ajoute un petit espace entre le montant et l'image */
-    margin-left: 0.25em;
+   position : relative;top:-0.1em;
+
 
 }

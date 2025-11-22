@@ -4,7 +4,7 @@ import { loadAllData } from './dataLoader.js';
 import { initializeAttributes, handleAttributeChange } from './attributes.js';
 import { initializeSkills, handleSkillChange, calculatePickupSkillPoints, updateSkillPointDisplays, updateSkillButtons, updateSpecialSkillTitle } from './skills.js';
 import { randomizeHistory, updateRoleSpecificHistory } from './history.js';
-import { render as renderSummary, downloadTxt, exportCsv} from './summary.js';
+import { render as renderSummary, downloadTxt} from './summary.js';
 import { render as renderAttributes } from './attributes.js';
 import { render as renderSkills } from './skills.js';
 import { calculateAndDisplayBudget } from './budget.js';
