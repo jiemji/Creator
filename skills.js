@@ -37,6 +37,28 @@ export function updateSkillPointDisplays() {
     dom.pickupSkillPointsDisplay.textContent = state.pickupSkillPointsRemaining;
 }
 
+export function updateSpecialSkillTitle() {
+    const selectedRole = dom.identity.lifepath.value;
+    const specialSkillInfo = state.gameData.specialskill.find(s => s.Classe === selectedRole);
+    if (!specialSkillInfo) return;
+
+    const specialSkillName = specialSkillInfo.specialskill;
+    const specialSkillValue = state.characterSkills[specialSkillName] || 0;
+
+    const budgetEntry = state.gameData.budget.find(entry => 
+        entry.Classe === selectedRole && 
+        parseInt(entry.Niveau, 10) === specialSkillValue
+    );
+
+    const title = budgetEntry ? budgetEntry.Titre : '';
+    
+    const titleElement = document.getElementById('special-skill-title');
+    if (titleElement) {
+        titleElement.textContent = `(${title})`;
+    }
+}
+
+
 export function updateSkillButtons() {
     skillButtonsCache.forEach(btn => {
         const action = btn.dataset.action;
@@ -115,10 +137,13 @@ export function render() {
         const isCore = true;
         const coreClass = 'core-skill';
         specialSkillGroup.innerHTML = `
-            <h3>Spécial</h3>
+            <h3>Compétence spéciale</h3>
             <div class="skills-list">
                 <div class="skill-item ${coreClass}">
-                    <span class="skill-name">${specialSkillName}</span>
+                        <div class="skill-name-container">
+                            <span class="skill-name">${specialSkillName}
+                            <span id="special-skill-title" class="special-skill-title"></span></span>
+                    </div>
                     <div class="skill-controls">
                         <button class="quantity-btn" data-skill="${specialSkillName}" data-core="${isCore}" data-action="decrease">-</button>
                         <span class="skill-value">${state.characterSkills[specialSkillName]}</span>

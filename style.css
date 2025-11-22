@@ -398,6 +398,20 @@ main, section.view {
     border-left: 2px solid var(--color-primary-dim);
 }
 
+.skill-name-container {
+    display: flex;
+    align-items: baseline; /* Aligne le nom et le titre sur leur ligne de base */
+    flex-grow: 1;
+}
+
+.special-skill-title {
+    margin-left: 10px;
+    font-size: 0.8em;
+    color: var(--color-primary-dim);
+    font-style: italic;
+    text-transform: none; /* Le titre ne doit pas être en majuscules */
+}
+
 /* --- BOUTONS --- */
 button {
     background: transparent;

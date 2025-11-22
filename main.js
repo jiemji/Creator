@@ -2,7 +2,7 @@ import { dom, initializeDom } from './dom.js';
 import { state } from './state.js';
 import { loadAllData } from './dataLoader.js';
 import { initializeAttributes, handleAttributeChange } from './attributes.js';
-import { initializeSkills, handleSkillChange, calculatePickupSkillPoints, updateSkillPointDisplays, updateSkillButtons } from './skills.js';
+import { initializeSkills, handleSkillChange, calculatePickupSkillPoints, updateSkillPointDisplays, updateSkillButtons, updateSpecialSkillTitle } from './skills.js';
 import { randomizeHistory, updateRoleSpecificHistory } from './history.js';
 import { render as renderSummary, downloadTxt, exportCsv, updateSummaryAttribute, updateSummaryHumanity, updateSummarySkill } from './summary.js';
 import { render as renderAttributes } from './attributes.js';
@@ -87,7 +87,7 @@ async function initializeApp() {
                 const specialSkillInfo = state.gameData.specialskill.find(s => s.Classe === selectedRole);
                 if (specialSkillInfo && skillName === specialSkillInfo.specialskill) {
                     calculateAndDisplayBudget();
-                    renderSummary();
+                    updateSpecialSkillTitle();                    renderSummary();
                 }
 
             }
