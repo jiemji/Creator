@@ -4,14 +4,16 @@ import { state, MIN_SKILL, MAX_STAT, TOTAL_CORE_SKILL_POINTS } from './state.js'
 let skillButtonsCache = [];
 
 export function initializeSkills() {
+    // Étape 1: Tout remettre à zéro
     state.characterSkills = {};
     state.gameData.competences.forEach(skill => {
         state.characterSkills[skill['Sous-competence']] = 0;
     });
     state.gameData.specialskill.forEach(skill => {
-        state.characterSkills[skill.specialskill] = 0;
+        state.characterSkills[skill.specialskill] = 1;
     });
     state.coreSkillPointsRemaining = TOTAL_CORE_SKILL_POINTS;
+
 }
 
 export function calculatePickupSkillPoints() {
@@ -36,11 +38,15 @@ export function updateSkillPointDisplays() {
 }
 
 export function updateSkillButtons() {
-    // 3. Utilisation du cache, beaucoup plus rapide
     skillButtonsCache.forEach(btn => {
         const action = btn.dataset.action;
         const skillName = btn.dataset.skill;
         const isCore = btn.dataset.core === 'true';
+
+        // Logique pour bloquer le bouton [-] de la compétence spéciale si elle est à 1
+        const selectedRole = dom.identity.lifepath.value;
+        const specialSkillInfo = state.gameData.specialskill.find(s => s.Classe === selectedRole);
+        const isSpecialSkill = specialSkillInfo && skillName === specialSkillInfo.specialskill;
 
         if (action === 'increase') {
             if (state.characterSkills[skillName] >= MAX_STAT) {
@@ -51,7 +57,11 @@ export function updateSkillButtons() {
                 btn.disabled = state.pickupSkillPointsRemaining <= 0;
             }
         } else if (action === 'decrease') {
-            btn.disabled = state.characterSkills[skillName] <= MIN_SKILL;
+            if (isSpecialSkill) {
+                btn.disabled = state.characterSkills[skillName] <= 1;
+            } else {
+                btn.disabled = state.characterSkills[skillName] <= MIN_SKILL;
+            }
         }
     });
 }
@@ -59,6 +69,8 @@ export function updateSkillButtons() {
 export function handleSkillChange(skillName, isCore, action, buttonElement) {
     const oldValue = state.characterSkills[skillName];
 
+    // La logique de blocage est maintenant gérée par updateSkillButtons, 
+    // donc on peut simplifier ici, bien que la vérification ne nuise pas.
     if (action === 'increase' && oldValue < MAX_STAT) {
         if (isCore && state.coreSkillPointsRemaining > 0) {
             state.characterSkills[skillName]++;
@@ -68,6 +80,8 @@ export function handleSkillChange(skillName, isCore, action, buttonElement) {
             state.pickupSkillPointsRemaining--;
         }
     } else if (action === 'decrease' && oldValue > MIN_SKILL) {
+        // La logique de blocage dans updateSkillButtons empêchera cette condition
+        // d'être appelée incorrectement pour la compétence spéciale.
         if (isCore) {
             state.characterSkills[skillName]--;
             state.coreSkillPointsRemaining++;
@@ -123,7 +137,7 @@ export function render() {
         return acc;
     }, {});
 
-const statOrder = ['Intelligence', 'Classe','Technique' ,'Réflexes',  'Sang-Froid',  'Puissance', 'Esprit'];
+    const statOrder = ['Intelligence', 'Classe','Technique' ,'Réflexes',  'Sang-Froid',  'Puissance', 'Esprit'];
 
     statOrder.forEach(statName => {
         if (!skillsByStat[statName]) return;
@@ -174,7 +188,7 @@ const statOrder = ['Intelligence', 'Classe','Technique' ,'Réflexes',  'Sang-Fro
         skillsContainer.appendChild(skillGroup);
     });
     
- skillButtonsCache = document.querySelectorAll('.skill-controls .quantity-btn');
+    skillButtonsCache = document.querySelectorAll('.skill-controls .quantity-btn');
 
     updateSkillButtons();
     updateSkillPointDisplays();
