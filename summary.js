@@ -31,6 +31,7 @@ function generateCharacterSheetText() {
     );
     const jobTitle = budgetEntry ? budgetEntry.Titre : 'Débutant';
     const monthlySalary = budgetEntry ? budgetEntry.Montant : 0;
+    const story = state.characterStory || { story: '', text: '' };
 
     text += "> IDENTITÉ\n" + separator;
     text += `Nom        : ${dom.identity.name.value || '...'}\n`;
@@ -38,6 +39,7 @@ function generateCharacterSheetText() {
     text += `Rôle       : ${selectedRole} (${jobDescription})\n`;
     text += `Titre      : ${jobTitle}\n\n`;
     text += `Capacité spéciale (niv. ${specialSkillValue})     : ${specialSkillName}\n\n`;
+    text += `Histoire   : ${story.text}\n\n`;
 
     // --- 2. HISTOIRE ---
     // On remplace les <br> HTML par des sauts de ligne \n
@@ -90,9 +92,9 @@ function generateCharacterSheetText() {
 
     // --- 5. BUDGET ---
     text += "> BUDGET\n" + separator;
-    text += `Fonds d'équipement : 80000 eb\n`;
-    text += `Epargne            : ${state.characterBudget.amount || 0} eb\n`;
-    text += `Salaire Mensuel    : ${monthlySalary} eb\n`;
+    text += `Fonds d'équipement : 80000 D$\n`;
+    text += `Epargne            : ${state.characterBudget.amount || 0} D$\n`;
+    text += `Salaire Mensuel    : ${monthlySalary} D$\n`;
 
     return text;
 }
@@ -118,12 +120,14 @@ function renderIdentity() {
         parseInt(entry.Niveau, 10) === specialSkillValue
     );
     const jobTitle = budgetEntry ? budgetEntry.Titre : 'Débutant';
+    const story = state.characterStory || { story: '...'};
 
     dom.summary.identity.innerHTML = `
         <p><strong>${dom.identity.name.value || '...'}</strong> - <em>${dom.identity.handle.value || '...'}</em></p>
         <p><strong>${selectedRole}</strong> (${jobDescription})</p>
         <p><strong>Titre :</strong> ${jobTitle}</p>
-        <p><strong>Compétences Spéciales (niv. ${specialSkillValue}) :</strong> ${specialSkillName}</p>
+        <p><strong>Compétences Spéciales (niv. ${specialSkillValue}) :</strong> ${specialSkillName}</p><br>
+        <p><strong>Expérience :</strong> ${story.story}</p>
     `;
 }
 
@@ -205,7 +209,7 @@ function renderBudget() {
     const monthlySalary = budgetEntry ? budgetEntry.Montant : 0;
 
     dom.summary.budget.innerHTML = `
-        <p><strong>Fonds d'équipement:</strong> ${equipmentFunds} <img src="donald.png" alt="crédits" class="currency-icon"></p>
+        <p><strong>Fonds d'équipement:</strong> ${equipmentFunds}<img src="donald.png" alt="crédits" class="currency-icon"></p>
         <p><strong>Epargne:</strong> ${savings}<img src="donald.png" alt="crédits" class="currency-icon"></p>
         <p><strong>Salaire Mensuel:</strong> ${monthlySalary}<img src="donald.png" alt="crédits" class="currency-icon"></p>
     `;

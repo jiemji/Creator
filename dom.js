@@ -19,7 +19,8 @@ export function initializeDom() {
             name: document.getElementById('char-name'),
             handle: document.getElementById('char-handle'),
             lifepath: document.getElementById('lifepath'),
-            jobDescription: document.getElementById('char-job-description')
+            jobDescription: document.getElementById('char-job-description'),
+            story: document.getElementById('char-story')
         },
         history: {
             style: document.getElementById('char-style'),

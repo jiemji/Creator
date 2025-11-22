@@ -1,0 +1,136 @@
+classe;archetype;story
+Solo;Ex-Militaire désabusé;Vous étiez dans les forces spéciales lors de la dernière guerre corpo. Votre unité a été sacrifiée pour des bénéfices boursiers. Vous travaillez désormais à votre compte, ne faisant confiance à personne.
+Solo;Garde du corps déchu;Vous protégiez une star de la braindance qui a été assassinée sous vos yeux. Personne ne veut plus vous embaucher officiellement, vous prenez les contrats les plus risqués pour survivre.
+Solo;Cobaye corporatiste;Une corpo a testé sur vous des réflexes de combat expérimentaux. Vous vous êtes échappé, mais vous avez des flashbacks violents et des 'glitchs' sensoriels.
+Solo;Ronin corporatiste;Vous étiez un assassin d'élite pour Arasaka, mais vous avez refusé un ordre moralement inacceptable (tuer un enfant). Vous êtes maintenant traqué par vos anciens employeurs.
+Solo;Sportif de combat underground;Vous étiez une star des arènes illégales de 'pit-fighting', dopé aux améliorations. Une blessurea grave vous a exclu du circuit, vous utilisez vos restes de talents pour le mercenariat.
+Solo;Vétéran de la police (MAX-TAC);Vous faisiez spartie de la Psycho Squad, chassant les cyberpsychos. La violence quotidienne vous a brisé, vous avez rendu votre badge mais gardé vos réflexes.
+Solo;Gamin des rues devenu légende;Vous n'avez aucune formation militaire, vous avez appris à tuer pour ne pas être tué dans la Zone de Combat. Votre instinct est votre seule école.
+Solo;Le 'Nettoyeur';Vous étiez spécialisé dans l'effacement des preuves et des témoins gênants pour la mafia. Vous essayez de vous racheter une conduite, ou du moins, de changer de clientèle.
+Solo;Garde du corps d'élite (Actif);Vous êtes actuellement employé par un cadre moyen qui a peur pour sa vie. C'est un boulot ennuyeux, mais la paie est bonne, jusqu'à ce que les vrais ennuis commencent.
+Solo;Chasseur de primes;Vous ne tuez pas pour l'argent, vous ramenez les cibles vivantes pour la caution. C'est plus dur, mais vous dormez mieux la nuit.
+Solo;L'artiste martial puriste;Vous refusez les armes à feu, préférant le katana ou les poings cybernétiques. Vous cherchez l'adversaire ultime pour prouver la supériorité de votre art.
+Solo;Le Dormeur;Vous étiez un agent dormant avec une personnalité programmée. Vous venez de vous 'réveiller' sans savoir qui vous êtes vraiment, mais vous savez manier n'importe quelle arme.
+Solo;Sécurité de convoi;Vous avez passé dix ans à protéger des transports de fonds dans les Badlands. Vous connaissez toutes les embuscades et les tactiques des Nomads.
+Solo;L'exécuteur froid;Vous n'avez pas d'émotions, peut-être à cause d'un implant défectueux. Le meurtre est juste une transaction mathématique pour vous.
+Solo;Le protecteur de quartier;Vous utilisez vos talents mortels pour protéger gratuitement votre bloc d'habitation des gangs, financé par la gratitude (et les dons) de vos voisins.
+Netrunner;Le fouineur de données;Vous avez trouvé des fichiers cryptés dans une banque de données oubliée. Maintenant, une IA vous parle dans votre tête et des gens en costume noir vous cherchent.
+Netrunner;Ex-Employé de la sécurité réseau;Vous construisiez les murs de glace que vous brisez aujourd'hui. Licencié pour avoir regardé des fichiers RH confidentiels, vous connaissez les failles des systèmes corpo.
+Netrunner;Hacktiviste idéaliste;Vous faites partie d'un collectif qui veut libérer l'information. Vous piratez pour exposer la corruption, pas pour l'argent (même si vous devez bien manger).
+Netrunner;Le 'Flatlined' survivant;Vous avez failli griller votre cerveau lors d'un run contre une Glace Noire militaire. Vous avez survécu, mais vous voyez le code de la Matrice se superposer à la réalité par moments.
+Netrunner;Voleur d'identité;Vous étiez un petit escroc volant des crédits. Un jour, vous avez volé l'identité de la mauvaise personne et vous devez maintenant fuir ou assumer ce rôle dangereux.
+Netrunner;Concepteur de virus;Vous créiez des malwares pour le marché noir. L'un de vos virus a muté et causé une catastrophe. Vous essayez de réparer les dégâts incognito.
+Netrunner;Le gamin prodige;À 12 ans, vous avez piraté la bourse. À 20 ans, vous sortez de prison juvénile avec un casier vierge (merci à un bienfaiteur mystérieux) et un cyberdeck obsolète.
+Netrunner;Netrunner de combat;Contrairement aux autres qui restent dans un fauteuil, vous accompagnez les équipes sur le terrain pour pirater les systèmes de sécurité 'en direct' et ouvrir les portes sous le feu ennemi.
+Netrunner;L'archéologue numérique;Vous êtes obsédé par le 'Vieux Net' d'avant le crash. Vous cherchez des serveurs fantômes et des technologies perdues, risquant votre vie face aux IA sauvages.
+Netrunner;Employé de bureau (sous couverture);Le jour, vous êtes un technicien support incompétent. La nuit, vous utilisez les serveurs de votre entreprise pour miner des cryptomonnaies et lancer des runs.
+Netrunner;Le marionnettiste;Vous préférez pirater les cyberwares des gens plutôt que les banques. Prendre le contrôle des bras ou des yeux de vos ennemis est votre signature cruelle.
+Netrunner;Victime de chantage;Un gang détient votre famille ou vos secrets. Ils vous obligent à effectuer des piratages de plus en plus dangereux pour eux.
+Netrunner;Le 'Ghost';Vous êtes techniquement mort. Votre conscience a été uploadée partiellement, vous vivez plus dans le Net que dans votre corps physique qui s'atrophie.
+Netrunner;Espion industriel freelance;Vous ne volez pas d'argent, vous volez des secrets de fabrication pour les revendre au plus offrant. C'est un jeu d'échecs mortel entre corpos.
+Netrunner;Le nettoyeur de casier;Pour le bon prix, vous effacez les dettes, les casiers judiciaires ou les mauvaises notes scolaires. Un business stable jusqu'à ce que vous effaciez le dossier d'un parrain de la pègre par erreur.
+Techie;Le Ripperdoc de rue;Vous opérez dans une cave insalubre, installant du cyberware de contrebande sur des gangers et des désespérés qui ne peuvent pas se payer une clinique.
+Techie;Mécano de combat;Vous étiez dans une unité blindée, réparant les tanks sous le feu. Aujourd'hui, vous réparez les AV et les voitures blindées des mercenaires.
+Techie;Inventeur raté;Vous avez créé une technologie révolutionnaire, mais une corpo vous a volé le brevet et vous a ruiné en procès. Vous cherchez à récupérer votre création.
+Techie;Spécialiste en démolition;Vous savez comment tout construire, donc vous savez exactement où placer une charge pour que tout s'effondre. Un talent très prisé pour les sabotages.
+Techie;Armurier du marché noir;Vous modifiez des armes pour les rendre illégales, automatiques ou indétectables. Vos clients sont dangereux, mais ils ont besoin de vous.
+Techie;Le 'Cyber-artiste';Pour vous, le chrome est un art. Vous créez des prothèses esthétiques uniques et magnifiques, mais vous avez besoin de mécènes (ou de crédits volés) pour financer vos chefs-d'œuvre.
+Techie;Technicien de maintenance aérospatial;Vous travailliez sur les navettes orbitales. Une erreur a causé une dépressurisation. Licencié et banni de l'espace, vous êtes coincé sur Terre avec des compétences trop pointues.
+Techie;Le recycleur (Scavenger);Vous récupérez du matériel sur les champs de bataille ou dans les décharges pour le remettre à neuf. Vous savez faire marcher une radio avec un grille-pain.
+Techie;Expert en sécurité domestique;Vous installiez des systèmes de défense pour les riches. Maintenant, vous aidez les voleurs à les contourner, car vous connaissez tous les codes par défaut.
+Techie;Le médecin des robots;Vous préférez les drones aux humains. Vous avez une petite armée de robots bricolés qui vous suivent partout et vous protègent.
+Techie;Saboteur industriel;Les corpos vous paient pour introduire des défauts subtils dans les produits de leurs concurrents. Un travail de précision qui demande d'être invisible.
+Techie;Le 'MacGyver' des bas-fonds;Sans outils ni pièces, vous pouvez fabriquer un explosif avec des produits ménagers. Vous avez survécu à une prison de haute sécurité grâce à ça.
+Techie;Technicien médical (Medtech raté);Vous vouliez être médecin, mais vous avez échoué aux examens. Vous savez maintenir en vie les machines qui maintiennent en vie les gens.
+Techie;Chauffeur/Mécano de fuite;Vous conduisez la voiture que vous avez vous-même boostée. Si elle tombe en panne pendant la poursuite, vous la réparez en roulant.
+Techie;L'archiviste technologique;Vous collectionnez et réparez des technologies du 20ème siècle (vinyles, consoles rétro). C'est une niche lucrative pour les collectionneurs riches et nostalgiques.
+Rockerboy/girl;L'idole déchue;Vous remplissiez des stades. Un scandale fabriqué de toutes pièces par un label vengeur a détruit votre carrière. Vous jouez dans des bars miteux, prêchant la révolution.
+Rockerboy/girl;Le poète de rue;Vous n'avez pas d'instruments, juste votre voix et vos textes percutants. Vous organisez des flash-mobs politiques qui tournent souvent à l'émeute.
+Rockerboy/girl;Membre de gang musical;Votre 'groupe' est aussi un gang violent. Vos concerts sont des prétextes pour marquer votre territoire et recruter des soldats.
+Rockerboy/girl;Enfant star grandi trop vite;Vous étiez célèbre à 10 ans. Maintenant à 25, personne ne vous reconnaît, mais vous avez gardé les contacts et les vices du show-business.
+Rockerboy/girl;Le propagandiste;Vous ne chantez pas, vous êtes un influenceur politique radical sur les réseaux. Vos streams sont suivis par des milliers de personnes prêtes à agir sur un mot de vous.
+Rockerboy/girl;L'artiste corporatiste rebelle;Vous êtes sous contrat avec une méga-corpo, mais vous glissez des messages subliminaux de révolte dans vos chansons pop ultra-produites. Combien de temps avant qu'ils ne s'en rendent compte ?
+Rockerboy/girl;Le DJ de la Zone de Combat;Vous organisez des raves illégales dans des zones de guerre. La musique couvre les coups de feu, et votre charisme protège la fête.
+Rockerboy/girl;L'imposteur;Vous ressemblez trait pour trait à une légende du Rockerboy morte ou disparue. Vous utilisez cette ressemblance pour galvaniser les foules, mais c'est un jeu dangereux.
+Rockerboy/girl;Le musicien nomad;Vous voyagez de ville en ville avec votre tribu, apportant des nouvelles et des chansons de l'extérieur. Vous êtes le lien entre les communautés isolées.
+Rockerboy/girl;L'artiste performeur extrême;Vos spectacles incluent de la douleur réelle, des mutilations cybernétiques en direct ou des cascades mortelles. Le public est accro à l'adrénaline que vous procurez.
+Rockerboy/girl;Le 'Voice' d'une révolution;Vous êtes le visage public d'un mouvement terroriste ou révolutionnaire clandestin. Vous ne tenez pas l'arme, vous donnez la motivation.
+Rockerboy/girl;Journaliste Gonzo (hybride Media);Vous vivez la vie de rockstar pour en écrire la chronique ultime, mais vous vous êtes perdu dans le personnage et la drogue.
+Rockerboy/girl;Le protecteur de la communauté;Vous utilisez votre célébrité locale pour empêcher les corpos de raser votre quartier. Les bulldozers n'osent pas avancer quand vous êtes devant, entouré de caméras.
+Rockerboy/girl;L'ex-groupie devenue star;Vous avez tout appris en suivant un groupe légendaire. Maintenant, c'est à votre tour, et vous savez exactement quelles erreurs ne pas commettre.
+Rockerboy/girl;Le barde religieux;Vous prêchez une nouvelle religion techno-mystique à travers le métal industriel. Vos fans sont des fanatiques prêts à mourir pour la 'Transcendance Numérique'.
+Nomad;L'exilé;Vous avez commis une faute grave et avez été banni de votre clan. Vous errez en ville, seul, cherchant à prouver votre valeur pour être réintégré.
+Nomad;L'éclaireur urbain;Votre clan veut s'implanter en ville. Vous avez été envoyé en repérage pour comprendre les coutumes des 'statiques' et nouer des alliances.
+Nomad;Le transporteur ('Coyote');Vous faites passer des gens ou des marchandises illégales à travers les frontières et les check-points corporatistes. Vous connaissez toutes les routes de contrebande.
+Nomad;Le dernier survivant;Votre clan a été exterminé par une corpo ou un clan rival. Vous êtes le dernier, portant la mémoire et la vengeance de votre peuple.
+Nomad;Le mercenaire motorisé;Vous et votre moto/voiture êtes inséparables. Vous vous louez comme escorte rapide ou messager dans les zones où les AV ne peuvent pas voler.
+Nomad;Le Nomad corporatisé;Vous avez quitté la route pour un emploi stable dans la sécurité d'une corpo. Votre famille vous considère comme un traître, mais vous envoyez de l'argent en secret.
+Nomad;Le chef de meute junior;Vous êtes le fils/fille du chef de clan, envoyé en ville pour votre 'éducation'. Vous devez apprendre comment fonctionne le monde réel avant de pouvoir diriger.
+Nomad;Le pirate de la route;Vous attaquiez les convois corporatistes. Après un coup raté, vous vous cachez en ville le temps que la chaleur retombe.
+Nomad;L'expert en survie urbaine;Pour vous, la ville est une jungle comme une autre. Vous vivez sur les toits, chassez les rats, cultivez des algues dans les égouts. Vous apprenez aux autres à survivre sans argent.
+Nomad;Le mécano de génie (hybride Techie);Les véhicules de votre clan tenaient grâce à vous. En ville, vous êtes scandalisé par le gaspillage et vous réparez tout ce que vous trouvez.
+Nomad;Le négociateur tribal;Vous êtes l'ambassadeur de plusieurs clans nomades auprès des fixers de la ville. Vous gérez les gros contrats d'approvisionnement agricole ou de main-d'œuvre.
+Nomad;Le gitan des mers;Votre clan n'est pas sur la route, mais sur l'eau (pirates, flotteurs). Vous avez débarqué au port pour une mission et vous êtes resté coincé.
+Nomad;Le coureur de course;Vous participez aux courses de rue mortelles pour gagner de quoi acheter des pièces détachées pour le convoi de votre famille.
+Nomad;Le garde du corps fidèle;Vous avez prêté serment de protéger un 'statique' qui a sauvé la vie d'un membre de votre famille. Une dette d'honneur est sacrée.
+Nomad;Le bâtisseur;Votre clan est spécialisé dans la construction temporaire. Vous savez monter un camp fortifié en une heure. En ville, vous aidez les sans-abris à construire des bidonvilles défendables.
+Cop;Le flic ripou;Vous avez compris que la loi ne s'applique pas aux riches. Vous prenez des pots-de-vin pour fermer les yeux, arrondissant vos fins de mois pour payer les soins de votre partenaire malade.
+Cop;L'idéaliste brisé;Vous vouliez vraiment protéger et servir. Après avoir été forcé par votre hiérarchie d'ignorer les crimes d'une corpo, vous faites justice vous-même la nuit.
+Cop;Le détective privé;Viré de la police pour insubordination, vous gardez votre imperméable et votre revolver. Vous enquêtez sur les affaires que la police a classées trop vite.
+Cop;L'agent infiltré;Vous avez passé tellement de temps infiltré dans un gang que vous ne savez plus de quel côté vous êtes vraiment. Vos collègues ne vous font plus confiance.
+Cop;Le flic de bureau;Relégué aux archives après une blessure, vous avez accès à tous les vieux dossiers non résolus (Cold Cases). Vous les résolvez en secret.
+Cop;Le membre du SWAT (C-SWAT);Vous êtes une brute en armure lourde, habitué aux raids et aux sièges. La subtilité n'est pas votre fort, mais l'efficacité tactique, oui.
+Cop;L'officier de liaison corporatiste;Vous êtes payé par la ville mais vous travaillez essentiellement comme sécurité privée pour Arasaka ou Militech dans le centre-ville. Un conflit d'intérêts permanent.
+Cop;Le shérif de quartier;La police ne vient plus dans votre secteur. Vous êtes un ex-flic qui maintient un semblant d'ordre dans votre bloc avec une milice de volontaires.
+Cop;Le 'Blade Runner';Votre spécialité était de traquer les androïdes ou les clones illégaux. Une unité dissoute, mais les cibles existent toujours.
+Cop;L'expert en scène de crime (CSI);Vous préférez les cadavres aux vivants. Votre capacité à faire parler les indices est inégalée, mais votre manque d'empathie vous isole.
+Cop;Le vengeur;Votre famille a été tuée par un gang. Vous utilisez votre badge pour traquer et éliminer méthodiquement chaque membre, en maquillant cela en légitime défense.
+Cop;Le contractuel zélé;Vous n'êtes pas un 'vrai' policier, mais un agent de sécurité privée avec des pouvoirs de police limités. Vous rêvez de passer dans la cour des grands.
+Cop;L'otage traumatisé;Vous avez été pris en otage lors d'un braquage qui a mal tourné. Depuis, vous êtes hyper-vigilant et paranoïaque, voyant des menaces partout.
+Cop;Le négociateur;Vous essayez toujours de parler avant de tirer. Vous avez sauvé des vies par les mots, mais dans ce monde, on vous considère souvent comme faible.
+Cop;Le flic cybernétique;Vous avez été si gravement blessé qu'il reste peu de chair en vous. Vous êtes la propriété du département de police ('RoboCop' style), luttant pour garder votre humanité.
+Corporate;Le jeune loup aux dents longues;Prêt à tout pour monter les échelons, y compris trahir vos mentors et sacrifier vos amis. L'ambition est votre seule drogue.
+Corporate;Le cadre 'placardisé';Vous avez perdu une guerre de pouvoir interne. On vous a donné un bureau vide et un titre ronflant sans pouvoir. Vous complotez votre retour ou votre vengeance.
+Corporate;Le transfuge;Vous voulez quitter votre corpo pour rejoindre la concurrence avec des données sensibles. La phase d'extraction est la plus dangereuse de votre vie.
+Corporate;Le gestionnaire de crise;On vous appelle quand tout va mal (scandale, accident industriel). Vous êtes expert pour nettoyer les dégâts et manipuler l'opinion publique.
+Corporate;Le responsable des 'Opérations Noires';Officiellement, vous êtes vice-président de la logistique. Officieusement, vous commanditez des assassinats et des enlèvements pour le compte du conseil d'administration.
+Corporate;Le corpo repenti;Vous avez vu l'impact horrible d'un produit que vous avez lancé (famine, maladie). Hanté par la culpabilité, vous utilisez vos ressources pour aider les victimes en secret.
+Corporate;L'héritier déshérité;Fils/fille du PDG, vous avez été coupé des vivres pour 'apprendre la vie'. Vous avez le style, l'éducation, mais plus un sou vaillant.
+Corporate;Le négociateur d'otages corpo;Votre job est de racheter les cadres enlevés par les gangs. C'est purement du business, vous négociez des vies humaines comme des contrats à terme.
+Corporate;L'espion dormant;Vous travaillez pour une corpo depuis 10 ans, mais vous êtes en réalité un agent d'une agence gouvernementale ou d'une corpo rivale, attendant le moment de frapper.
+Corporate;Le courtier en information;Vous ne travaillez plus pour une seule boîte. Vous êtes freelance, vendant des analyses de marché et des secrets industriels à qui paie le mieux.
+Corporate;Le chef de projet cybernétique;Vous testez les prototypes sur vous-même pour gagner de temps sur la R&D. Vous êtes performant, mais votre corps commence à rejeter les implants.
+Corporate;Le DRH impitoyable;Votre spécialité est le 'downsizing' (licenciement massif). Vous êtes détesté par des milliers de personnes, ce qui fait de vous une cible.
+Corporate;Le blanchisseur d'argent;Vous savez comment transformer l'argent sale des activités illégales de la corpo en profits propres et imposables. Les gangs vous adorent aussi pour ça.
+Corporate;Le diplomate de la zone grise;Vous négociez les trêves entre votre corpo et les syndicats du crime organisé. Vous êtes à l'aise dans les salons feutrés comme dans les arrière-salles enfumées.
+Corporate;La mascotte;Vous avez été embauché uniquement pour votre apparence ou votre nom célèbre. Vous êtes une coquille vide pour les actionnaires, mais vous commencez à vouloir tirer les ficelles.
+Medtech;Le 'Doc Wagon' freelance;Vous avez une ambulance blindée et vous allez chercher les clients blessés en pleine fusillade. Le chrono tourne, la prime de risque est élevée.
+Medtech;Le chirurgien de l'ombre;Rayé de l'ordre des médecins pour pratiques non éthiques, vous opérez dans une clinique clandestine. Vous ne posez pas de questions sur l'origine des blessures par balle.
+Medtech;Le chercheur en bio-peste;Vous travailliez sur des armes biologiques. Une fuite a eu lieu, vous avez fui avec l'antidote (ou la souche). Tout le monde veut ce que vous avez dans le sang.
+Medtech;Le dealer de rue (Pharmacien);Vous fabriquez vos propres drogues de synthèse, plus pures et plus sûres que celles des gangs. Vous vous voyez comme un réducteur de risques, pas un criminel.
+Medtech;Le spécialiste des implants;Vous êtes obsédé par l'intégration chair-métal. Vous aidez les cyberpsychos à gérer leur charge mentale et à ne pas basculer.
+Medtech;Le médecin légiste curieux;Vous revendez des organes prélevés sur les cadavres qui arrivent à la morgue. C'est du recyclage, après tout.
+Medtech;L'humanitaire urbain;Vous tenez une clinique gratuite dans les bas-fonds. Vous manquez de tout, sauf de patients. Les gangs vous protègent car vous soignez leurs mères.
+Medtech;Le médecin de combat;Ancien militaire, vous êtes plus à l'aise pour faire un garrot sous le feu que pour prescrire des antibiotiques dans un bureau.
+Medtech;Le psychiatre pour IA;Vous ne soignez pas les corps, mais les esprits déviants, y compris ceux des intelligences artificielles traumatisées.
+Medtech;Le voleur d'organes repenti;Vous faisiez partie des Scavengers. Dégoûté, vous essayez maintenant de sauver des vies pour compenser celles que vous avez dépecées.
+Medtech;L'expert en clonage;Vous savez cultiver des membres ou des organes de remplacement en cuve. Une technologie rare et convoitée par les riches qui veulent vivre éternellement.
+Medtech;Le médecin de star;Vous êtes spécialisé dans la chirurgie esthétique extrême et le 'body sculpting'. Vos clients sont capricieux, riches et vindicatifs si le nez n'est pas parfait.
+Medtech;Le Cryo-technicien;Vous gérez les 'cercueils' des gens en cryogénisation. Parfois, vous devez réveiller quelqu'un pour obtenir des infos du passé, ou débrancher quelqu'un qui ne paie plus.
+Medtech;Le toxicologue;Expert en poisons et antidotes. On vous engage souvent pour vérifier la nourriture des paranoïaques ou pour déterminer comment un VIP a été assassiné sans trace.
+Medtech;L'étudiant en médecine fauché;Vous avez les compétences mais pas encore le diplôme. Vous faites des 'petits boulots' médicaux illégaux pour payer vos frais de scolarité exorbitants.
+Media;Le reporter de guerre;Vous avez couvert les conflits en Amérique du Sud. La ville est juste une autre zone de guerre pour vous. Vous portez un gilet pare-balles sous votre veste de treillis.
+Media;Le paparazzi agressif;Vous utilisez des drones et des micros longue portée pour voler les secrets des stars et des corpos. Vous n'avez aucune éthique, seule l'exclusivité compte.
+Media;Le présentateur vedette déchu;Vous étiez le visage du JT de 20h. Un mot de travers à l'antenne vous a coûté votre place. Vous faites maintenant des reportages web sensationnalistes.
+Media;Le blogueur conspirationniste;Vous voyez des complots partout (aliens, IA contrôlant le monde). Le pire, c'est que vous avez parfois raison.
+Media;Le documentariste social;Vous vivez avec les sans-abris et les gangs pour raconter leur 'vraie' vie. Vous êtes respecté dans la rue, mais ignoré par les grands médias.
+Media;L'influenceur de mode;Vous avez des millions d'abonnés. Vous pouvez lancer une tendance ou détruire une marque d'une simple vidéo. Les corpos vous courtisent pour votre pouvoir 'soft'.
+Media;Le journaliste d'investigation (le vrai);Vous travaillez sur 'L'Affaire' qui fera tomber une méga-corpo. Vous changez de planque tous les soirs et ne dormez jamais deux fois au même endroit.
+Media;Le propagandiste corpo;Vous écrivez les communiqués de presse qui justifient les massacres. Vous êtes un maître du 'spin doctoring', mais votre conscience commence à peser.
+Media;Le pirate des ondes;Vous détournez les fréquences officielles pour diffuser vos propres nouvelles pirates ('La Voix de la Vérité').
+Media;Le photographe de scène de crime;Vous arrivez avant la police. Vos photos d'art gore se vendent très cher aux magazines spécialisés et aux collectionneurs morbides.
+Media;Le critique gastronomique (version rue);Vous testez la 'street food' synthétique. C'est moins dangereux que la guerre, sauf quand vous critiquez le stand du cousin d'un chef de gang.
+Media;L'archiviste de la mémoire;Vous interviewez les vieux qui se souviennent du monde d'avant. Vous essayez de préserver l'histoire humaine avant qu'elle ne soit réécrite numériquement.
+Media;Le chasseur de scandale sexuel;Votre spécialité est de piéger les politiciens et les cadres dans des situations compromettantes. C'est sale, mais ça paie très bien (surtout le chantage).
+Media;Le correspondant 'Braindance';Vous enregistrez vos propres émotions et sensations lors d'événements extrêmes pour les vendre sous forme d'expériences VR. Vous risquez votre santé mentale à chaque prise.
+Media;Le lanceur d'alerte;Vous n'étiez pas journaliste, mais un employé témoin d'horreurs. Vous avez contacté les médias, et maintenant vous êtes devenu l'un d'eux pour survivre et témoigner.

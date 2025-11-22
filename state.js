@@ -8,6 +8,7 @@ export const state = {
     characterAttributes: {},
     characterSkills: {},
     characterBudget: { amount: 0},
+    characterStory: { story: '' },
     attrPointsRemaining: 0,
     coreSkillPointsRemaining: TOTAL_CORE_SKILL_POINTS,
     pickupSkillPointsRemaining: 0,
