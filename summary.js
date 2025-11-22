@@ -39,7 +39,7 @@ function generateCharacterSheetText() {
     text += `Rôle       : ${selectedRole} (${jobDescription})\n`;
     text += `Titre      : ${jobTitle}\n\n`;
     text += `Capacité spéciale (niv. ${specialSkillValue})     : ${specialSkillName}\n\n`;
-    text += `Histoire   : ${story.text}\n\n`;
+    text += `Histoire   : ${story.story}\n\n`;
 
     // --- 2. HISTOIRE ---
     // On remplace les <br> HTML par des sauts de ligne \n

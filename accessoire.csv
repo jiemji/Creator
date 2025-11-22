@@ -1,12 +1,136 @@
-num;texte
-1;Tatoos
-2;Lunette à verre miroir
-3;Ritual Scars
-4;Spiked gloves
-5;Nose Rings
-6;Earrings
-7;Long fingernails
-8;Spike heeled boots
-9;Weird Contact Lenses
-10;Fingerless gloves
-
+classe;texte
+Solo;Une balle déformée Extraite de votre propre thorax après votre première fusillade. Elle vous rappelle que vous n'êtes pas invincible.
+Solo;Dog Tags d'un ami Les plaques d'identité de votre meilleur ami mort au combat à vos côtés. Vous avez juré de le venger.
+Solo;Photo écornée Une photo d'avant la guerre, montrant votre escouade au complet. Vous êtes le seul survivant.
+Solo;Briquet Zippo gravé Offert par un officier qui vous a sauvé la vie. La gravure dit : 'Le feu purifie tout'.
+Solo;Couteau de combat rouillé Votre première arme. La lame est ébréchée, mais elle a sauvé votre vie plus de fois que votre fusil.
+Solo;Morceau de cyber-bras Un doigt articulé chromé arraché à un cyberpsycho qui a failli vous tuer.
+Solo;Médaille d'honneur ternie Une décoration militaire que vous n'osez plus porter, symbole d'une guerre injuste.
+Solo;Éclat de verre pare-balle Provenant de la fenêtre de la voiture du client que vous n'avez pas réussi à protéger.
+Solo;Carte à jouer (As de Pique) Trouvée sur le corps de votre première cible. C'est devenu votre signature ou votre superstition.
+Solo;Manuelle de terrain usé Un vieux livre de tactique militaire annoté par votre mentor. Votre bible en situation de crise.
+Solo;Foulard tactique Taché de sang et d'huile, il cache votre visage et filtre (mal) l'air des zones de combat.
+Solo;Douille de gros calibre La douille de la balle qui a tué le chef du gang qui terrorisait votre quartier.
+Solo;Montre analogique cassée Arrêtée à l'heure exacte où vous avez quitté l'armée (ou la police) pour devenir mercenaire.
+Solo;Bague de phalange Une arme de poing discrète, souvenir de vos années de combat de rue à mains nues.
+Solo;Patch d'unité militaire L'insigne de votre ancienne unité, arraché de votre uniforme le jour de votre désertion.
+Netrunner;Puce mémoire grillée Le reste fumant de votre premier cyberdeck, détruit par une Glace Noire redoutable.
+Netrunner;Clavier mécanique vintage Une touche 'Echap' manquante. Il vous rappelle qu'il n'y a pas d'échappatoire dans le Net.
+Netrunner;Lunettes miroir fêlées Vos premières lunettes de connexion. La fissure vient d'une surtension neuronale.
+Netrunner;Carte d'accès Corpo Volée lors de votre premier run réussi. Elle ne sert plus à rien, mais c'est un trophée.
+Netrunner;Disquette 3.5 pouces Un artefact antique contenant un virus légendaire du vieux Net. Personne ne peut plus le lire.
+Netrunner;Figurine d'anime Posée sur votre bureau, elle est votre seul public quand vous plongez dans le cyberespace.
+Netrunner;Éclat de données crypté Vous avez trouvé cet éclat il y a 5 ans. Vous n'avez toujours pas réussi à le décrypter.
+Netrunner;Câble d'interface coupé Souvenir du jour où quelqu'un a dû vous déconnecter physiquement (Jack-out) pour vous sauver la vie.
+Netrunner;Photo numérique corrompue Le seul fichier récupéré d'un serveur effacé contenant la preuve de l'innocence de votre frère.
+Netrunner;Boîte de pilules vides Des stimulants neuronaux. Gardée pour vous rappeler votre addiction passée au 'Speed'.
+Netrunner;Manuel de programmation C++ Un livre papier du 20ème siècle. Les bases sont éternelles.
+Netrunner;Morceau de serveur Un fragment de circuit imprimé volé dans la salle des serveurs d'Arasaka.
+Netrunner;Post-it avec un mot de passe Le mot de passe du compte en banque secret que vous avez oublié. Un jour, ça vous reviendra.
+Netrunner;Sticker holographique Collé sur votre deck, le logo d'un groupe de hackers célèbre dont vous rêviez de faire partie.
+Netrunner;Gant haptique déchiré Usé jusqu'à la trame à force de taper du code dans la réalité virtuelle.
+Techie;Clé à molette 10mm Votre premier outil. Vous l'avez utilisée pour réparer le vélo de votre enfance et le tank de votre régiment.
+Techie;Plan bleu (Blueprint) Le schéma d'une invention révolutionnaire que personne n'a voulu financer.
+Techie;Robot-cafard en jouet Votre toute première création autonome. Il marche encore, mais tourne en rond.
+Techie;Fusible fondu Ce fusible a empêché l'explosion de votre atelier. Un rappel de toujours vérifier la tension.
+Techie;Oeil cybernétique brisé Une pièce défectueuse que vous n'avez pas pu réparer à temps pour sauver la vue d'un client.
+Techie;Multimètre analogique Un vieil appareil à aiguille, plus précis que les trucs numériques modernes selon vous.
+Techie;Bouteille d'huile moteur De l'huile synthétique rare. Vous gardez la dernière goutte pour une occasion spéciale.
+Techie;Boulon en titane Il reste d'un assemblage mystérieux sur lequel vous avez travaillé pour une Corpo sans savoir ce que c'était.
+Techie;Gants isolants brûlés Ils ont sauvé vos mains d'un arc électrique mortel.
+Techie;Fer à souder portable C'est presque une extension de votre main. Vous dormez parfois avec.
+Techie;Manuel de réparation d'AV-4 Volé à la bibliothèque militaire. Vous le connaissez par cœur.
+Techie;Puce de diagnostic Elle contient les logs d'erreur d'une IA devenue folle que vous avez dû désactiver.
+Techie;Roulement à billes Un objet anti-stress que vous faites tourner dans votre main quand vous réfléchissez.
+Techie;Badge de la guilde L'insigne d'un syndicat de techniciens aujourd'hui dissous par les Corpos.
+Techie;Morceau de drone L'hélice d'un drone de surveillance que vous avez abattu avec une télécommande de garage.
+Rockerboy/girl;Médiator usé Utilisé lors de votre concert le plus mythique, celui qui a fini en émeute.
+Rockerboy/girl;Corde de guitare cassée Elle a lâché pendant le solo qui devait lancer votre carrière.
+Rockerboy/girl;Affiche de concert déchirée Votre nom est écrit en tout petit en bas. Cela vous rappelle d'où vous venez.
+Rockerboy/girl;Bouteille de whisky vide La bouteille que vous avez partagée avec Johnny Silverhand (ou une autre légende) un soir de beuverie.
+Rockerboy/girl;Lettre de fan tachée La dernière lettre d'un fan qui s'est suicidé en écoutant votre chanson.
+Rockerboy/girl;Microphone cabossé Vous l'avez utilisé pour frapper un garde de sécurité trop agressif.
+Rockerboy/girl;Veste en cuir cloutée Chaque clou représente un concert dans une ville différente.
+Rockerboy/girl;Setlist manuscrite La liste des chansons jouées lors d'un concert illégal sur le toit d'une tour corpo.
+Rockerboy/girl;Lunettes de soleil noires Pour cacher vos yeux injectés de sang après les nuits blanches.
+Rockerboy/girl;Contrat d'enregistrement brûlé Les restes du contrat que vous avez refusé de signer pour ne pas vendre votre âme.
+Rockerboy/girl;Bande démo sur cassette Vos premiers enregistrements, le son est pourri mais l'énergie est pure.
+Rockerboy/girl;Pass Backstage Un vieux pass 'All Access' pour une tournée qui n'a jamais eu lieu.
+Rockerboy/girl;Bottes de combat Elles ont foulé plus de scènes et de visages que n'importe quelle autre chaussure.
+Rockerboy/girl;Harmonica bon marché Le seul instrument que vous aviez quand vous viviez dans la rue.
+Rockerboy/girl;Pendentif Anarchiste Un symbole de résistance offert par un mentor politique.
+Nomad;Clé de contact La clé de votre première voiture, aujourd'hui une épave dans le désert.
+Nomad;Boussole antique Elle appartenait à votre grand-père. Elle pointe toujours vers le Nord, contrairement aux GPS brouillés.
+Nomad;Poignée de sable Dans une petite fiole. C'est la terre de l'endroit où votre clan a été massacré.
+Nomad;Patch de clan (Cut) Votre gilet en cuir avec les couleurs de votre famille. Votre bien le plus précieux.
+Nomad;Carte routière papier Une vieille carte des États-Unis avec des routes qui n'existent plus surlignées.
+Nomad;Bidon d'essence cabossé Ce bidon vous a sauvé de la panne sèche au milieu de nulle part.
+Nomad;Dent de coyote Un porte-bonheur monté en collier, tué lors de votre rite de passage.
+Nomad;Radio CB portable Pour écouter les fréquences des camionneurs et des contrebandiers.
+Nomad;Pneu crevé (morceau) Un morceau de caoutchouc du pneu qui a éclaté lors de la course qui vous a rendu célèbre.
+Nomad;Photo de famille floue Prise lors d'un grand rassemblement tribal autour d'un feu de camp.
+Nomad;Couteau de chasse Outil indispensable pour dépecer le gibier ou couper les ceintures de sécurité.
+Nomad;Graines de maïs L'espoir de trouver un jour une terre fertile pour s'installer.
+Nomad;Filtre à air encrassé Souvenir d'une tempête de sable (Haboob) que vous avez traversée de justesse.
+Nomad;Bague de mariage Celle de votre conjoint(e) resté(e) dans un autre clan ou décédé(e) sur la route.
+Nomad;Statue de la Vierge (Dashboard) Une petite figurine en plastique collée sur le tableau de bord de tous vos véhicules successifs.
+Cop;Badge de police rayé Votre insigne officiel. Les rayures témoignent des luttes corps à corps.
+Cop;Balle qui vous a touché Le chirurgien vous l'a donnée. Elle est passée à 2 cm de votre cœur.
+Cop;Photo de votre partenaire Il/Elle a pris sa retraite ou est mort(e). Vous parlez parfois à la photo.
+Cop;Carnet de contraventions Rempli de notes sur des suspects plutôt que de PV. Votre base de données personnelle.
+Cop;Menottes faussées La paire dont le criminel 'Le Boucher' s'est libéré. Vous avez juré de le rattraper.
+Cop;Donut en plastique Une blague de vos collègues pour votre anniversaire. Un souvenir d'époque plus légère.
+Cop;Dossier 'Cold Case' Le dossier papier d'une affaire non résolue qui vous obsède depuis 10 ans.
+Cop;Holster d'épaule usé Le cuir a pris la forme de votre arme et de votre corps.
+Cop;Lampe torche lourde Elle sert autant à éclairer qu'à 'calmer' les suspects récalcitrants.
+Cop;Képi de cérémonie Impeccable, conservé sous plastique. Le souvenir de votre idéal de justice.
+Cop;Bande de scène de crime Un rouleau de ruban jaune 'DO NOT CROSS' volé sur votre première scène de meurtre.
+Cop;Enregistrement d'appel 911 La cassette de l'appel d'une victime que vous n'êtes pas arrivé à sauver à temps.
+Cop;Pièce de monnaie Pour jouer à pile ou face quand la loi ne donne pas de réponse claire.
+Cop;Gilet pare-balles percé Le gilet qui vous a sauvé la vie, gardé comme trophée dans votre placard.
+Cop;Stylo de luxe Offert par une Corpo après avoir 'bien géré' une affaire impliquant son fils.
+Corporate;Stylo Montblanc Un instrument d'écriture hors de prix. Vous avez signé plus d'arrêts de mort avec que n'importe quel mercenaire avec son fusil.
+Corporate;Montre de luxe arrêtée Cassée lors d'une bagarre dans un bar miteux, seul moment où vous vous êtes senti vivant.
+Corporate;Carte de visite noire Celle d'un Fixer légendaire qui ne travaille qu'avec l'élite. Votre atout maître.
+Corporate;Action papier encadrée Le certificat d'une entreprise que vous avez personnellement menée à la faillite.
+Corporate;Bouteille de Cognac réel Pas du synthétique. Elle vaut plus cher que la vie de vos employés. Pour célébrer votre promotion.
+Corporate;Pass VIP Platine Accès illimité au club le plus exclusif de Night City.
+Corporate;Tablette de données Contient les secrets inavouables de vos rivaux. Votre assurance vie.
+Corporate;Cravate en soie rouge Portée le jour où vous avez trahi votre mentor pour prendre sa place.
+Corporate;Maquette de gratte-ciel Le projet immobilier de vos rêves, annulé à cause de la guerre.
+Corporate;Puce de crédit vide Elle contenait autrefois votre premier million. Elle vous rappelle que la fortune est volatile.
+Corporate;Trophée de golf Gagné lors d'un tournoi caritatif. C'est là que vous avez noué vos alliances les plus sombres.
+Corporate;Lettre de licenciement Pas la vôtre, celle que vous avez dû remettre à votre propre père pour 'raisons économiques'.
+Corporate;Parfum sur mesure Une odeur unique créée pour vous, pour marquer votre présence dans une pièce.
+Corporate;Miroir de poche Pour vérifier que votre masque social est toujours en place.
+Corporate;Bio-moniteur de luxe Il vibre si votre stress monte trop. Indispensable pour ne pas craquer en réunion.
+Medtech;Premier scalpel L'outil de votre première incision. Vous l'avez gardé, même s'il est émoussé.
+Medtech;Lettre de remerciement Écrite par un enfant dont vous avez sauvé la mère gratuitement.
+Medtech;Fiole d'antidote vide La dernière dose utilisée pour sauver votre propre vie après un empoisonnement.
+Medtech;Main cybernétique d'enfant Une prothèse que vous avez fabriquée vous-même pour un orphelin de guerre.
+Medtech;Carte de donneur d'organes Celle d'un patient décédé sur votre table, dont les organes ont sauvé cinq personnes.
+Medtech;Stéthoscope antique Un vieil instrument acoustique. Vous prétendez entendre l'âme avec, pas juste le cœur.
+Medtech;Seringue d'adrénaline Toujours dans votre poche, 'au cas où'. Un porte-bonheur nerveux.
+Medtech;Badge de Trauma Team Arraché d'une tenue d'intervention. Souvenir d'une époque où vous aviez du budget mais pas de liberté.
+Medtech;Scan IRM imprimé L'image du cerveau d'un cyberpsycho. Fascinant et terrifiant.
+Medtech;Tourniquet ensanglanté Vous n'avez jamais réussi à le laver complètement. Le sang d'un frère d'armes.
+Medtech;Boîte de bonbons Pour rassurer les patients. Un geste d'humanité dans un monde de métal.
+Medtech;Puce d'encyclopédie médicale Une base de données obsolète mais qui contient des remèdes de grand-mère oubliés.
+Medtech;Masque chirurgical décoré Peint avec un sourire ou des dents de requin pour détendre (ou effrayer) les patients.
+Medtech;Gants en latex (boîte) Le bruit du latex qui claque est votre son de mise en condition.
+Medtech;Implant cardiaque défectueux Vous le gardez sur votre bureau pour vous rappeler que la technologie n'est pas infaillible.
+Media;Micro-enregistreur à bande Numérique ? Non, analogique. On ne peut pas pirater une bande magnétique à distance.
+Media;Carte de presse plastifiée Périmée depuis des années, mais elle ouvre encore des portes grâce à votre culot.
+Media;Objectif de caméra brisé Une balle l'a traversé alors que vous filmiez une bavure policière.
+Media;Carnet de notes Moleskine Rempli de sténo incompréhensible. Contient potentiellement de quoi faire tomber le maire.
+Media;Casquette 'PRESS' Votre armure. Parfois, elle vous protège. Parfois, elle fait de vous une cible.
+Media;Disque dur crypté Contient votre 'Assurance Vie' : un reportage explosif à diffuser si vous disparaissez.
+Media;Photo floue d'un OVNI Ou d'un projet secret militaire. Vous cherchez encore la vérité.
+Media;Stylo dictaphone espion Ressemble à un stylo ordinaire, enregistre tout dans un rayon de 10 mètres.
+Media;Bouteille d'eau-de-vie Cadeau d'une source anonyme dans la pègre.
+Media;Câble de connexion universel Pour voler des données sur n'importe quel terminal public.
+Media;Masque à gaz Indispensable pour couvrir les émeutes et les zones industrielles toxiques.
+Media;Une de journal encadrée Votre premier grand article. Le titre est sensationnaliste, mais vous étiez fier.
+Media;Billet de loterie perdant Trouvé dans la poche d'un cadavre que vous avez filmé. Ironie du sort.
+Media;Sacoche en bandoulière Contient tout votre bureau mobile. C'est votre maison.
+Media;Lunettes caméra Filment tout ce que vous voyez. Vous ne les enlevez jamais.

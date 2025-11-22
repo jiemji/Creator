@@ -6,24 +6,32 @@ const getRandomItem = (arr) => {
     return arr[Math.floor(Math.random() * arr.length)];
 };
 
-// NOUVELLE FONCTION EXPORTÉE pour la mise à jour ciblée
+// FONCTION MODIFIÉE : Intègre maintenant les accessoires filtrés
 export function updateRoleSpecificHistory() {
     const selectedRole = dom.identity.lifepath.value;
 
+    // 1. Filtre Vêtements
     const filteredVetement = state.gameData.vetement.filter(item => item.Rôle === selectedRole);
+    
+    // 2. Filtre Coiffure
     const filteredCoiffure = state.gameData.coiffure.filter(item => item.Rôle === selectedRole);
+
+    // 3. NOUVEAU : Filtre Accessoire par rôle
+    // (Nécessite une colonne 'Rôle' dans le fichier accessoire.csv)
+    const filteredAccessoire = state.gameData.accessoire.filter(item => item.classe === selectedRole);
 
     dom.history.style.textContent = getRandomItem(filteredVetement).texte;
     dom.history.hair.textContent = getRandomItem(filteredCoiffure).texte;
+    dom.history.accessory.textContent = getRandomItem(filteredAccessoire).texte;
 }
 
-// ANCIENNE FONCTION MODIFIÉE pour une regénération complète
+// FONCTION MODIFIÉE : Ne gère plus l'accessoire de manière générique
 export function randomizeHistory() {
-    // 1. Appelle la fonction ciblée pour les éléments dépendants du rôle
+    // 1. Appelle la fonction ciblée pour les éléments dépendants du rôle (Vêtement, Coiffure, Accessoire)
     updateRoleSpecificHistory();
     
     // 2. S'occupe du reste des éléments indépendants
-    dom.history.accessory.textContent = getRandomItem(state.gameData.accessoire).texte;
+    // Note : La ligne concernant l'accessoire a été supprimée ici car déplacée au-dessus
     dom.history.csp.textContent = getRandomItem(state.gameData.origine).texte;
     dom.history.childhood.textContent = getRandomItem(state.gameData.childhood).texte;
 
