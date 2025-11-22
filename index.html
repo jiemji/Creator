@@ -73,7 +73,7 @@
                 <div class="title-actions">
                     <button id="reroll-history-btn" class="section-action-btn" title="Générer un nouvel historique"></button>
                     <div class="tooltip-container">
-                        <span class="tooltip-trigger" tabindex="0">?</span>
+                        <span class="tooltip-trigger" tabindex="1">?</span>
                         <div class="tooltip-content">
                             <p>Cette section génère aléatoirement l'apparence et le passé de votre personnage.</p>
                         <p>Cliquez sur le bouton de rafraîchissement pour obtenir un nouvel historique sans changer vos attributs.</p>
@@ -169,7 +169,7 @@
                 <div class="title-actions">
                     <button id="reroll-skills-btn" class="section-action-btn" title="Remise à zéro"></button>
                     <div class="tooltip-container">
-                        <span class="tooltip-trigger" tabindex="2">?</span>
+                        <span class="tooltip-trigger" tabindex="3">?</span>
                         <div class="tooltip-content">
                             <p>Les compétences sont des bonus qui s'ajoutent au score d'un attribut lors d'un jet de compétence.</p>
                             <p>Elles peuvent avoir une valeur comprise entre 0 et 10.<br>A 0, le personnage ne maitrise absolument pas cette compétence. A 10, il est un maitre du sujet</p><p></p>
@@ -192,17 +192,27 @@
 
         <!-- SECTION BUDGET -->
         <section id="budget" class="view">
-            <h2 class="section-title">> SECTION 5: BUDGET</h2>
+            <h2 class="section-title">> SECTION 5: BUDGET
+                <div class="tooltip-container">
+                        <span class="tooltip-trigger" tabindex="4">?</span>
+                        <div class="tooltip-content">
+                            <p>Le fond d'équipements est un montant forfaitaire qui permet de s'équiper en totalité (armes, implants, hacks...). Ils représentent le montant des investissements professionnels du personnage.</p>
+                            <p> Le salaire mensuel est dépendantt de l'expertise du personnage dans son métier (c'est à dire le niveau de sa compétences spéciales.</p>
+                            <p> L'épargne représente la part des salaires de son job passé ou actuel qu'il a pu économiser à date.</p>
+                        </div>
+            </h2>
             <div class="history-item">
-                <span class="history-label">Fonds pour la création du personnage</span>
+                <span class="history-label">Fonds pour l'équipement du personnage</span>
                 <p class="history-value" style="font-size: 2em; justify-content: center;color: var(--crt-amber);">80000<img src="donald.png" alt="crédits" class="currency-icon"></p>
             </div>
             <br>
             <div class="history-item">
-                <span class="history-label">Epargne</span>
+                <span class="history-label">Epargne (Salaire mensuel : <span id="char-salary">...</span>)</span>
                 <span id="char-budget" class="history-value " style="font-size: 2em; justify-content: center;color: var(--crt-amber);">...</span>
             </div>
         </section>
+
+
 
         <!-- SECTION RÉSUMÉ -->
         <section id="summary" class="view">

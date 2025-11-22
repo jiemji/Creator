@@ -1,10 +1,101 @@
-Classe;Montant;Devise
-Cop;2000;€$
-Corporate;50000;€$
-Media;1500;€$
-Medtech;5000;€$
-Netrunner;2000;€$
-Nomad;1000;€$
-Rockerboy/girl;1000;€$
-Solo;2000;€$
-Techie;4000;€$
+Classe;Niveau;Titre;Montant
+Rockerboy;1;Désespéré pour Jouer en Club;1000
+Rockerboy;2;Désespéré pour Jouer en Club;1000
+Rockerboy;3;Désespéré pour Jouer en Club;1000
+Rockerboy;4;Désespéré pour Jouer en Club;1000
+Rockerboy;5;Désespéré pour Jouer en Club;1000
+Rockerboy;6;Jouer en Club Régulier;1500
+Rockerboy;7;Le Grand Concert;2000
+Rockerboy;8;Vous avez un Contrat;5000
+Rockerboy;9;Groupe Majeur;8000
+Rockerboy;10;Gigs (Mégastar);12000
+Solo;1;Ronin de la Rue;2000
+Solo;2;Ronin de la Rue;2000
+Solo;3;Ronin de la Rue;2000
+Solo;4;Ronin de la Rue;2000
+Solo;5;Ronin de la Rue;2000
+Solo;6;Muscle Privé;3000
+Solo;7;Opérateur Corporatiste;4500
+Solo;8;Tueur Professionnel;7000
+Solo;9;Solo de Ligue Majeure;9000
+Solo;10;Solo d'Élite;12000
+Cop;1;Garde Privé;1000
+Cop;2;Garde Privé;1000
+Cop;3;Garde Privé;1000
+Cop;4;Garde Privé;1000
+Cop;5;Garde Privé;1000
+Cop;6;Policier Municipal;1200
+Cop;7;Garde Corp. / Détective;3000
+Cop;8;Sécurité Corp. / Escouade Psycho;5000
+Cop;9;Chef d'Équipe d'Exécution;7000
+Cop;10;Chef de Police;9000
+Corporate;1;Assistant Manager;1500
+Corporate;2;Assistant Manager;1500
+Corporate;3;Assistant Manager;1500
+Corporate;4;Assistant Manager;1500
+Corporate;5;Assistant Manager;1500
+Corporate;6;Cadre Junior;3000
+Corporate;7;Cadre Exécutif;5000
+Corporate;8;Chef de Département;7000
+Corporate;9;Chef de Division;9000
+Corporate;10;Haut Dirigeant;12000
+Media;1;Pigiste / Correspondant;1000
+Media;2;Pigiste / Correspondant;1000
+Media;3;Pigiste / Correspondant;1000
+Media;4;Pigiste / Correspondant;1000
+Media;5;Pigiste / Correspondant;1000
+Media;6;Reporter;1200
+Media;7;Reporter Salarié;3000
+Media;8;Éditeur de Section / Pers. Média Locale;5000
+Media;9;Producteur / Rédacteur en Chef;7000
+Media;10;Personnalité Média Nationale;10000
+Fixer;1;Voyou de la Rue;1500
+Fixer;2;Voyou de la Rue;1500
+Fixer;3;Voyou de la Rue;1500
+Fixer;4;Voyou de la Rue;1500
+Fixer;5;Voyou de la Rue;1500
+Fixer;6;Chef de Gang;3000
+Fixer;7;Exécuteur;5000
+Fixer;8;Sous-Lieutenant;7000
+Fixer;9;Lieutenant;8000
+Fixer;10;Chef du Crime;10000
+Techie;1;Bricoleur Local;1000
+Techie;2;Bricoleur Local;1000
+Techie;3;Bricoleur Local;1000
+Techie;4;Bricoleur Local;1000
+Techie;5;Bricoleur Local;1000
+Techie;6;Opérateur Privé;2000
+Techie;7;Technicien Corporatiste;3000
+Techie;8;Ingénieur Junior;4000
+Techie;9;Ingénieur Senior;5000
+Techie;10;Maître Ingénieur;8000
+Netrunner;1;Netrunner Débutant (Weefle Runner);1000
+Netrunner;2;Netrunner Débutant (Weefle Runner);1000
+Netrunner;3;Netrunner Débutant (Weefle Runner);1000
+Netrunner;4;Netrunner Débutant (Weefle Runner);1000
+Netrunner;5;Netrunner Débutant (Weefle Runner);1000
+Netrunner;6;Hacker;2000
+Netrunner;7;Bit Jockey;3000
+Netrunner;8;Cowboy du Net;5000
+Netrunner;9;Deckslinger;7000
+Netrunner;10;Sysop (Administrateur Système);10000
+Medtechie;1;Réparateur (Patch Man);1600
+Medtechie;2;Réparateur (Patch Man);1600
+Medtechie;3;Réparateur (Patch Man);1600
+Medtechie;4;Réparateur (Patch Man);1600
+Medtechie;5;Réparateur (Patch Man);1600
+Medtechie;6;Technicien Médical;3000
+Medtechie;7;Ripperdoc / Médecin Général;5000
+Medtechie;8;Spécialiste Trauma Team;7000
+Medtechie;9;Praticien;10000
+Medtechie;10;Médecin;15000
+Nomad;1;Membre du Clan;1000
+Nomad;2;Membre du Clan;1000
+Nomad;3;Membre du Clan;1000
+Nomad;4;Membre du Clan;1000
+Nomad;5;Membre du Clan;1000
+Nomad;6;Guerrier;1500
+Nomad;7;Chef de Famille;2000
+Nomad;8;Éclaireur;3000
+Nomad;9;Ancien du Clan;4000
+Nomad;10;Chef (Leader de Pack);5000

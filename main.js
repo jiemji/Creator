@@ -81,6 +81,15 @@ async function initializeApp() {
                     e.target
                 );
                 updateSummarySkill(skillName);
+
+                // Vérifie si la compétence modifiée est la compétence spéciale
+                const selectedRole = dom.identity.lifepath.value;
+                const specialSkillInfo = state.gameData.specialskill.find(s => s.Classe === selectedRole);
+                if (specialSkillInfo && skillName === specialSkillInfo.specialskill) {
+                    calculateAndDisplayBudget();
+                    renderSummary();
+                }
+
             }
         });
 
