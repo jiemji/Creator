@@ -177,9 +177,12 @@ main, section.view {
     flex-grow: 1;
 }
 
-/* Force chaque section à avoir une hauteur minimale pour corriger le scroll */
+/* MODIFICATION : Suppression de la hauteur minimale et ajustement de l'écart */
 section.view {
-    min-height: calc(100vh - var(--header-height));
+    min-height: auto; /* Supprime l'espace vide géant */
+    padding-top: 0;   /* On colle le haut de la section à l'ancre */
+    padding-bottom: 3em; /* On définit l'écart demandé (3em) entre les sections */
+    margin-bottom: 0;
 }
 
 .section-title {
