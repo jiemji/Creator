@@ -4,7 +4,7 @@ import { loadAllData } from './dataLoader.js';
 import { initializeAttributes, handleAttributeChange } from './attributes.js';
 import { initializeSkills, handleSkillChange, calculatePickupSkillPoints, updateSkillPointDisplays, updateSkillButtons, updateSpecialSkillTitle } from './skills.js';
 import { randomizeHistory, updateRoleSpecificHistory } from './history.js';
-import { render as renderSummary, downloadTxt} from './summary.js';
+import { render as renderSummary, downloadTxt } from './summary.js';
 import { render as renderAttributes } from './attributes.js';
 import { render as renderSkills } from './skills.js';
 import { calculateAndDisplayBudget } from './budget.js';
@@ -20,7 +20,6 @@ async function initializeApp() {
         initializeDom();
         state.gameData = await loadAllData();
         
-        
         initializeSkills();
         initializeAttributes();
         calculatePickupSkillPoints();
@@ -31,10 +30,9 @@ async function initializeApp() {
         randomizeHistory();
         updateUI(); // Premier rendu complet
 
-        dom.refreshSummaryBtn.addEventListener('click', renderSummary); // NOUVEAU
+        dom.refreshSummaryBtn.addEventListener('click', renderSummary);
 
         dom.rerollHistoryBtn.addEventListener('click', randomizeHistory);
-
 
         // AJOUT DE L'ÉVÉNEMENT POUR LE REROLL DES ATTRIBUTS
         dom.rerollAttributesBtn.addEventListener('click', () => {
@@ -44,7 +42,7 @@ async function initializeApp() {
             updateUI();                   // 4. Met à jour toute l'interface
         });
 
-                // AJOUT DE L'ÉVÉNEMENT POUR LE REROLL DES SKILLS
+        // AJOUT DE L'ÉVÉNEMENT POUR LE REROLL DES SKILLS
         dom.rerollSkillsBtn.addEventListener('click', () => {
             initializeSkills();           // 2. Réinitialise les compétences
             calculatePickupSkillPoints(); // 3. Recalcule les points de compétence additionnels
@@ -59,7 +57,7 @@ async function initializeApp() {
                 calculatePickupSkillPoints();
                 updateSkillPointDisplays(); 
                 
-                if (attrKey === 'Intelligence' || attrKey === 'Réflexes') {
+                if (attrKey === 'Intelligence' || attrKey === 'Reflexes') {
                     updateSkillButtons();
                 }
             }
@@ -82,12 +80,8 @@ async function initializeApp() {
                     calculateAndDisplayBudget();
                     updateSpecialSkillTitle();                   
                 }
-
             }
         });
-
-        /*dom.identity.name.addEventListener('input', () => {});
-        dom.identity.handle.addEventListener('input', () => {});*/
 
         dom.identity.lifepath.addEventListener('change', () => {
             initializeSkills();
@@ -101,11 +95,9 @@ async function initializeApp() {
 
         dom.printBtn.addEventListener('click', () => window.print());
         dom.downloadBtn.addEventListener('click', downloadTxt);
-        dom.exportCsvBtn.addEventListener('click', exportCsv);
 
     } catch (error) {
         console.error("ERREUR D'INITIALISATION :", error);
-        /*document.querySelectorAll('.history-value').forEach(el => el.textContent = "Erreur");*/
     }
 }
 

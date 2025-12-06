@@ -109,8 +109,6 @@ export function updateSkillButtons() {
 export function handleSkillChange(skillName, isCore, action, buttonElement) {
     const oldValue = state.characterSkills[skillName];
 
-    // La logique de blocage est maintenant gérée par updateSkillButtons, 
-    // donc on peut simplifier ici, bien que la vérification ne nuise pas.
     if (action === 'increase' && oldValue < MAX_STAT) {
         if (isCore && state.coreSkillPointsRemaining > 0) {
             state.characterSkills[skillName]++;
@@ -120,8 +118,6 @@ export function handleSkillChange(skillName, isCore, action, buttonElement) {
             state.pickupSkillPointsRemaining--;
         }
     } else if (action === 'decrease' && oldValue > MIN_SKILL) {
-        // La logique de blocage dans updateSkillButtons empêchera cette condition
-        // d'être appelée incorrectement pour la compétence spéciale.
         if (isCore) {
             state.characterSkills[skillName]--;
             state.coreSkillPointsRemaining++;
@@ -149,6 +145,9 @@ export function render() {
     const specialSkillInfo = state.gameData.specialskill.find(s => s.Classe === selectedClass);
     if (specialSkillInfo) {
         const specialSkillName = specialSkillInfo.specialskill;
+        // CORRECTION ICI : On échappe les guillemets pour ne pas casser l'attribut HTML
+        const safeSkillName = specialSkillName.replace(/"/g, '&quot;');
+
         const specialSkillGroup = document.createElement('div');
         specialSkillGroup.className = 'skill-group';
         specialSkillGroup.id = 'special-skill-group';
@@ -163,9 +162,10 @@ export function render() {
                             <span id="special-skill-title" class="special-skill-title"></span></span>
                     </div>
                     <div class="skill-controls">
-                        <button class="quantity-btn" data-skill="${specialSkillName}" data-core="${isCore}" data-action="decrease">-</button>
+                        <!-- Utilisation de safeSkillName dans les attributs data-skill -->
+                        <button class="quantity-btn" data-skill="${safeSkillName}" data-core="${isCore}" data-action="decrease">-</button>
                         <span class="skill-value">${state.characterSkills[specialSkillName]}</span>
-                        <button class="quantity-btn" data-skill="${specialSkillName}" data-core="${isCore}" data-action="increase">+</button>
+                        <button class="quantity-btn" data-skill="${safeSkillName}" data-core="${isCore}" data-action="increase">+</button>
                     </div>
                 </div>
             </div>`;
@@ -198,6 +198,9 @@ export function render() {
 
         for (const compName in groupedByCompetence) {
             const subSkills = groupedByCompetence[compName];
+            // On sécurise aussi les noms des compétences standards par précaution
+            const safeCompName = compName.replace(/"/g, '&quot;');
+
             if (subSkills.length === 1 && subSkills[0] === compName) {
                 const isCore = coreSkillsForClass.includes(compName);
                 const coreClass = isCore ? 'core-skill' : '';
@@ -205,9 +208,9 @@ export function render() {
                     <div class="skill-item ${coreClass}">
                         <span class="skill-name">${compName}</span>
                         <div class="skill-controls">
-                            <button class="quantity-btn" data-skill="${compName}" data-core="${isCore}" data-action="decrease">-</button>
+                            <button class="quantity-btn" data-skill="${safeCompName}" data-core="${isCore}" data-action="decrease">-</button>
                             <span class="skill-value">${state.characterSkills[compName]}</span>
-                            <button class="quantity-btn" data-skill="${compName}" data-core="${isCore}" data-action="increase">+</button>
+                            <button class="quantity-btn" data-skill="${safeCompName}" data-core="${isCore}" data-action="increase">+</button>
                         </div>
                     </div>`;
             } else {
@@ -215,13 +218,15 @@ export function render() {
                 subSkills.forEach(subSkillName => {
                     const isCore = coreSkillsForClass.includes(subSkillName);
                     const coreClass = isCore ? 'core-skill' : '';
+                    const safeSubSkillName = subSkillName.replace(/"/g, '&quot;');
+                    
                     skillsListHtml += `
                         <div class="skill-sub-item ${coreClass}">
                             <span class="skill-name">${subSkillName}</span>
                             <div class="skill-controls">
-                                <button class="quantity-btn" data-skill="${subSkillName}" data-core="${isCore}" data-action="decrease">-</button>
+                                <button class="quantity-btn" data-skill="${safeSubSkillName}" data-core="${isCore}" data-action="decrease">-</button>
                                 <span class="skill-value">${state.characterSkills[subSkillName]}</span>
-                                <button class="quantity-btn" data-skill="${subSkillName}" data-core="${isCore}" data-action="increase">+</button>
+                                <button class="quantity-btn" data-skill="${safeSubSkillName}" data-core="${isCore}" data-action="increase">+</button>
                             </div>
                         </div>`;
                 });

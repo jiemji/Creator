@@ -4,14 +4,18 @@
     --color-primary: #39FF14;   /* Vert néon vif */
     --color-primary-dim: #2E8B57; /* Vert plus sombre pour les éléments secondaires */
     --color-primary-light: #00BFFF;/* Cyan pour les compétences métiers et le survol */
-    --color-primary-dark: #006d00;/* Cyan pour les compétences métiers et le survol */
+    --color-primary-dark: #006d00;
     --header-height: 160px;
-       --crt-amber: #FFB000;
+    
+    /* Palette Ambre pour le budget */
+    --crt-amber: #FFB000;
     --crt-amber-dim: #996A00;
 }
 
-html { box-sizing: border-box;
-    scroll-padding-top: var(--header-height);}
+html { 
+    box-sizing: border-box;
+    scroll-padding-top: var(--header-height);
+}
 *, *:before, *:after { box-sizing: inherit; }
 
 body {
@@ -21,7 +25,7 @@ body {
     font-weight: 400;
     margin: 0;
     padding-top: var(--header-height);
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     /* Effet de scanlines pour le look rétro */
@@ -48,32 +52,57 @@ header {
     background-color: var(--color-bg);
     z-index: 1000;
     text-align: center;
-    padding: 20px;
+    padding: 10px 20px;
     border-bottom: 1px solid var(--color-primary-dim);
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-header h1 {
-    font-size: 2.2em;
+/* Conteneur principal du haut du header */
+.lifepath-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
     margin-bottom: 15px;
-    letter-spacing: 0.1em;
+    width: 100%;
 }
 
-/* Style pour le conteneur du select dans le header */
-header .form-group {
-    margin-bottom: 15px;
+/* Texte indicateur "Choisissez votre classe" */
+.class-selector-label {
+    font-family: 'Cousine', monospace;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    font-size: 1.2em;
+    text-shadow: 0 0 5px rgba(57, 255, 20, 0.4);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap;
 }
 
-/* On cache la label maintenant inutile */
-#lifepath-label-header {
-    display: none;
+/* La flèche animée */
+.class-selector-label .arrow {
+    display: inline-block;
+    font-size: 1.2em;
+    animation: point-right 1s infinite alternate ease-in-out;
+}
+
+@keyframes point-right {
+    from { transform: translateX(0); }
+    to { transform: translateX(10px); }
+}
+
+@keyframes point-down {
+    from { transform: translateY(0) rotate(90deg); }
+    to { transform: translateY(10px) rotate(90deg); }
 }
 
 /* Style principal pour le select, imitant l'ancien H1 */
 header #lifepath {
-    /* Reset du style de base */
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -83,35 +112,36 @@ header #lifepath {
     margin: 0;
     width: auto;
     cursor: pointer;
+    max-width: 100%;
     
-    /* Application du style du titre */
     font-family: 'Cousine', monospace;
     font-weight: 700;
     text-transform: uppercase;
     color: var(--color-primary);
     text-shadow: 0 0 60px rgba(2, 83, 15, 0.8);
-    font-size:5em;
+    font-size: 5em;
     letter-spacing: 0.1em;
     text-align: center;
+    text-align-last: center;
 }
 
 header #lifepath:focus {
     outline: none;
-    box-shadow: none;
-}
-
-/* S'assure que le texte des options est centré dans tous les navigateurs */
-header #lifepath {
-    text-align-last: center;
 }
 
 header #lifepath option {
     text-shadow: none;
-    font-size: 0.5em; /* Ajuster si nécessaire pour la lisibilité */
-    text-align: left; /* Les options dans la liste déroulante sont plus lisibles à gauche */
+    font-size: 0.5em;
+    text-align: left;
+    background-color: var(--color-bg);
+    color: var(--color-primary);
 }
 
+header .form-group {
+    margin-bottom: 0;
+}
 
+/* Navigation */
 nav ul {
     list-style: none;
     padding: 0; margin: 0;
@@ -147,26 +177,29 @@ main, section.view {
     flex-grow: 1;
 }
 
+/* Force chaque section à avoir une hauteur minimale pour corriger le scroll */
+section.view {
+    min-height: calc(100vh - var(--header-height));
+}
+
 .section-title {
     font-size: 2.5em;
     border-bottom: 1px solid var(--color-primary);
     text-align: left;
     padding-bottom: 10px;
     margin-bottom: 30px;
-    /* Ajouts pour aligner le texte et le '?' */
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Pousse le '?' à droite */
+    justify-content: space-between;
 }
 
-/* AJOUT: Conteneur pour les boutons d'action dans le titre */
 .title-actions {
     display: flex;
     align-items: center;
-    gap: 10px; /* Espace entre le bouton reroll et le tooltip */
+    gap: 10px;
 }
 
-/* --- AJOUT DES STYLES POUR LE BOUTON D'ACTION DE SECTION --- */
+/* --- BOUTONS D'ACTION RONDS --- */
 .section-action-btn {
     display: flex;
     align-items: center;
@@ -183,11 +216,10 @@ main, section.view {
 
 .section-action-btn:hover {
     border-color: var(--color-primary);
-    background-color: transparent; /* Annule le hover global */
-    box-shadow: none; /* Annule le hover global */
+    background-color: transparent;
+    box-shadow: none;
 }
 
-/* Icône de rafraîchissement (flèche circulaire) */
 .section-action-btn::before {
     content: '';
     display: block;
@@ -203,6 +235,78 @@ main, section.view {
     border-color: var(--color-primary);
     border-top-color: transparent;
     transform: rotate(360deg);
+}
+
+/* --- TOOLTIPS --- */
+.tooltip-container {
+    position: relative;
+    display: inline-block;
+    margin-left: 15px;
+}
+
+.tooltip-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 2px solid var(--color-primary-dim);
+    color: var(--color-primary-dim);
+    background-color: transparent;
+    font-weight: 700;
+    cursor: help;
+    transition: all 0.3s ease;
+    user-select: none;
+    font-size: 0.5em;
+}
+
+.tooltip-trigger:hover,
+.tooltip-trigger:focus {
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+    outline: none;
+}
+
+.tooltip-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.95);
+    width: 90%;
+    max-width: 500px;
+    padding: 25px;
+    background-color: rgba(5, 5, 5, 0.9);
+    border: 1px solid var(--color-primary);
+    border-radius: 4px;
+    color: var(--color-primary);
+    font-size: 0.5em;
+    text-align: left;
+    text-transform: none;
+    line-height: 1.5;
+    z-index: 2000;
+    box-shadow: 0 0 25px rgba(57, 255, 20, 0.2);
+    backdrop-filter: blur(5px);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+    pointer-events: none;
+}
+
+.tooltip-content p {
+    margin: 0 0 10px;
+    font-weight: 400;
+}
+
+.tooltip-content p:last-child {
+    margin-bottom: 0;
+}
+
+.tooltip-trigger:hover + .tooltip-content,
+.tooltip-trigger:focus + .tooltip-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
 }
 
 /* --- FORMULAIRES (SECTION IDENTITÉ) --- */
@@ -234,40 +338,34 @@ main, section.view {
     border-color: var(--color-primary);
     box-shadow: 0 0 10px rgba(57, 255, 20, 0.3);
 }
-.form-group select option {
-    background-color: var(--color-bg);
-    color: var(--color-primary);
-}
 
 .job-description-text {
     background: transparent;
     border: 1px solid var(--color-primary-dim);
     color: var(--color-primary);
     font-family: 'Cousine', monospace;
-    font-size: 1em; /* Un peu plus petit pour un paragraphe */
+    font-size: 1em;
     padding: 12px;
     margin: 0;
-    min-height: 80px; /* Hauteur minimale pour l'alignement */
+    min-height: 80px;
     line-height: 1.5;
-    opacity: 0.8; /* Le rendre légèrement moins proéminent qu'un champ de saisie */
+    opacity: 0.8;
 }
 
 /* --- SECTION HISTORIQUE --- */
-
 .history-container {
     display: flex;
     flex-direction: column;
-    gap: 25px; /* Espace vertical entre les lignes */
+    gap: 25px;
 }
 .history-row {
     display: flex;
     flex-direction: row;
-    gap: 25px; /* Espace horizontal entre les items */
+    gap: 25px;
 }
 .history-item {
-    flex: 1; /* Chaque item prend une part égale de l'espace de la ligne */
+    flex: 1;
 }
-
 .history-item .history-label {
     font-weight: 700;
     text-transform: uppercase;
@@ -276,7 +374,6 @@ main, section.view {
     font-size: 1.1em;
     color: var(--color-primary-dim);
 }
-
 .history-item .history-value {
     font-size: 0.95em;
     margin: 8px 0 0 0;
@@ -312,7 +409,7 @@ main, section.view {
     margin-top: 40px;
 }
 
-.attribute-card {
+.attribute-card, .amber-card {
     border: 1px solid var(--color-primary-dim);
     padding: 15px 10px 10px 10px;
     display: flex;
@@ -359,21 +456,12 @@ main, section.view {
 
 /* --- SECTION COMPÉTENCES --- */
 .skills-container {
-    /* Suppression des propriétés de grille */
-    /* display: grid; */
-    /* grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); */
-    /* gap: 30px; */
-    /* align-items: start;  */
-
-    /* Ajout des propriétés multi-colonnes */
     column-width: 300px;
     column-gap: 30px;
     margin-top: 40px;
 }
 
 #special-skill-group {
-    /* La propriété grid-column est remplacée par column-span */
-    /* grid-column: 1 / -1; */
     column-span: all;
 }
 
@@ -383,9 +471,8 @@ main, section.view {
     background-color: rgba(57, 255, 20, 0.02);
     display: flex;
     flex-direction: column;
-        /* Ajouts pour la mise en page multi-colonnes */
-    break-inside: avoid;   /* Empêche un bloc de se couper entre deux colonnes */
-    margin-bottom: 30px; /* Remplace le 'gap' vertical de la grille */
+    break-inside: avoid;
+    margin-bottom: 30px;
 }
 
 .skill-group h3 {
@@ -414,13 +501,9 @@ main, section.view {
     font-size: 1em;
 }
 
-.core-skill .skill-name {
+.core-skill .skill-name, .core-skill .skill-value {
     color: var(--color-primary-light);
     font-weight: 700;
-}
-
-.core-skill .skill-value {
-    color: var(--color-primary-light);
 }
 
 .core-skill .quantity-btn {
@@ -464,7 +547,7 @@ main, section.view {
 
 .skill-name-container {
     display: flex;
-    align-items: baseline; /* Aligne le nom et le titre sur leur ligne de base */
+    align-items: baseline;
     flex-grow: 1;
 }
 
@@ -473,10 +556,10 @@ main, section.view {
     font-size: 0.8em;
     color: var(--color-primary-dim);
     font-style: italic;
-    text-transform: none; /* Le titre ne doit pas être en majuscules */
+    text-transform: none;
 }
 
-/* --- BOUTONS --- */
+/* --- BOUTONS GÉNÉRAUX --- */
 button {
     background: transparent;
     border: 1px solid var(--color-primary);
@@ -513,6 +596,42 @@ button:disabled {
     justify-content: center;
 }
 
+/* --- BOUTON SPÉCIAL FICHE PERSONNAGE --- */
+#refresh-summary-btn {
+    width: auto;
+    height: auto;
+    border-radius: 0;
+    font-family: 'Cousine', monospace;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.4em;
+    padding: 0.5em 1.5em;
+    margin-top: 5px;
+    background-color: var(--color-primary);
+    color: #000;
+    border: none;
+    box-shadow: 0 0 15px var(--color-primary), 0 0 30px var(--color-primary);
+    animation: radioactive-glow 2s infinite alternate;
+    display: inline-block;
+}
+
+#refresh-summary-btn:hover {
+    background-color: var(--color-primary-light);
+    color: #000;
+    box-shadow: 0 0 25px var(--color-primary-light), 0 0 50px var(--color-primary-light);
+    transform: scale(1.05);
+}
+
+@keyframes radioactive-glow {
+    from { box-shadow: 0 0 10px var(--color-primary), 0 0 20px var(--color-primary); }
+    to { box-shadow: 0 0 20px var(--color-primary), 0 0 40px var(--color-primary), 0 0 60px rgba(57, 255, 20, 0.4); }
+}
+
+#refresh-summary-btn::before {
+    display: none;
+    content: none;
+}
+
 /* --- RÉSUMÉ ET EXPORT --- */
 .summary-card {
     border: 1px solid var(--color-primary);
@@ -544,7 +663,6 @@ button:disabled {
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
 }
-
 .summary-grid-attributes {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -553,7 +671,6 @@ button:disabled {
 .summary-section p {
     margin: 0 0 8px 0;
 }
-
 
 .export-buttons {
     display: flex;
@@ -565,53 +682,20 @@ button:disabled {
     flex-grow: 1;
 }
 
-/* --- BOUTON SPÉCIAL FICHE PERSONNAGE --- */
-#refresh-summary-btn {
-    /* Dimensions et Texte */
-    width: auto;
-    height: auto;
-    border-radius: 0; /* Rectangulaire */
-    font-family: 'Cousine', monospace;
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 0.4em; /* Relatif à la taille du titre H2 (2.5em) -> Rendu visuel harmonieux */
-    padding: 0.5em 1.5em;
-    margin-top: 5px;
-    
-    /* Couleurs (Texte Noir sur Fond Vert) */
-    background-color: var(--color-primary);
-    color: #000; /* Noir pur pour le contraste */
-    border: none;
-    
-    /* Effet d'irradiation (Glow) */
-    box-shadow: 0 0 15px var(--color-primary), 0 0 30px var(--color-primary);
-    animation: radioactive-glow 2s infinite alternate;
-    
-    /* Suppression des styles par défaut du bouton rond s'il en reste */
-    display: inline-block;
+/* --- AMBER CARD (BUDGET) --- */
+.amber-card {
+    border: 1px solid var(--crt-amber-dim);
+}
+.amber-card:hover { border-color: var(--crt-amber); }
+.amber-card h3, .amber-card .description, .amber-card .attribute-value {
+    color: var(--crt-amber);
 }
 
-#refresh-summary-btn:hover {
-    background-color: var(--color-primary-light);
-    color: #000;
-    box-shadow: 0 0 25px var(--color-primary-light), 0 0 50px var(--color-primary-light);
-    transform: scale(1.05); /* Léger zoom au survol */
-}
-
-/* Animation de pulsation pour l'effet "irradie" */
-@keyframes radioactive-glow {
-    from {
-        box-shadow: 0 0 10px var(--color-primary), 0 0 20px var(--color-primary);
-    }
-    to {
-        box-shadow: 0 0 20px var(--color-primary), 0 0 40px var(--color-primary), 0 0 60px rgba(57, 255, 20, 0.4);
-    }
-}
-
-/* Suppression de l'icône (flèche) définie précédemment pour les boutons d'action */
-#refresh-summary-btn::before {
-    display: none;
-    content: none;
+.currency-icon {
+    height: 1em; 
+    position : relative;
+    top: -0.1em;
+    margin-left: 0.25em;
 }
 
 /* --- FOOTER --- */
@@ -625,11 +709,42 @@ footer {
     flex-shrink: 0;
 }
 
-/* --- RESPONSIVE --- */
-@media (max-width: 768px) {
-    :root { --header-height: 180px; }
-    header h1 { font-size: 1.8em; }
+/* --- RESPONSIVE / MEDIA QUERIES --- */
+@media (max-width: 900px) {
+    /* Responsive Header pour Mobile */
+    .lifepath-container {
+        flex-direction: column;
+        gap: 5px;
+        margin-bottom: 10px;
+    }
+
+    .class-selector-label {
+        font-size: 0.9em;
+        opacity: 0.8;
+    }
+
+    .class-selector-label .arrow {
+        transform: rotate(90deg);
+        animation: point-down 1s infinite alternate ease-in-out;
+    }
+
+    header #lifepath {
+        font-size: 2.5em; /* Réduction drastique pour mobile */
+    }
     
+    :root {
+        --header-height: 200px;
+    }
+    
+    nav ul {
+        gap: 15px;
+    }
+    
+    nav a {
+        font-size: 0.9em;
+    }
+
+    /* Responsive Content */
     .history-row {
         flex-direction: column;
     }
@@ -668,150 +783,7 @@ footer {
         text-shadow: none !important;
         border-color: #ccc !important;
     }
-    .export-buttons {
+    .export-buttons, #refresh-summary-btn {
         display: none !important;
     }
-}
-
-
-/* --- AJOUT DES STYLES POUR LES TOOLTIPS --- */
-.tooltip-container {
-    position: relative;
-    display: inline-block; /* Permet de le placer correctement */
-    margin-left: 15px; /* Petit espace entre le texte et le '?' */
-}
-
-.tooltip-trigger {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    border: 2px solid var(--color-primary-dim);
-    color: var(--color-primary-dim);
-    background-color: transparent;
-    font-weight: 700;
-    cursor: help;
-    transition: all 0.3s ease;
-    user-select: none;
-    font-size: 0.5em;
-}
-
-.tooltip-trigger:hover,
-.tooltip-trigger:focus {
-    color: var(--color-primary);
-    border-color: var(--color-primary);
-    outline: none;
-}
-
-.tooltip-content {
-    /* Changement de positionnement en 'fixed' pour le centrage */
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0.95);
-    
-    width: 90%; /* Prend presque toute la largeur sur mobile */
-    max-width: 500px; /* Limite la largeur sur grand écran */
-    padding: 25px;
-    background-color: rgba(5, 5, 5, 0.9);
-    border: 1px solid var(--color-primary);
-    border-radius: 4px;
-    color: var(--color-primary);
-    font-size: 0.5em;
-    text-align: left;
-    text-transform: none;
-    line-height: 1.5;
-    z-index: 2000; /* Doit être au-dessus de tout */
-    box-shadow: 0 0 25px rgba(57, 255, 20, 0.2);
-    backdrop-filter: blur(5px); /* Effet "verre dépoli" pour le fond */
-
-    /* Logique de visibilité */
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
-    pointer-events: none;
-}
-
-.tooltip-content p {
-    margin: 0 0 10px;
-    font-weight: 400;
-}
-
-.tooltip-content p:last-child {
-    margin-bottom: 0;
-}
-
-.tooltip-trigger:hover + .tooltip-content,
-.tooltip-trigger:focus + .tooltip-content {
-    opacity: 1;
-    visibility: visible;
-    transform: translate(-50%, -50%) scale(1);
-}
-
-/* --- NOUVELLE FICHE AMBRE --- */
-/* amber-card {
-    Définition de la palette locale Ambre
-    --crt-amber: #FFB000;
-    --crt-amber-dim: #996A00;
-    --crt-bg: #1A1A1A;
-
-    /*background-color: var(--crt-bg);
-    border-color: var(--crt-amber-dim);
-    color: var(--crt-amber);
-    /*box-shadow: 0 0 5px var(--crt-amber-dim), inset 0 0 15px rgba(0,0,0,0.6)
-    position: relative;
-    overflow: hidden;
-}*/
-
-.amber-card {
- 
-    border: 1px solid var(--crt-amber-dim);
-    padding: 15px 10px 10px 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: rgba(57, 255, 20, 0.02);
-    transition: all 0.3s ease;
-}
-/*.amber-card::after {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background-image: linear-gradient(rgba(0,0,0,0.4) 50%, transparent 50%);
-    background-size: 100% 4px;
-    opacity: 0.5;
-    pointer-events: none;
-}*/
-
-.amber-card:hover { border-color: var(--crt-amber); }
-
-.amber-card h3 {
-    color: var(--crt-amber);
-}
-
-.amber-card .description {
-    color: var(--crt-amber);
-}
-
-.amber-card .attribute-value {
-    color: var(--crt-amber);
-
-}
-
-.amber-card .attribute-controls {
-    z-index: 1;
-}
-
-/* --- STYLE POUR L'ICÔNE DE DEVISE --- */
-.currency-icon {
-    /* Fait en sorte que la hauteur de l'image s'aligne sur la hauteur du texte */
-    height: 1em; 
-    /* Aligne l'image verticalement avec le milieu du texte */
-   /*vertical-align: center;*/
-   position : relative;top:-0.1em;
-
-
 }
