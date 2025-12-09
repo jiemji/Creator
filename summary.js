@@ -38,12 +38,10 @@ function generateCharacterSheetText() {
     text += `Pseudonyme : ${dom.identity.handle.value || '...'}\n\n`;
     text += `Rôle       : ${selectedRole} (${jobDescription})\n`;
     text += `Titre      : ${jobTitle}\n\n`;
-    // AJOUT DE LA COMPÉTENCE SPÉCIALE DANS L'EXPORT TEXTE
     text += `Compétences Spéciales (niv. ${specialSkillValue}) : ${specialSkillName}\n\n`;
     text += `Histoire   : ${story.story}\n\n`;
 
     // --- 2. HISTOIRE ---
-    // On remplace les <br> HTML par des sauts de ligne \n
     text += "> HISTOIRE\n" + separator;
     text += `Style vestimentaire : ${dom.history.style.textContent}\n\n`;
     text += `Coiffure            : ${dom.history.hair.textContent}\n\n`;
@@ -60,7 +58,8 @@ function generateCharacterSheetText() {
     const humanity = (attrs['Esprit'] || 0) * 10;
     
     text += `Puissance   : ${attrs['Puissance'] || 0}\n`;
-    text += `Reflexes    : ${attrs['Reflexes'] || 0}\n`; // Sans accent comme validé
+    // CORRECTION ICI : Utilisation de l'accent pour correspondre au CSV
+    text += `Reflexes    : ${attrs['Réflexes'] || 0}\n`;
     text += `Sang-Froid  : ${attrs['Sang-Froid'] || 0}\n`;
     text += `Classe      : ${attrs['Classe'] || 0}\n`;
     text += `Esprit      : ${attrs['Esprit'] || 0}\n`;
@@ -70,7 +69,8 @@ function generateCharacterSheetText() {
 
     // --- 4. COMPÉTENCES ---
     text += "> COMPÉTENCES\n" + separator;
-    const statOrder = ['Intelligence', 'Classe', 'Technique', 'Reflexes', 'Sang-Froid', 'Puissance', 'Esprit'];
+    // On garde l'accent dans l'ordre de tri aussi pour le code JS
+    const statOrder = ['Intelligence', 'Classe', 'Technique', 'Réflexes', 'Sang-Froid', 'Puissance', 'Esprit'];
     let hasSkills = false;
 
     statOrder.forEach(statName => {
@@ -109,10 +109,8 @@ function renderIdentity() {
     const selectedRole = dom.identity.lifepath.value;
     const skillInfo = state.gameData.specialskill.find(s => s.Classe === selectedRole);
     
-    // 1. Récupération de la description
     const jobDescription = skillInfo ? skillInfo.resume : '';
 
-    // 2. Récupération du Titre (basé sur le niveau de la compétence spéciale)
     const specialSkillName = skillInfo ? skillInfo.specialskill : null;
     const specialSkillValue = specialSkillName ? (state.characterSkills[specialSkillName] || 0) : 0;
     
@@ -123,7 +121,6 @@ function renderIdentity() {
     const jobTitle = budgetEntry ? budgetEntry.Titre : 'Débutant';
     const story = state.characterStory || { story: '...'};
 
-    // AJOUT DE LA COMPÉTENCE SPÉCIALE DANS L'AFFICHAGE HTML
     dom.summary.identity.innerHTML = `
         <p><strong>${dom.identity.name.value || '...'}</strong> - <em>${dom.identity.handle.value || '...'}</em></p>
         <p><strong>${selectedRole}</strong> (${jobDescription})</p>
@@ -153,7 +150,8 @@ function renderAttributes() {
     const humanity = (attrs['Esprit'] || 0) * 10;
     dom.summary.attributes.innerHTML = `
         <p><strong>Puissance:</strong> ${attrs['Puissance'] || 0}</p>
-        <p><strong>Reflexes:</strong> ${attrs['Reflexes'] || 0}</p>
+        <!-- CORRECTION ICI AUSSI -->
+        <p><strong>Réflexes:</strong> ${attrs['Réflexes'] || 0}</p>
         <p><strong>Sang-Froid:</strong> ${attrs['Sang-Froid'] || 0}</p>
         <p><strong>Classe:</strong> ${attrs['Classe'] || 0}</p>
         <p><strong>Esprit:</strong> ${attrs['Esprit'] || 0}</p>
@@ -165,7 +163,8 @@ function renderAttributes() {
 
 function renderSkills() {
     let html = '<br>'; 
-    const statOrder = ['Intelligence', 'Classe', 'Technique', 'Reflexes', 'Sang-Froid', 'Puissance', 'Esprit'];
+    // On remet l'accent pour le tri des compétences
+    const statOrder = ['Intelligence', 'Classe', 'Technique', 'Réflexes', 'Sang-Froid', 'Puissance', 'Esprit'];
     
     statOrder.forEach(statName => {
         const skillsForStat = state.gameData.competences
