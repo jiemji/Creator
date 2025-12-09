@@ -58,8 +58,7 @@ function generateCharacterSheetText() {
     const humanity = (attrs['Esprit'] || 0) * 10;
     
     text += `Puissance   : ${attrs['Puissance'] || 0}\n`;
-    // CORRECTION ICI : Utilisation de l'accent pour correspondre au CSV
-    text += `Reflexes    : ${attrs['Réflexes'] || 0}\n`;
+    text += `Reflexes    : ${attrs['Réflexes'] || 0}\n`; 
     text += `Sang-Froid  : ${attrs['Sang-Froid'] || 0}\n`;
     text += `Classe      : ${attrs['Classe'] || 0}\n`;
     text += `Esprit      : ${attrs['Esprit'] || 0}\n`;
@@ -69,7 +68,7 @@ function generateCharacterSheetText() {
 
     // --- 4. COMPÉTENCES ---
     text += "> COMPÉTENCES\n" + separator;
-    // On garde l'accent dans l'ordre de tri aussi pour le code JS
+    // CORRECTION : Ajout de l'accent sur Réflexes pour correspondre au CSV
     const statOrder = ['Intelligence', 'Classe', 'Technique', 'Réflexes', 'Sang-Froid', 'Puissance', 'Esprit'];
     let hasSkills = false;
 
@@ -150,8 +149,7 @@ function renderAttributes() {
     const humanity = (attrs['Esprit'] || 0) * 10;
     dom.summary.attributes.innerHTML = `
         <p><strong>Puissance:</strong> ${attrs['Puissance'] || 0}</p>
-        <!-- CORRECTION ICI AUSSI -->
-        <p><strong>Réflexes:</strong> ${attrs['Réflexes'] || 0}</p>
+        <p><strong>Reflexes:</strong> ${attrs['Réflexes'] || 0}</p>
         <p><strong>Sang-Froid:</strong> ${attrs['Sang-Froid'] || 0}</p>
         <p><strong>Classe:</strong> ${attrs['Classe'] || 0}</p>
         <p><strong>Esprit:</strong> ${attrs['Esprit'] || 0}</p>
@@ -163,7 +161,7 @@ function renderAttributes() {
 
 function renderSkills() {
     let html = '<br>'; 
-    // On remet l'accent pour le tri des compétences
+    // CORRECTION : Ajout de l'accent sur Réflexes ici aussi
     const statOrder = ['Intelligence', 'Classe', 'Technique', 'Réflexes', 'Sang-Froid', 'Puissance', 'Esprit'];
     
     statOrder.forEach(statName => {
